@@ -5,6 +5,8 @@
  */
 package GUIS;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author phongnguyen
@@ -27,21 +29,166 @@ public class frmCustomerManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panCustomer = new javax.swing.JPanel();
+        lblIDCust = new javax.swing.JLabel();
+        radioMale = new javax.swing.JRadioButton();
+        radioFemale = new javax.swing.JRadioButton();
+        txtIDCust = new javax.swing.JTextField();
+        txtFullname = new javax.swing.JTextField();
+        lblFullname = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
+        lblTelephone = new javax.swing.JLabel();
+        lblNativeplace = new javax.swing.JLabel();
+        cbNativeplace = new javax.swing.JComboBox<>();
+        txtBirthday = new javax.swing.JFormattedTextField();
+        lblBirthday = new javax.swing.JLabel();
+        txtTelephone = new javax.swing.JFormattedTextField();
+        panCard = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        panCustomer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        lblIDCust.setText("Mã khách hàng:");
+
+        radioMale.setText("Nam");
+
+        radioFemale.setText("Nữ");
+
+        lblFullname.setText("Họ và tên:");
+
+        lblGender.setText("Giới tính:");
+
+        lblTelephone.setText("Điện thoại:");
+
+        lblNativeplace.setText("Nơi sinh:");
+
+        cbNativeplace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        txtBirthday.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        txtBirthday.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                checkDate(evt);
+            }
+        });
+
+        lblBirthday.setText("Ngày sinh:");
+
+        txtTelephone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yyyy"))));
+
+        javax.swing.GroupLayout panCustomerLayout = new javax.swing.GroupLayout(panCustomer);
+        panCustomer.setLayout(panCustomerLayout);
+        panCustomerLayout.setHorizontalGroup(
+            panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panCustomerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panCustomerLayout.createSequentialGroup()
+                        .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFullname)
+                            .addComponent(lblNativeplace)
+                            .addComponent(lblBirthday)
+                            .addComponent(lblTelephone))
+                        .addGap(138, 138, 138)
+                        .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panCustomerLayout.createSequentialGroup()
+                                .addComponent(radioMale)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
+                                .addComponent(radioFemale))
+                            .addComponent(txtFullname)
+                            .addComponent(txtBirthday, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTelephone)))
+                    .addGroup(panCustomerLayout.createSequentialGroup()
+                        .addComponent(lblGender)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panCustomerLayout.createSequentialGroup()
+                        .addComponent(lblIDCust)
+                        .addGap(109, 109, 109)
+                        .addComponent(txtIDCust)))
+                .addContainerGap())
+        );
+        panCustomerLayout.setVerticalGroup(
+            panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panCustomerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIDCust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIDCust))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtFullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFullname))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGender)
+                    .addComponent(radioMale)
+                    .addComponent(radioFemale))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbNativeplace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNativeplace))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBirthday))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTelephone)
+                    .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        javax.swing.GroupLayout panCardLayout = new javax.swing.GroupLayout(panCard);
+        panCard.setLayout(panCardLayout);
+        panCardLayout.setHorizontalGroup(
+            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 618, Short.MAX_VALUE)
+        );
+        panCardLayout.setVerticalGroup(
+            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1288, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(panCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 666, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void checkDate(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkDate
+        if (txtBirthday.getText().length() == 2) {
+            txtBirthday.setText(txtBirthday.getText() + "/");
+        }
+        if (txtBirthday.getText().length() == 5) {
+            txtBirthday.setText(txtBirthday.getText() + "/");
+        }
+        if (evt.getKeyCode() == KeyEvent.VK_DELETE) {
+            txtBirthday.setText("");
+        }
+    }//GEN-LAST:event_checkDate
 
     /**
      * @param args the command line arguments
@@ -71,13 +218,26 @@ public class frmCustomerManagement extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmCustomerManagement().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new frmCustomerManagement().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbNativeplace;
+    private javax.swing.JLabel lblBirthday;
+    private javax.swing.JLabel lblFullname;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblIDCust;
+    private javax.swing.JLabel lblNativeplace;
+    private javax.swing.JLabel lblTelephone;
+    private javax.swing.JPanel panCard;
+    private javax.swing.JPanel panCustomer;
+    private javax.swing.JRadioButton radioFemale;
+    private javax.swing.JRadioButton radioMale;
+    private javax.swing.JFormattedTextField txtBirthday;
+    private javax.swing.JTextField txtFullname;
+    private javax.swing.JTextField txtIDCust;
+    private javax.swing.JFormattedTextField txtTelephone;
     // End of variables declaration//GEN-END:variables
 }
