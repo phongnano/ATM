@@ -5,10 +5,6 @@ import GUIS.frmCustomer;
 import GUIS.frmStaff;
 import java.sql.*;
 
-/**
- *
- * @author nguyenphong
- */
 public class DAL_Logins {
 
     private DatabaseAccess db = null;

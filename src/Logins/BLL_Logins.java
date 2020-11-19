@@ -1,9 +1,5 @@
 package Logins;
 
-/**
- *
- * @author nguyenphong
- */
 public class BLL_Logins {
 
     DAL_Logins dal = new DAL_Logins();

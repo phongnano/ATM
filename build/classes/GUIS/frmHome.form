@@ -123,9 +123,6 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblUsr">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/username.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="T&#xe0;i kho&#x1ea3;n:"/>
           </Properties>
         </Component>
@@ -143,9 +140,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblPwd">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/password.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u:"/>
           </Properties>
         </Component>
@@ -218,7 +212,7 @@
         <Component class="javax.swing.JLabel" name="lblBackgroud">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/picture/background.png"/>
+              <Image iconType="3" name="/Images/picture/background.png"/>
             </Property>
           </Properties>
         </Component>

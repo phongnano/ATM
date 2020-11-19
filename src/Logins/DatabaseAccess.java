@@ -8,10 +8,6 @@ import java.util.Properties;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author nguyenphong
- */
 public class DatabaseAccess {
 
     private String url = null;

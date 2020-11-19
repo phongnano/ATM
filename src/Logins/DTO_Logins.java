@@ -1,9 +1,5 @@
 package Logins;
 
-/**
- *
- * @author nguyenphong
- */
 public class DTO_Logins {
 
     private String username;

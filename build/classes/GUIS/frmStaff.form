@@ -6,17 +6,11 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnHome">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/home.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Trang ch&#x1ee7;"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemChangepass">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/changepass.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i m&#x1ead;t kh&#x1ea9;u"/>
               </Properties>
               <Events>
@@ -25,9 +19,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemLogout">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/logout.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng xu&#x1ea5;t"/>
               </Properties>
               <Events>
@@ -36,11 +27,8 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mnFeature">
+        <Menu class="javax.swing.JMenu" name="mnCatalog">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/catalog.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Danh m&#x1ee5;c"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
@@ -49,17 +37,11 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemCustomer">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/customer.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemCard">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/phongnguyen/Desktop/JAVA/Projects/img/icon/card.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; th&#x1ebb;"/>
               </Properties>
             </MenuItem>
