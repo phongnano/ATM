@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="groupGender">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="resizable" type="boolean" value="false"/>
@@ -24,9 +28,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="85" max="32767" attributes="0"/>
               <Component id="panCard" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -41,7 +56,14 @@
                   <Component id="panCustomer" max="32767" attributes="0"/>
                   <Component id="panCard" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="496" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="462" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,17 +91,17 @@
                               <Component id="lblBirthday" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblTelephone" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                          <EmptySpace min="132" pref="132" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="txtTelephone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cbNativeplace" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="radioMale" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="238" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="radioFemale" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txtFullname" max="32767" attributes="0"/>
-                              <Component id="txtBirthday" alignment="1" max="32767" attributes="0"/>
-                              <Component id="cbNativeplace" alignment="1" max="32767" attributes="0"/>
-                              <Component id="txtTelephone" max="32767" attributes="0"/>
+                              <Component id="txtFullname" alignment="0" max="32767" attributes="0"/>
+                              <Component id="dateBirthday" alignment="0" pref="330" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -121,9 +143,9 @@
                       <Component id="lblNativeplace" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtBirthday" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblBirthday" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblBirthday" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateBirthday" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -143,11 +165,17 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="radioMale">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupGender"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nam"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="radioFemale">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupGender"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
           </Properties>
         </Component>
@@ -178,27 +206,12 @@
         <Component class="javax.swing.JComboBox" name="cbNativeplace">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtBirthday">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkDate"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblBirthday">
           <Properties>
@@ -210,6 +223,11 @@
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="d/M/yyyy" subtype="-1" type="1"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -236,5 +254,25 @@
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="javax.swing.JButton" name="btnAdd">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEdit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDelete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCancel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="H&#x1ee7;y"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
