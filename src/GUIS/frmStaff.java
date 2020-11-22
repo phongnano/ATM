@@ -7,6 +7,7 @@ public class frmStaff extends javax.swing.JFrame {
 
     public static String usr, pwd, role;
     private frmChangePassword pass;
+    private frmCustomerManagement cust;
 
     public frmStaff() {
         initComponents();
@@ -75,6 +76,11 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         itemCustomer.setText("Quản lý khách hàng");
+        itemCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerManagement(evt);
+            }
+        });
         mnCatalog.add(itemCustomer);
 
         itemCard.setText("Quản lý thẻ");
@@ -138,6 +144,18 @@ public class frmStaff extends javax.swing.JFrame {
             new frmHome().setVisible(true);
         }
     }//GEN-LAST:event_Logout
+
+    private void CustomerManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerManagement
+        if (cust == null || cust.isClosed()) {
+            cust = new frmCustomerManagement(this);
+            cust.setLocation(this.getWidth() / 2 - cust.getWidth() / 2, (this.getHeight() - 20) / 2 - cust.getHeight() / 2 - 20);
+            panelStaff.add(cust);
+            cust.setVisible(true);
+        } else {
+            cust.setLocation(this.getWidth() / 2 - cust.getWidth() / 2, (this.getHeight() - 20) / 2 - cust.getHeight() / 2 - 20);
+            cust.setVisible(true);
+        }
+    }//GEN-LAST:event_CustomerManagement
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

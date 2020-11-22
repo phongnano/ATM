@@ -1,28 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUIS;
 
-import Customers.DTO_Customers;
-import java.awt.event.KeyEvent;
+public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
-public class frmCustomerManagement extends javax.swing.JFrame {
-    
-    DTO_Customers dto = new DTO_Customers();
-    
-    public frmCustomerManagement() {
+    frmStaff stf;
+
+    public frmCustomerManagement(frmStaff staff) {
         initComponents();
-        int id = dto.genID();
-        txtIDCust.setText(String.valueOf(id));
+        stf = staff;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        groupGender = new javax.swing.ButtonGroup();
+        panCard = new javax.swing.JPanel();
         panCustomer = new javax.swing.JPanel();
         lblIDCust = new javax.swing.JLabel();
         radioMale = new javax.swing.JRadioButton();
@@ -37,23 +28,33 @@ public class frmCustomerManagement extends javax.swing.JFrame {
         lblBirthday = new javax.swing.JLabel();
         txtTelephone = new javax.swing.JFormattedTextField();
         dateBirthday = new com.toedter.calendar.JDateChooser();
-        panCard = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setClosable(true);
+        setTitle("QUẢN LÝ KHÁCH HÀNG");
+
+        panCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        javax.swing.GroupLayout panCardLayout = new javax.swing.GroupLayout(panCard);
+        panCard.setLayout(panCardLayout);
+        panCardLayout.setHorizontalGroup(
+            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 618, Short.MAX_VALUE)
+        );
+        panCardLayout.setVerticalGroup(
+            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         panCustomer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         lblIDCust.setText("Mã khách hàng:");
 
-        groupGender.add(radioMale);
         radioMale.setText("Nam");
 
-        groupGender.add(radioFemale);
         radioFemale.setText("Nữ");
 
         lblFullname.setText("Họ và tên:");
@@ -98,7 +99,7 @@ public class frmCustomerManagement extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblIDCust)
-                        .addGap(109, 109, 109)
+                        .addGap(102, 102, 102)
                         .addComponent(txtIDCust)))
                 .addContainerGap())
         );
@@ -133,19 +134,6 @@ public class frmCustomerManagement extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panCard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        javax.swing.GroupLayout panCardLayout = new javax.swing.GroupLayout(panCard);
-        panCard.setLayout(panCardLayout);
-        panCardLayout.setHorizontalGroup(
-            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
-        );
-        panCardLayout.setVerticalGroup(
-            panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         btnAdd.setText("Thêm");
 
         btnEdit.setText("Sửa");
@@ -170,7 +158,7 @@ public class frmCustomerManagement extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addComponent(btnCancel))
                     .addComponent(panCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(panCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -187,45 +175,12 @@ public class frmCustomerManagement extends javax.swing.JFrame {
                     .addComponent(btnEdit)
                     .addComponent(btnCancel)
                     .addComponent(btnDelete))
-                .addContainerGap(462, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmCustomerManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmCustomerManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmCustomerManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmCustomerManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new frmCustomerManagement().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
@@ -234,7 +189,6 @@ public class frmCustomerManagement extends javax.swing.JFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JComboBox<String> cbNativeplace;
     private com.toedter.calendar.JDateChooser dateBirthday;
-    private javax.swing.ButtonGroup groupGender;
     private javax.swing.JLabel lblBirthday;
     private javax.swing.JLabel lblFullname;
     private javax.swing.JLabel lblGender;

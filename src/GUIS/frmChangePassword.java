@@ -16,7 +16,6 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
     public frmChangePassword(frmStaff staff) {
         initComponents();
         stf = staff;
-
         txtUsername.setText(usr);
         txtUsername.setEnabled(false);
     }

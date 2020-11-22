@@ -1,7 +1,7 @@
 create table LOGINS (
     username    varchar(50) primary key ,
     password    varchar(50)             ,
-    role        int                     ,
+    role        int                     
 );
 
 create table BANKS  (
