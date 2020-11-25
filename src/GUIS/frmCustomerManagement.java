@@ -13,6 +13,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        groupGender = new javax.swing.ButtonGroup();
         panCard = new javax.swing.JPanel();
         panCustomer = new javax.swing.JPanel();
         lblIDCust = new javax.swing.JLabel();
@@ -53,8 +54,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         lblIDCust.setText("Mã khách hàng:");
 
+        groupGender.add(radioMale);
         radioMale.setText("Nam");
 
+        groupGender.add(radioFemale);
         radioFemale.setText("Nữ");
 
         lblFullname.setText("Họ và tên:");
@@ -189,6 +192,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JComboBox<String> cbNativeplace;
     private com.toedter.calendar.JDateChooser dateBirthday;
+    private javax.swing.ButtonGroup groupGender;
     private javax.swing.JLabel lblBirthday;
     private javax.swing.JLabel lblFullname;
     private javax.swing.JLabel lblGender;
