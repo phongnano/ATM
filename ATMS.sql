@@ -50,3 +50,5 @@ insert into LOGINS
 values ('phong', 'phong', 1);
 insert into LOGINS
 values ('user', 'user', 2);
+
+select * from LOGINS

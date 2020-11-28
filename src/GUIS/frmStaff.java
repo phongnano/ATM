@@ -11,13 +11,13 @@ public class frmStaff extends javax.swing.JFrame {
 
     public frmStaff() {
         initComponents();
-        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + pwd + "\tChức vụ: " + role);
-        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
-        itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
-        itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
-        mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
-        itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
-        itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
+            this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + pwd + "\tChức vụ: " + role);
+            mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+            itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
+            itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
+            mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
+            itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
+            itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
     }
 
     @SuppressWarnings("unchecked")
