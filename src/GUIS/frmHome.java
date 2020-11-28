@@ -11,7 +11,6 @@ public class frmHome extends javax.swing.JFrame {
     DTO_Logins dto = new DTO_Logins();
     BLL_Logins bll = new BLL_Logins();
     DAL_Logins dal = new DAL_Logins();
-    String path;
 
     public frmHome() {
         initComponents();
@@ -194,7 +193,6 @@ public class frmHome extends javax.swing.JFrame {
                     frmCustomer.role = "Khách hàng";
                     new frmCustomer().setVisible(true);
                 }
-
             } else {
                 JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
             }

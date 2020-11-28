@@ -8,6 +8,7 @@ public class frmStaff extends javax.swing.JFrame {
     public static String usr, pwd, role;
     private frmChangePassword pass;
     private frmCustomerManagement cust;
+    private frmBanks bnk;
 
     public frmStaff() {
         initComponents();
@@ -84,6 +85,11 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog.add(itemCustomer);
 
         itemCard.setText("Quản lý thẻ");
+        itemCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CardManagement(evt);
+            }
+        });
         mnCatalog.add(itemCard);
 
         menuStaff.add(mnCatalog);
@@ -157,31 +163,19 @@ public class frmStaff extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CustomerManagement
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void CardManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardManagement
+        if (bnk == null || bnk.isClosed()) {
+            bnk = new frmBanks(this);
+            bnk.setLocation(this.getWidth() / 2 - bnk.getWidth() / 2, (this.getHeight() - 20) / 2 - bnk.getHeight() / 2 - 20);
+            panelStaff.add(bnk);
+            bnk.setVisible(true);
+        } else {
+            bnk.setLocation(this.getWidth() / 2 - bnk.getWidth() / 2, (this.getHeight() - 20) / 2 - bnk.getHeight() / 2 - 20);
+            bnk.setVisible(true);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_CardManagement
 
-        /* Create and display the form */
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new frmStaff().setVisible(true);
         });

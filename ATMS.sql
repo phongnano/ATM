@@ -44,9 +44,20 @@ create table CUSTOMERS  (
     primary key (idcust, id)            
 );
 
+insert into BANKS
+values ('00000', 'Sacombank');
+insert into BANKS
+values ('00001', 'Vietcombank');
+insert into BANKS
+values ('00002', 'Techcombank');
+
 insert into LOGINS
 values ('admin', 'admin', 0);
 insert into LOGINS
 values ('phong', 'phong', 1);
 insert into LOGINS
 values ('user', 'user', 2);
+
+
+
+select * from BANKS
