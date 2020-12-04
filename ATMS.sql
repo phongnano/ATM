@@ -58,6 +58,10 @@ values ('phong', 'phong', 1);
 insert into LOGINS
 values ('user', 'user', 2);
 
+<<<<<<< HEAD
 
 
 select * from BANKS
+=======
+select * from LOGINS
+>>>>>>> origin/master
