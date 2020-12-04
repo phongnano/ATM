@@ -4,6 +4,7 @@ import Banks.BLL_Banks;
 import Banks.DTO_Banks;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmBanks extends javax.swing.JInternalFrame {
@@ -13,16 +14,26 @@ public class frmBanks extends javax.swing.JInternalFrame {
     ArrayList<DTO_Banks> arr = new ArrayList<>();
     Random rd = new Random();
     frmStaff stf;
+    int result;
 
     public frmBanks(frmStaff staff) {
         initComponents();
         stf = staff;
-//        dto.setIDBank(rd.nextInt(10000) + 90000);
-//        txtID.setText(String.valueOf(dto.getIDBank()));
         loadBanks();
     }
 
+    private void genID() {
+        dto.setIDBank(String.valueOf(rd.nextInt(10000) + 90000));
+        txtID.setText(String.valueOf(dto.getIDBank()));
+    }
+
+    private void resetData() {
+        txtID.setText("");
+        txtName.setText("");
+    }
+
     private void loadBanks() {
+        tblBanks.setVisible(true);
         String[] header = {"Mã ngân hàng", "Tên ngân hàng"};
         DefaultTableModel model = new DefaultTableModel(header, 0);
         arr = bll.loadBanks();
@@ -35,6 +46,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
         }
         tblBanks.setModel(model);
         tblBanks.setDefaultEditor(Object.class, null);
+        tblBanks.getTableHeader().setReorderingAllowed(false);
+        tblBanks.getTableHeader().setResizingAllowed(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -52,6 +65,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        cbBanks = new javax.swing.JComboBox<>();
 
         setClosable(true);
 
@@ -63,12 +77,11 @@ public class frmBanks extends javax.swing.JInternalFrame {
 
         lblName.setText("Tên ngân hàng:");
 
+        txtName.setEditable(false);
+
         tblBanks.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
 
@@ -76,7 +89,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         ));
         tblBanks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                selectedBanks(evt);
+                ChoseBanks(evt);
             }
         });
         jScrollPane.setViewportView(tblBanks);
@@ -109,47 +122,60 @@ public class frmBanks extends javax.swing.JInternalFrame {
             }
         });
 
+        cbBanks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vietcombank", "Sacombank", "Techbank", "TPBank", "VPBank" }));
+        cbBanks.setSelectedIndex(-1);
+        cbBanks.setAutoscrolls(true);
+        cbBanks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelectedBanks(evt);
+            }
+        });
+
         javax.swing.GroupLayout panBanksLayout = new javax.swing.GroupLayout(panBanks);
         panBanks.setLayout(panBanksLayout);
         panBanksLayout.setHorizontalGroup(
             panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panBanksLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(75, 75, 75)
-                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(75, 75, 75)
-                .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(75, 75, 75)
-                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(panBanksLayout.createSequentialGroup()
                 .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panBanksLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panBanksLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jScrollPane))
+                        .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE))
                     .addGroup(panBanksLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblID)
                             .addComponent(lblName))
                         .addGap(50, 50, 50)
-                        .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtID)
-                            .addComponent(txtName))))
+                        .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(txtID))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbBanks, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panBanksLayout.setVerticalGroup(
             panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panBanksLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblID))
-                .addGap(18, 18, 18)
-                .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblName))
+                .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panBanksLayout.createSequentialGroup()
+                        .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblID))
+                        .addGap(18, 18, 18)
+                        .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblName)))
+                    .addComponent(cbBanks))
                 .addGap(18, 18, 18)
                 .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -190,20 +216,36 @@ public class frmBanks extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_EditBanks
 
     private void DeleteBanks(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBanks
-
+        dto.setIDBank(txtID.getText());
+        dto.setNameBank(txtName.getText());
+        int choice = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa dữ liệu ?", "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            try {
+                result = bll.deleteBanks(dto);
+                loadBanks();
+                resetData();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Lỗi: " + e, "Thông báo", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_DeleteBanks
 
     private void CancelBanks(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBanks
-
+        resetData();
     }//GEN-LAST:event_CancelBanks
 
-    private void selectedBanks(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectedBanks
+    private void ChoseBanks(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChoseBanks
         int row = tblBanks.getSelectedRow();
         if (row != -1) {
             txtID.setText(tblBanks.getValueAt(row, 0).toString());
             txtName.setText(tblBanks.getValueAt(row, 1).toString());
         }
-    }//GEN-LAST:event_selectedBanks
+    }//GEN-LAST:event_ChoseBanks
+
+    private void SelectedBanks(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectedBanks
+    
+        
+    }//GEN-LAST:event_SelectedBanks
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -211,6 +253,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JComboBox<String> cbBanks;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblName;
