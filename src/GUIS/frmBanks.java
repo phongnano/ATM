@@ -2,8 +2,10 @@ package GUIS;
 
 import Banks.BLL_Banks;
 import Banks.DTO_Banks;
+import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -243,8 +245,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ChoseBanks
 
     private void SelectedBanks(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectedBanks
-    
-        
+
     }//GEN-LAST:event_SelectedBanks
 
 
