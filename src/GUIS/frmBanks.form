@@ -199,12 +199,13 @@
               <StringArray count="5">
                 <StringItem index="0" value="Vietcombank"/>
                 <StringItem index="1" value="Sacombank"/>
-                <StringItem index="2" value="Techbank"/>
+                <StringItem index="2" value="Techcombank"/>
                 <StringItem index="3" value="TPBank"/>
                 <StringItem index="4" value="VPBank"/>
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="-1"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="autoscrolls" type="boolean" value="true"/>
           </Properties>
           <Events>

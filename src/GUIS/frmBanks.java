@@ -2,10 +2,8 @@ package GUIS;
 
 import Banks.BLL_Banks;
 import Banks.DTO_Banks;
-import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.Random;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,11 +20,6 @@ public class frmBanks extends javax.swing.JInternalFrame {
         initComponents();
         stf = staff;
         loadBanks();
-    }
-
-    private void genID() {
-        dto.setIDBank(String.valueOf(rd.nextInt(10000) + 90000));
-        txtID.setText(String.valueOf(dto.getIDBank()));
     }
 
     private void resetData() {
@@ -124,8 +117,9 @@ public class frmBanks extends javax.swing.JInternalFrame {
             }
         });
 
-        cbBanks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vietcombank", "Sacombank", "Techbank", "TPBank", "VPBank" }));
+        cbBanks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vietcombank", "Sacombank", "Techcombank", "TPBank", "VPBank" }));
         cbBanks.setSelectedIndex(-1);
+        cbBanks.setToolTipText("");
         cbBanks.setAutoscrolls(true);
         cbBanks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

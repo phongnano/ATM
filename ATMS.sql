@@ -50,6 +50,10 @@ insert into BANKS
 values ('00001', 'Vietcombank');
 insert into BANKS
 values ('00002', 'Techcombank');
+insert into BANKS
+values ('00003', 'TPBank');
+insert into BANKS
+values ('00004', 'VPBank');
 
 insert into LOGINS
 values ('admin', 'admin', 0);

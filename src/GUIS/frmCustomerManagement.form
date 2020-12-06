@@ -32,7 +32,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Component id="jScrollPane" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -47,7 +47,7 @@
                           <Component id="panCustomer" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="125" max="32767" attributes="0"/>
-                      <Component id="panCustomer1" min="-2" max="-2" attributes="0"/>
+                      <Component id="panCard" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -59,7 +59,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="panCustomer1" max="32767" attributes="0"/>
+                  <Component id="panCard" max="32767" attributes="0"/>
                   <Component id="panCustomer" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -70,7 +70,7 @@
                   <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="326" max="32767" attributes="0"/>
+              <Component id="jScrollPane" pref="326" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -188,6 +188,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIDCust">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFullname">
         </Component>
@@ -260,7 +263,7 @@
         <Property name="text" type="java.lang.String" value="H&#x1ee7;y"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="panCustomer1">
+    <Container class="javax.swing.JPanel" name="panCard">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -295,8 +298,8 @@
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="txtFullname1" alignment="1" max="32767" attributes="0"/>
-                      <Component id="txtIDCust1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtIDAcco" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtIDCard" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -307,12 +310,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtIDCust1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIDCard" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblCard" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtFullname1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIDAcco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblAccount" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -346,9 +349,15 @@
             <Property name="text" type="java.lang.String" value="S&#x1ed1; th&#x1ebb;:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtIDCust1">
+        <Component class="javax.swing.JTextField" name="txtIDCard">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFullname1">
+        <Component class="javax.swing.JTextField" name="txtIDAcco">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAccount">
           <Properties>
@@ -387,6 +396,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Th&#x1ebb; Visa"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCards"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="radioLocal">
           <Properties>
@@ -395,10 +407,13 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Th&#x1ebb; N&#x1ed9;i &#x111;&#x1ecb;a"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkCards"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -408,12 +423,7 @@
         <Component class="javax.swing.JTable" name="tableInfo">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
-              </Table>
+              <Table columnCount="0" rowCount="0"/>
             </Property>
           </Properties>
         </Component>
