@@ -2,14 +2,14 @@ package GUIS;
 
 import Cards.DTO_Cards;
 import Customers.DTO_Customers;
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class frmCustomerManagement extends javax.swing.JInternalFrame {
-
+    
     frmStaff stf;
     DTO_Cards card = new DTO_Cards();
     DTO_Customers cust = new DTO_Customers();
@@ -18,13 +18,15 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     Date endday = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("MM/yy");
     Calendar cal = Calendar.getInstance();
-
+    
     public frmCustomerManagement(frmStaff staff) {
         initComponents();
         stf = staff;
         txtIDCust.setText(genIDCust());
+        JTextFieldDateEditor editor = (JTextFieldDateEditor) dateBirthday.getDateEditor();
+        editor.setEditable(false);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -43,8 +45,8 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         lblNativeplace = new javax.swing.JLabel();
         cbNativeplace = new javax.swing.JComboBox<>();
         lblBirthday = new javax.swing.JLabel();
-        txtTelephone = new javax.swing.JFormattedTextField();
         dateBirthday = new com.toedter.calendar.JDateChooser();
+        txtTelephone = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -87,11 +89,19 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         lblNativeplace.setText("Nơi sinh:");
 
+        cbNativeplace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP HCM" }));
+        cbNativeplace.setSelectedIndex(-1);
+        cbNativeplace.setAutoscrolls(true);
+
         lblBirthday.setText("Ngày sinh:");
 
-        txtTelephone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yyyy"))));
-
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
+
+        txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                checkNumbers(evt);
+            }
+        });
 
         javax.swing.GroupLayout panCustomerLayout = new javax.swing.GroupLayout(panCustomer);
         panCustomer.setLayout(panCustomerLayout);
@@ -108,14 +118,14 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                             .addComponent(lblTelephone))
                         .addGap(132, 132, 132)
                         .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbNativeplace, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panCustomerLayout.createSequentialGroup()
                                 .addComponent(radioMale)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(radioFemale))
                             .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)))
+                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtTelephone)))
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblGender)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -153,7 +163,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTelephone)
                     .addComponent(txtTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         btnAdd.setText("Thêm");
@@ -275,17 +285,17 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAdd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEdit)
-                                .addGap(99, 99, 99)
-                                .addComponent(btnDelete)
-                                .addGap(101, 101, 101)
-                                .addComponent(btnCancel))
+                                .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(75, 75, 75)
+                                .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(75, 75, 75)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(75, 75, 75)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(panCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addGap(125, 125, 125)
                         .addComponent(panCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -298,12 +308,12 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                     .addComponent(panCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnEdit)
-                    .addComponent(btnCancel)
-                    .addComponent(btnDelete))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -313,37 +323,55 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     private void checkCards(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkCards
         if (radioVisa.isSelected()) {
             if (checkData()) {
-               
+                genVisCard();
+                txtIDAcco.setText(genIDAcco() + genIDCust());
+                Dates();
+            } else {
+                groupCard.clearSelection();
             }
         }
         if (radioLocal.isSelected()) {
             if (checkData()) {
-
+                genLocCard();
+                txtIDAcco.setText(genIDAcco() + genIDCust());
+                Dates();
+            } else {
+                groupCard.clearSelection();
             }
         }
     }//GEN-LAST:event_checkCards
 
+    private void checkNumbers(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkNumbers
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+        if (txtTelephone.getText().length() == 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_checkNumbers
+    
     private boolean checkData() {
-        return !txtFullname.getText().isEmpty() && !txtTelephone.getText().isEmpty() && radioFemale.isSelected() || radioMale.isSelected();
+        return (!txtFullname.getText().isEmpty() && !txtTelephone.getText().isEmpty()) && (radioMale.isSelected() || radioFemale.isSelected());
     }
-
+    
     private void Dates() {
         cal.setTime(endday);
         cal.add(Calendar.MONTH, 4);
         lblSDay.setText(formatter.format(sttday));
         lblEDay.setText(formatter.format(cal.getTime()));
     }
-
+    
     private String genIDCust() {
         cust.setIdcust(String.valueOf(rd.nextInt(10000) + 90000));
         return cust.getIdcust();
     }
-
+    
     private String genIDAcco() {
         card.setIdacco(String.valueOf(rd.nextInt(1000000) + 9000000));
         return card.getIdacco();
     }
-
+    
     private void genVisCard() {
         radioVisa.setEnabled(false);
         radioLocal.setEnabled(true);
@@ -353,7 +381,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         txtIDCard.setText(String.valueOf(card.getIdcard()));
         txtIDAcco.setText(genIDAcco() + txtIDCust.getText());
     }
-
+    
     private void genLocCard() {
         radioVisa.setEnabled(true);
         radioLocal.setEnabled(false);
@@ -363,7 +391,6 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         txtIDCard.setText(String.valueOf(card.getIdcard()));
         txtIDAcco.setText(genIDAcco() + txtIDCust.getText());
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
@@ -399,6 +426,6 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtIDAcco;
     private javax.swing.JTextField txtIDCard;
     private javax.swing.JTextField txtIDCust;
-    private javax.swing.JFormattedTextField txtTelephone;
+    private javax.swing.JTextField txtTelephone;
     // End of variables declaration//GEN-END:variables
 }
