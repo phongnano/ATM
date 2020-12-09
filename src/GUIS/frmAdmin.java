@@ -30,19 +30,40 @@ public class frmAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        menuAdmin = new javax.swing.JMenuBar();
+        mnHome = new javax.swing.JMenu();
+        mnManagement = new javax.swing.JMenu();
+        itemBankManagement = new javax.swing.JMenuItem();
+        itemStaffManagement = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ADMIN");
         setResizable(false);
+
+        mnHome.setText("Trang chủ");
+        menuAdmin.add(mnHome);
+
+        mnManagement.setText("Danh mục quản lý");
+
+        itemBankManagement.setText("Quản lý ngân hàng");
+        mnManagement.add(itemBankManagement);
+
+        itemStaffManagement.setText("Quản lý nhân viên");
+        mnManagement.add(itemStaffManagement);
+
+        menuAdmin.add(mnManagement);
+
+        setJMenuBar(menuAdmin);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 579, Short.MAX_VALUE)
         );
 
         pack();
@@ -83,5 +104,10 @@ public class frmAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemBankManagement;
+    private javax.swing.JMenuItem itemStaffManagement;
+    private javax.swing.JMenuBar menuAdmin;
+    private javax.swing.JMenu mnHome;
+    private javax.swing.JMenu mnManagement;
     // End of variables declaration//GEN-END:variables
 }
