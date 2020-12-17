@@ -179,16 +179,19 @@ public class frmHome extends javax.swing.JFrame {
             if (bll.Logins(dto)) {
                 int role = dal.getRole(dto.getUsername());
                 if (role == 0) {
+                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmAdmin.role = "Quản trị viên";
                     new frmAdmin().setVisible(true);
                 }
                 if (role == 1) {
+                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmStaff.role = "Nhân viên";
                     new frmStaff().setVisible(true);
                 }
                 if (role == 2) {
+                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmCustomer.role = "Khách hàng";
                     new frmCustomer().setVisible(true);
