@@ -95,10 +95,4 @@ public class DTO_Customers {
     public void setRd(Random rd) {
         this.rd = rd;
     }
-
-    public int genID() {
-        id = rd.nextInt(100000000) * 900000000;
-        return id;
-    }
-
 }

@@ -62,6 +62,12 @@ values ('phong', 'phong', 1);
 insert into LOGINS
 values ('user', 'user', 2);
 
+insert into STAFFS
+values ('025786236', '0123456', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 1);
+
+insert into CUSTOMERS
+values ('025786236', '0123456', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 2);
+
 select * from BANKS
 =======
-select * from LOGINS
+select * from CUSTOMERS
