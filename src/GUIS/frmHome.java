@@ -176,21 +176,22 @@ public class frmHome extends javax.swing.JFrame {
 
         if (!dto.getUsername().isEmpty()) {
             frmChangePassword.usr = dto.getUsername();
-            if (bll.Logins(dto)) {
-                int role = dal.getRole(dto.getUsername());
-                if (role == 0) {
+            if (bll.SLogins(dto) || bll.CLogins(dto)) {
+                int srole = dal.getSRole(dto.getUsername());
+                int crole = dal.getCRole(dto.getUsername());
+                if (srole == 0) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmAdmin.role = "Quản trị viên";
                     new frmAdmin().setVisible(true);
                 }
-                if (role == 1) {
+                if (srole == 1) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmStaff.role = "Nhân viên";
                     new frmStaff().setVisible(true);
                 }
-                if (role == 2) {
+                if (crole == 2) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     frmCustomer.role = "Khách hàng";

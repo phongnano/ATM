@@ -38,36 +38,25 @@ create table CUSTOMERS  (
     primary key (idcust, id)            
 );
 
-create table LOGINS (
-    username    varchar(50) unique ,
-    password    varchar(50)             ,
-    role        int                     ,
-    foreign key (username) references STAFFS (idstaff) ,
-    foreign key (username) references STAFFS (idcust)  
-);
+insert into BANKS
+values ('00000', 'Sacombank');
+insert into BANKS
+values ('00001', 'Vietcombank');
+insert into BANKS
+values ('00002', 'Techcombank');
+insert into BANKS
+values ('00003', 'TPBank');
+insert into BANKS
+values ('00004', 'VPBank');
 
--- insert into BANKS
--- values ('00000', 'Sacombank');
--- insert into BANKS
--- values ('00001', 'Vietcombank');
--- insert into BANKS
--- values ('00002', 'Techcombank');
--- insert into BANKS
--- values ('00003', 'TPBank');
--- insert into BANKS
--- values ('00004', 'VPBank');
--- 
--- insert into LOGINS
--- values ('admin', 'admin', 0);
--- insert into LOGINS
--- values ('phong', 'phong', 1);
--- insert into LOGINS
--- values ('user', 'user', 2);
--- 
--- insert into STAFFS
--- values ('025786236', '0123456', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 1);
--- 
--- insert into CUSTOMERS
--- values ('025786236', '0123456', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 2);
--- 
--- select * from BANKS
+insert into STAFFS
+values ('025786236', 'AD01234', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 0);
+insert into STAFFS
+values ('025786236', 'NV01234', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 1);
+
+insert into CUSTOMERS
+values ('025786236', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 2);
+
+select IDSTAFF, PASSWORD, "ROLE" from STAFFS
+union
+select IDCUST, PASSWORD, "ROLE" from CUSTOMERS
