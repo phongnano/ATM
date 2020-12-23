@@ -3,6 +3,7 @@ package Customers;
 import Logins.DatabaseAccess;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAL_Cusomters {
@@ -10,6 +11,21 @@ public class DAL_Cusomters {
     private DatabaseAccess db = null;
     private Connection con = null;
     private PreparedStatement ps = null;
+    private ResultSet rs = null;
+
+    public boolean checkID(String usr) {
+        String query = "select ID from USERS where ID = ? and ROLE = 2";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usr);
+            rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+        }
+        return false;
+    }
 
     public int addCustomers(DTO_Customers dto) {
         int result = 0;

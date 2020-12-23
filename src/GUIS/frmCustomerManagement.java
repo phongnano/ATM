@@ -24,12 +24,15 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     Date endday = new Date();
     SimpleDateFormat formatter, getpass;
     Calendar cal = Calendar.getInstance();
+    JTextFieldDateEditor editor;
 
     public frmCustomerManagement(frmStaff staff) {
         initComponents();
         stf = staff;
         txtIDCust.setText(genIDCust());
-        JTextFieldDateEditor editor = (JTextFieldDateEditor) dateBirthday.getDateEditor();
+        editor = (JTextFieldDateEditor) dateBirthday.getDateEditor();
+        editor = (JTextFieldDateEditor) dateSday.getDateEditor();
+        editor = (JTextFieldDateEditor) dateEday.getDateEditor();
         editor.setEditable(false);
     }
 
@@ -66,13 +69,13 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         lblAccount = new javax.swing.JLabel();
         lblStartday = new javax.swing.JLabel();
         lblEndday = new javax.swing.JLabel();
-        lblSDay = new javax.swing.JLabel();
-        lblEDay = new javax.swing.JLabel();
         lblCards = new javax.swing.JLabel();
         radioVisa = new javax.swing.JRadioButton();
         radioLocal = new javax.swing.JRadioButton();
         lblBank = new javax.swing.JLabel();
         cbBank = new javax.swing.JComboBox<>();
+        dateSday = new com.toedter.calendar.JDateChooser();
+        dateEday = new com.toedter.calendar.JDateChooser();
         jScrollPane = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable();
 
@@ -109,11 +112,17 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                checkNumbers(evt);
+                checkTelephone(evt);
             }
         });
 
         lblID.setText("CMND:");
+
+        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                checkID(evt);
+            }
+        });
 
         javax.swing.GroupLayout panCustomerLayout = new javax.swing.GroupLayout(panCustomer);
         panCustomer.setLayout(panCustomerLayout);
@@ -140,14 +149,14 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                             .addComponent(txtTelephone)))
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblIDCust)
-                        .addGap(102, 102, 102)
+                        .addGap(109, 109, 109)
                         .addComponent(txtIDCust))
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblGender)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblID)
-                        .addGap(157, 157, 157)
+                        .addGap(152, 152, 152)
                         .addComponent(txtID)))
                 .addContainerGap())
         );
@@ -218,10 +227,6 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         lblEndday.setText("Ngày kết thúc:");
 
-        lblSDay.setText(".........");
-
-        lblEDay.setText(".........");
-
         lblCards.setText("Chọn loại thẻ:");
 
         groupCard.add(radioVisa);
@@ -242,6 +247,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         lblBank.setText("Chọn ngân hàng:");
 
+        dateSday.setDateFormatString("yyyy-MM-dd"); // NOI18N
+
+        dateEday.setDateFormatString("yyyy-MM-dd"); // NOI18N
+
         javax.swing.GroupLayout panCardLayout = new javax.swing.GroupLayout(panCard);
         panCard.setLayout(panCardLayout);
         panCardLayout.setHorizontalGroup(
@@ -249,6 +258,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
             .addGroup(panCardLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCardLayout.createSequentialGroup()
+                        .addComponent(lblBank)
+                        .addGap(102, 102, 102)
+                        .addComponent(cbBank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panCardLayout.createSequentialGroup()
                         .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAccount)
@@ -256,26 +269,16 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                             .addComponent(lblEndday)
                             .addComponent(lblCard)
                             .addComponent(lblCards))
-                        .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panCardLayout.createSequentialGroup()
-                                .addGap(138, 335, Short.MAX_VALUE)
-                                .addComponent(radioLocal))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panCardLayout.createSequentialGroup()
-                                .addGap(129, 129, 129)
-                                .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtIDAcco, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtIDCard)
-                                    .addGroup(panCardLayout.createSequentialGroup()
-                                        .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblSDay)
-                                            .addComponent(lblEDay))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCardLayout.createSequentialGroup()
-                        .addComponent(lblBank)
                         .addGap(114, 114, 114)
                         .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioVisa)
-                            .addComponent(cbBank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtIDAcco)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCardLayout.createSequentialGroup()
+                                .addComponent(radioVisa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                                .addComponent(radioLocal))
+                            .addComponent(dateSday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtIDCard)
+                            .addComponent(dateEday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         panCardLayout.setVerticalGroup(
@@ -290,13 +293,13 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                     .addComponent(txtIDAcco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAccount))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblStartday)
-                    .addComponent(lblSDay))
+                    .addComponent(dateSday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblEndday)
-                    .addComponent(lblEDay, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateEday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCards)
@@ -306,7 +309,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblBank))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
@@ -328,18 +331,18 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(345, 345, 345)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(154, 154, 154)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(345, 345, 345)
-                                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(333, 333, 333)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
@@ -352,10 +355,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                     .addComponent(panCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAdd)
+                    .addComponent(btnEdit)
+                    .addComponent(btnCancel)
+                    .addComponent(btnDelete))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -385,7 +388,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_checkCards
 
-    private void checkNumbers(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkNumbers
+    private void checkTelephone(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkTelephone
         char ch = evt.getKeyChar();
         if (!Character.isDigit(ch)) {
             evt.consume();
@@ -393,15 +396,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         if (txtTelephone.getText().length() == 10) {
             evt.consume();
         }
-    }//GEN-LAST:event_checkNumbers
+    }//GEN-LAST:event_checkTelephone
 
     private void AddCustCard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustCard
         getpass = new SimpleDateFormat("ddMMyyyy");
-        formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-        cal.setTime(endday);
-        cal.add(Calendar.YEAR, 4);
-
         cust.setIdcust(txtIDCust.getText());
         cust.setId(txtID.getText());
         cust.setFullname(txtFullname.getText());
@@ -419,16 +417,15 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
         card.setIdcard(txtIDCard.getText());
         card.setIdacco(txtIDAcco.getText());
-        card.setSttday(new java.sql.Date(sttday.getTime()));
-        card.setEndday(new java.sql.Date(endday.getTime()));
-
+        card.setSttday(new java.sql.Date(dateSday.getDate().getTime()));
+        card.setEndday(new java.sql.Date(dateEday.getDate().getTime()));
+        card.setIdbank(null);
         if (radioVisa.isSelected()) {
             card.setTypecard("Visa");
         }
         if (radioLocal.isSelected()) {
             card.setTypecard("Nội địa");
         }
-
         try {
             int result_1 = bllcust.AddCustomer(cust);
             int result_2 = bllcard.AddCard(card);
@@ -436,6 +433,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "OK");
             }
         } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, "Lỗi: " + e);
         }
     }//GEN-LAST:event_AddCustCard
 
@@ -443,16 +441,26 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_EditCustCard
 
+    private void checkID(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkID
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+        if (txtTelephone.getText().length() == 9) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_checkID
+
     private boolean checkData() {
         return (!txtFullname.getText().isEmpty() && !txtTelephone.getText().isEmpty()) && (radioMale.isSelected() || radioFemale.isSelected());
     }
 
     private void Dates() {
-        formatter = new SimpleDateFormat("MM/yy");
+        formatter = new SimpleDateFormat("yyyy-MM-dd");
         cal.setTime(endday);
         cal.add(Calendar.YEAR, 4);
-        lblSDay.setText(formatter.format(sttday));
-        lblEDay.setText(formatter.format(cal.getTime()));
+        dateSday.setDate(new java.sql.Date(sttday.getTime()));
+        dateEday.setDate(cal.getTime());
     }
 
     private String genIDCust() {
@@ -493,6 +501,8 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cbBank;
     private javax.swing.JComboBox<String> cbNativeplace;
     private com.toedter.calendar.JDateChooser dateBirthday;
+    private com.toedter.calendar.JDateChooser dateEday;
+    private com.toedter.calendar.JDateChooser dateSday;
     private javax.swing.ButtonGroup groupCard;
     private javax.swing.ButtonGroup groupGender;
     private javax.swing.JScrollPane jScrollPane;
@@ -501,14 +511,12 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblBirthday;
     private javax.swing.JLabel lblCard;
     private javax.swing.JLabel lblCards;
-    private javax.swing.JLabel lblEDay;
     private javax.swing.JLabel lblEndday;
     private javax.swing.JLabel lblFullname;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblIDCust;
     private javax.swing.JLabel lblNativeplace;
-    private javax.swing.JLabel lblSDay;
     private javax.swing.JLabel lblStartday;
     private javax.swing.JLabel lblTelephone;
     private javax.swing.JPanel panCard;
