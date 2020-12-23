@@ -14,11 +14,11 @@ public class frmAdmin extends javax.swing.JFrame {
     /**
      * Creates new form frmAdmin
      */
-    public static String usr, pwd, role;
+    public static String usr, name, role;
 
     public frmAdmin() {
         initComponents();
-        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + pwd + "\tChức vụ: " + role);
+        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
     }
 
     /**
@@ -46,9 +46,19 @@ public class frmAdmin extends javax.swing.JFrame {
         mnManagement.setText("Danh mục quản lý");
 
         itemBankManagement.setText("Quản lý ngân hàng");
+        itemBankManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BankManagement(evt);
+            }
+        });
         mnManagement.add(itemBankManagement);
 
         itemStaffManagement.setText("Quản lý nhân viên");
+        itemStaffManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StaffManagement(evt);
+            }
+        });
         mnManagement.add(itemStaffManagement);
 
         menuAdmin.add(mnManagement);
@@ -69,6 +79,14 @@ public class frmAdmin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BankManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankManagement
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BankManagement
+
+    private void StaffManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StaffManagement
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StaffManagement
 
     /**
      * @param args the command line arguments

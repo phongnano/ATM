@@ -5,20 +5,20 @@ import javax.swing.JOptionPane;
 
 public class frmStaff extends javax.swing.JFrame {
 
-    public static String usr, pwd, role;
+    public static String usr, name, role;
     private frmChangePassword pass;
     private frmCustomerManagement cust;
     private frmBanks bnk;
 
     public frmStaff() {
         initComponents();
-            this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + pwd + "\tChức vụ: " + role);
-            mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
-            itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
-            itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
-            mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
-            itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
-            itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
+        this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
+        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+        itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
+        itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
+        mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
+        itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
+        itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -133,7 +133,7 @@ public class frmStaff extends javax.swing.JFrame {
         if (JOptionPane.showConfirmDialog(this, "Bạn có muốn thoát ứng dụng?", "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION) {
             this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         } else {
-            usr = pwd = role = null;
+            usr = name = role = null;
             this.setTitle(null);
             this.dispose();
             new frmHome().setVisible(true);
@@ -144,7 +144,7 @@ public class frmStaff extends javax.swing.JFrame {
         if (JOptionPane.showConfirmDialog(this, "Bạn có muốn đăng xuất?", "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION) {
             this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         } else {
-            usr = pwd = role = null;
+            usr = name = role = null;
             this.setTitle(null);
             this.dispose();
             new frmHome().setVisible(true);

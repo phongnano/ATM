@@ -14,11 +14,11 @@ public class frmCustomer extends javax.swing.JFrame {
     /**
      * Creates new form frmCustomer
      */
-    public static String usr, pwd, role;
+    public static String usr, name, role;
 
     public frmCustomer() {
         initComponents();
-        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + pwd + "\tChức vụ: " + role);
+        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
     }
 
     /**
@@ -77,10 +77,8 @@ public class frmCustomer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmCustomer().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new frmCustomer().setVisible(true);
         });
     }
 

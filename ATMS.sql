@@ -9,12 +9,13 @@ create table CARDS  (
     startday    date                    ,
     endday      date                    ,
     idbank      char(5)                 ,
+    typecard    varchar(10)             ,
     foreign key (idbank) references BANKS (idbank)
 );
 
-create table STAFFS (
+create table USERS (
     id          char(9)                 ,
-    idstaff     char(7)                 ,
+    ids         char(7)                 ,
     fullname    varchar(50)             ,
     birthday    date                    ,
     gender      int                     ,
@@ -22,20 +23,7 @@ create table STAFFS (
     telephone   char(10)                ,
     password    varchar(50)             , 
     role        int                     ,
-    primary key (idstaff, id)           
-);
-
-create table CUSTOMERS  (
-    id          char(9)                 ,
-    idcust      char(7)                 ,
-    fullname    varchar(50)             ,
-    birthday    date                    ,
-    gender      int                     ,
-    nativeplace varchar(100)            ,
-    telephone   char(10)                ,
-    password    varchar(50)             , 
-    role        int                     ,
-    primary key (idcust, id)            
+    primary key (id, ids)           
 );
 
 insert into BANKS
@@ -49,14 +37,11 @@ values ('00003', 'TPBank');
 insert into BANKS
 values ('00004', 'VPBank');
 
-insert into STAFFS
-values ('025786236', 'AD01234', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 0);
-insert into STAFFS
-values ('025786236', 'NV01234', 'Nguyễn Hoàng Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 1);
+insert into USERS
+values ('123456789', 'AD01234', 'Lê Hoàng Song', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 0);
+insert into USERS
+values ('234567890', 'NV01234', 'Nguyễn Thanh Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 1);
+insert into USERS
+values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 2);
 
-insert into CUSTOMERS
-values ('025786236', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', 2);
-
-select IDSTAFF, PASSWORD, "ROLE" from STAFFS
-union
-select IDCUST, PASSWORD, "ROLE" from CUSTOMERS
+select * from USERS where "ROLE" = 2

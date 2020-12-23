@@ -1,6 +1,6 @@
 package Cards;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class DTO_Cards {
 
@@ -8,6 +8,8 @@ public class DTO_Cards {
     private String idacco;
     private Date sttday;
     private Date endday;
+    private String typecard;
+    private String idbank;
 
     public String getIdcard() {
         return idcard;
@@ -39,6 +41,22 @@ public class DTO_Cards {
 
     public void setEndday(Date endday) {
         this.endday = endday;
+    }
+
+    public String getTypecard() {
+        return typecard;
+    }
+
+    public void setTypecard(String typecard) {
+        this.typecard = typecard;
+    }
+
+    public String getIdbank() {
+        return idbank;
+    }
+
+    public void setIdbank(String idbank) {
+        this.idbank = idbank;
     }
 
 }

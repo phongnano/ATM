@@ -1,20 +1,18 @@
 package Customers;
 
 import java.sql.Date;
-import java.util.Random;
 
 public class DTO_Customers {
 
     private String idcust;
-    private int id;
+    private String id;
     private String fullname;
     private Date birthday;
     private int gender;
     private String nativeplace;
-    private int telephone;
+    private String telephone;
     private String password;
     private int role;
-    private Random rd = new Random();
 
     public String getIdcust() {
         return idcust;
@@ -24,11 +22,11 @@ public class DTO_Customers {
         this.idcust = idcust;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -64,11 +62,11 @@ public class DTO_Customers {
         this.nativeplace = nativeplace;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -88,11 +86,4 @@ public class DTO_Customers {
         this.role = role;
     }
 
-    public Random getRd() {
-        return rd;
-    }
-
-    public void setRd(Random rd) {
-        this.rd = rd;
-    }
 }

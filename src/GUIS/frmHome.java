@@ -7,18 +7,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class frmHome extends javax.swing.JFrame {
-
+    
     DTO_Logins dto = new DTO_Logins();
     BLL_Logins bll = new BLL_Logins();
     DAL_Logins dal = new DAL_Logins();
-
+    
     public frmHome() {
         initComponents();
         lblBackgroud.setIcon(new ImageIcon(getClass().getResource("/Images/picture/background.png")));
         lblUsr.setIcon(new ImageIcon(getClass().getResource("/Images/icon/username.png")));
         lblPwd.setIcon(new ImageIcon(getClass().getResource("/Images/icon/password.png")));
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,6 +47,12 @@ public class frmHome extends javax.swing.JFrame {
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Login(evt);
+            }
+        });
+
+        txtUsr.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ConvertUppercase(evt);
             }
         });
 
@@ -173,27 +179,32 @@ public class frmHome extends javax.swing.JFrame {
     private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
         dto.setUsername(txtUsr.getText());
         dto.setPasswowd(txtPwd.getText());
-
-        if (!dto.getUsername().isEmpty()) {
+        
+        if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
             frmChangePassword.usr = dto.getUsername();
-            if (bll.SLogins(dto) || bll.CLogins(dto)) {
-                int srole = dal.getSRole(dto.getUsername());
-                int crole = dal.getCRole(dto.getUsername());
-                if (srole == 0) {
+            if (bll.Logins(dto)) {
+                int role = dal.getRole(dto.getUsername());
+                if (role == 0) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
+                    frmAdmin.usr = dto.getUsername();
+                    frmAdmin.name = dal.getName(dto.getUsername());
                     frmAdmin.role = "Quản trị viên";
                     new frmAdmin().setVisible(true);
                 }
-                if (srole == 1) {
+                if (role == 1) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
+                    frmStaff.usr = dto.getUsername();
+                    frmStaff.name = dal.getName(dto.getUsername());
                     frmStaff.role = "Nhân viên";
                     new frmStaff().setVisible(true);
                 }
-                if (crole == 2) {
+                if (role == 2) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
+                    frmCustomer.usr = dto.getUsername();
+                    frmCustomer.name = dal.getName(dto.getUsername());
                     frmCustomer.role = "Khách hàng";
                     new frmCustomer().setVisible(true);
                 }
@@ -216,6 +227,12 @@ public class frmHome extends javax.swing.JFrame {
     private void ForgetPassword(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgetPassword
         new frmForgetPassword().setVisible(true);
     }//GEN-LAST:event_ForgetPassword
+
+    private void ConvertUppercase(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConvertUppercase
+        int pos = txtUsr.getCaretPosition();
+        txtUsr.setText(txtUsr.getText().toUpperCase());
+        txtUsr.setCaretPosition(pos);
+    }//GEN-LAST:event_ConvertUppercase
 
     /**
      * @param args the command line arguments

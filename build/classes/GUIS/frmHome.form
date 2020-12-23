@@ -134,6 +134,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUsr">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ConvertUppercase"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txtPwd">
         </Component>

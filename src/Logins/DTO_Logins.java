@@ -3,6 +3,7 @@ package Logins;
 public class DTO_Logins {
 
     private String username;
+    private String fullname;
     private String passwowd;
     private String newpassword;
     private String repassword;
@@ -14,6 +15,14 @@ public class DTO_Logins {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getPasswowd() {
