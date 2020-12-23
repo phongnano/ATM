@@ -22,8 +22,8 @@ public class DAL_Cards {
             ps.setString(2, dto.getIdacco());
             ps.setDate(3, dto.getSttday());
             ps.setDate(4, dto.getEndday());
-            ps.setString(5, dto.getTypecard());
-            ps.setString(6, dto.getIdcard());
+            ps.setString(5, dto.getIdcard());
+            ps.setString(6, dto.getTypecard());
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {

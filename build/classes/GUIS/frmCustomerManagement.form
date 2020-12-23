@@ -34,20 +34,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="btnAdd" min="-2" pref="101" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnEdit" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="btnDelete" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
-                              <Component id="btnCancel" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="btnCancel" min="-2" pref="74" max="-2" attributes="0"/>
                           </Group>
                           <Component id="panCard" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -67,10 +67,10 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnAdd" alignment="3" max="32767" attributes="0"/>
-                  <Component id="btnEdit" alignment="3" max="32767" attributes="0"/>
-                  <Component id="btnCancel" alignment="3" max="32767" attributes="0"/>
-                  <Component id="btnDelete" alignment="3" max="32767" attributes="0"/>
+                  <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane" min="-2" pref="234" max="-2" attributes="0"/>
@@ -117,7 +117,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblIDCust" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="txtIDCust" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -126,7 +126,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lblID" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                           <Component id="txtID" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -315,7 +315,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelephone">
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkNumbers"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkTelephone"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblID">
@@ -324,6 +324,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtID">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkID"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -368,6 +371,11 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblBank" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="cbBank" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblAccount" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -376,33 +384,17 @@
                               <Component id="lblCard" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCards" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="138" pref="335" max="32767" attributes="0"/>
-                                  <Component id="radioLocal" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtIDAcco" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txtIDCard" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblSDay" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblEDay" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblBank" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radioVisa" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbBank" max="32767" attributes="0"/>
+                              <Component id="txtIDAcco" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="radioVisa" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="156" max="32767" attributes="0"/>
+                                  <Component id="radioLocal" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="dateSday" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtIDCard" max="32767" attributes="0"/>
+                              <Component id="dateEday" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -424,14 +416,14 @@
                       <Component id="lblAccount" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblStartday" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblSDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblStartday" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateSday" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEndday" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblEDay" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblEndday" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateEday" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -444,7 +436,7 @@
                       <Component id="cbBank" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblBank" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -478,16 +470,6 @@
         <Component class="javax.swing.JLabel" name="lblEndday">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ng&#xe0;y k&#x1ebf;t th&#xfa;c:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblSDay">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="........."/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblEDay">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="........."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCards">
@@ -531,6 +513,16 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dateSday">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dateEday">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd" noResource="true"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
