@@ -148,16 +148,28 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                             .addComponent(dateBirthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtTelephone)))
                     .addGroup(panCustomerLayout.createSequentialGroup()
+<<<<<<< HEAD
                         .addComponent(lblID)
                         .addGap(157, 157, 157)
                         .addComponent(txtID))
+=======
+                        .addComponent(lblIDCust)
+                        .addGap(109, 109, 109)
+                        .addComponent(txtIDCust))
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                     .addGroup(panCustomerLayout.createSequentialGroup()
                         .addComponent(lblGender)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panCustomerLayout.createSequentialGroup()
+<<<<<<< HEAD
                         .addComponent(lblIDCust)
                         .addGap(102, 102, 102)
                         .addComponent(txtIDCust)))
+=======
+                        .addComponent(lblID)
+                        .addGap(152, 152, 152)
+                        .addComponent(txtID)))
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                 .addContainerGap())
         );
         panCustomerLayout.setVerticalGroup(
@@ -258,6 +270,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
             .addGroup(panCardLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCardLayout.createSequentialGroup()
+                        .addComponent(lblBank)
+                        .addGap(102, 102, 102)
+                        .addComponent(cbBank, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panCardLayout.createSequentialGroup()
                         .addComponent(lblBank)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -269,6 +285,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                             .addComponent(lblEndday)
                             .addComponent(lblCard)
                             .addComponent(lblCards))
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                         .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtIDAcco, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -280,6 +297,18 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                                 .addComponent(radioLocal))
                             .addComponent(dateEday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtIDCard))))
+=======
+                        .addGap(114, 114, 114)
+                        .addGroup(panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtIDAcco)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCardLayout.createSequentialGroup()
+                                .addComponent(radioVisa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                                .addComponent(radioLocal))
+                            .addComponent(dateSday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtIDCard)
+                            .addComponent(dateEday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                 .addContainerGap())
         );
         panCardLayout.setVerticalGroup(
@@ -339,10 +368,17 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                                 .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+<<<<<<< HEAD
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(333, 333, 333)
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())

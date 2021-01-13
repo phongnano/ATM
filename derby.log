@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Mon Dec 28 13:01:31 ICT 2020 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 Mon Dec 28 13:01:31 ICT 2020 Thread[DRDAConnThread_2,5,main] Cleanup action starting
 java.sql.SQLException: Database 'sample' not found.
@@ -134,3 +135,19 @@ Mon Dec 28 13:02:26 ICT 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = CayKien
 ----------------------------------------------------------------
 Mon Dec 28 13:02:30 ICT 2020: Shutting down Derby engine
 ----------------------------------------------------------------
+=======
+Wed Dec 23 16:31:33 ICT 2020 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Wed Dec 23 16:31:33 ICT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0176-8ef0-7876-ffffee8c47e8 
+on database directory C:\Users\Admin\Desktop\java\ATMS with class loader sun.misc.Launcher$AppClassLoader@194fa3e 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=C:\Program Files\Java\jdk1.8.0_111\db
+os.name=Windows 10
+os.arch=x86
+os.version=10.0
+derby.system.home=C:\Users\Admin\Desktop\java
+Database Class Loader started - derby.database.classpath=''
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739

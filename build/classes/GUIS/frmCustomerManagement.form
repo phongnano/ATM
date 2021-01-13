@@ -43,10 +43,17 @@
                           <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+<<<<<<< HEAD
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="btnDelete" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+=======
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnDelete" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                               <Component id="btnCancel" min="-2" pref="74" max="-2" attributes="0"/>
                           </Group>
                           <Component id="panCard" min="-2" max="-2" attributes="0"/>
@@ -116,18 +123,30 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                           <Component id="lblID" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                           <Component id="txtID" max="32767" attributes="0"/>
+=======
+                          <Component id="lblIDCust" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                          <Component id="txtIDCust" max="32767" attributes="0"/>
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="lblGender" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                           <Component id="lblIDCust" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                           <Component id="txtIDCust" max="32767" attributes="0"/>
+=======
+                          <Component id="lblID" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                          <Component id="txtID" max="32767" attributes="0"/>
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -371,6 +390,11 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblBank" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="cbBank" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="lblBank" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -384,6 +408,7 @@
                               <Component id="lblCard" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCards" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <EmptySpace pref="129" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="txtIDAcco" alignment="1" max="32767" attributes="0"/>
@@ -396,6 +421,19 @@
                               </Group>
                               <Component id="dateEday" alignment="1" max="32767" attributes="0"/>
                               <Component id="txtIDCard" max="32767" attributes="0"/>
+=======
+                          <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtIDAcco" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="radioVisa" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="156" max="32767" attributes="0"/>
+                                  <Component id="radioLocal" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="dateSday" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtIDCard" max="32767" attributes="0"/>
+                              <Component id="dateEday" alignment="1" max="32767" attributes="0"/>
+>>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
                           </Group>
                       </Group>
                   </Group>
