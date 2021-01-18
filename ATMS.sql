@@ -35,8 +35,7 @@ create table TRANSATIONS (
     idaccount   char(12)         unique ,
     amount      int                     ,
     idbank      char(5)                 ,
-    foreign key (idcard) references TRANSATIONS (idcard) ,
-    foreign key (idaccount) references TRANSATIONS (idaccount) ,
+    foreign key (idaccount) references CARDS (idaccount) ,
     foreign key (idbank) references BANKS (idbank) 
 );
 
