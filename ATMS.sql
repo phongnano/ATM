@@ -15,7 +15,7 @@ create table CARDS  (
 );
 
 create table USERS (
-    id          char(9)                 ,
+    id          char(9)     primary key ,
     ids         char(7)                 ,
     fullname    varchar(50)             ,
     birthday    date                    ,
@@ -27,6 +27,17 @@ create table USERS (
     amount      int                     ,
     role        int                     ,
     foreign key (account) references CARDS (idaccount)
+);
+
+create table TRANSATIONS (
+    idtrans     char(5)     primary key ,
+    idcard      char(12)         unique ,
+    idaccount   char(12)         unique ,
+    amount      int                     ,
+    idbank      char(5)                 ,
+    foreign key (idcard) references TRANSATIONS (idcard) ,
+    foreign key (idaccount) references TRANSATIONS (idaccount) ,
+    foreign key (idbank) references BANKS (idbank) 
 );
 
 insert into BANKS
