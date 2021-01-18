@@ -7,7 +7,6 @@ public class frmStaff extends javax.swing.JFrame {
 
     public static String usr, name, role;
     private frmChangePassword pass;
-    private frmCustomerManagement cust;
     private frmBanks bnk;
 
     public frmStaff() {
@@ -152,15 +151,7 @@ public class frmStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_Logout
 
     private void CustomerManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerManagement
-        if (cust == null || cust.isClosed()) {
-            cust = new frmCustomerManagement(this);
-            cust.setLocation(this.getWidth() / 2 - cust.getWidth() / 2, (this.getHeight() - 20) / 2 - cust.getHeight() / 2 - 20);
-            panelStaff.add(cust);
-            cust.setVisible(true);
-        } else {
-            cust.setLocation(this.getWidth() / 2 - cust.getWidth() / 2, (this.getHeight() - 20) / 2 - cust.getHeight() / 2 - 20);
-            cust.setVisible(true);
-        }
+
     }//GEN-LAST:event_CustomerManagement
 
     private void CardManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardManagement

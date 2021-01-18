@@ -50,7 +50,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" title="N&#x1ea0;P TI&#x1ec0;N">
-              <Font PropertyName="font" name="Times New Roman" size="12" style="0"/>
+              <Font PropertyName="font" name="Times New Roman" size="14" style="0"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -61,11 +61,23 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblInput" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblInput_1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblInput_2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txtInput" pref="418" max="32767" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnCheck" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtAccount" pref="418" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnCheck" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="txtMoney" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnDeposit" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -75,17 +87,23 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtAccount" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblInput_1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCheck" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="521" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtMoney" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblInput_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDeposit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="472" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="txtInput">
+        <Component class="javax.swing.JTextField" name="txtAccount">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="12" style="0"/>
@@ -94,10 +112,10 @@
             <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkInput"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkID"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblInput">
+        <Component class="javax.swing.JLabel" name="lblInput_1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="14" style="0"/>
@@ -111,6 +129,34 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkInfo"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblInput_2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nh&#x1ead;p s&#x1ed1; ti&#x1ec1;n c&#x1ea7;n n&#x1ed9;p:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtMoney">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="12" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkMoney"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDeposit">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="N&#x1ed9;p ti&#x1ec1;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Deposit"/>
           </Events>
         </Component>
       </SubComponents>
