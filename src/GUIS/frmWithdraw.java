@@ -328,36 +328,32 @@ public class frmWithdraw extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCheck
 
     private void btnWithdraw(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdraw
-        try {
-            if (!txtMoney.getText().isEmpty()) {
-                dto.setAmount(Integer.parseInt(txtMoney.getText()));
-                if (dto.getAmount() < 50000 || dto.getAmount() > 2000000000) {
-                    JOptionPane.showMessageDialog(null, "Số tiền rút từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
-                    txtMoney.requestFocus();
-                } else {
-                    if (dto.getAmount() % 50000 == 0) {
-                        if (dto.getAmount() <= dto.getBalance()) {
-                            dto.withdraw(dto.getAmount());
-                            bll_trans.Withdraw(dto.getBalance(), dto.getId());
-                            JOptionPane.showMessageDialog(null, "Rút tiền thành công"
-                                    + "\nSố dư hiện tại trong tài khoản sau khi rút là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                            ResetValue();
+        if (!txtMoney.getText().isEmpty()) {
+            dto.setAmount(Long.parseLong(txtMoney.getText()));
+            if (dto.getAmount() < 50000 || dto.getAmount() > 2000000000) {
+                JOptionPane.showMessageDialog(null, "Số tiền rút từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                txtMoney.requestFocus();
+            } else {
+                if (dto.getAmount() % 50000 == 0) {
+                    if (dto.getAmount() <= dto.getBalance()) {
+                        dto.withdraw(dto.getAmount());
+                        bll_trans.Withdraw(dto.getBalance(), dto.getId());
+                        JOptionPane.showMessageDialog(null, "Rút tiền thành công"
+                                + "\nSố dư hiện tại trong tài khoản sau khi rút là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                        ResetValue();
 
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Số tiền bạn rút vượt quá số dư hiện có trong tài khoản", "Thông báo", JOptionPane.WARNING_MESSAGE);
-                            txtMoney.requestFocus();
-                        }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Số tiền bạn rút không hợp lệ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Số tiền bạn rút vượt quá số dư hiện có trong tài khoản", "Thông báo", JOptionPane.WARNING_MESSAGE);
                         txtMoney.requestFocus();
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Số tiền bạn rút không hợp lệ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                    txtMoney.requestFocus();
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
-                txtMoney.requestFocus();
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Dữ liệu không hợp lệ: " + e, "Thông báo", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            txtMoney.requestFocus();
         }
     }//GEN-LAST:event_btnWithdraw
 
