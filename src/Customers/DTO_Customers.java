@@ -12,7 +12,8 @@ public class DTO_Customers {
     private String nativeplace;
     private String telephone;
     private String password;
-    private double amount;
+    private int amount;
+    private int balance;
     private int role;
 
     public String getIdcust() {
@@ -79,12 +80,20 @@ public class DTO_Customers {
         this.password = password;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     public int getRole() {
@@ -95,4 +104,11 @@ public class DTO_Customers {
         this.role = role;
     }
 
+    public void deposit(int dep) {
+        balance += dep;
+    }
+
+    public void withdraw(int wit) {
+        balance -= wit;
+    }
 }

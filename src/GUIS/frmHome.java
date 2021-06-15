@@ -7,18 +7,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class frmHome extends javax.swing.JFrame {
-    
+
     DTO_Logins dto = new DTO_Logins();
     BLL_Logins bll = new BLL_Logins();
     DAL_Logins dal = new DAL_Logins();
-    
+
     public frmHome() {
         initComponents();
         lblBackgroud.setIcon(new ImageIcon(getClass().getResource("/Images/picture/background.png")));
         lblUsr.setIcon(new ImageIcon(getClass().getResource("/Images/icon/username.png")));
         lblPwd.setIcon(new ImageIcon(getClass().getResource("/Images/icon/password.png")));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -179,7 +179,7 @@ public class frmHome extends javax.swing.JFrame {
     private void Login(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login
         dto.setUsername(txtUsr.getText());
         dto.setPasswowd(txtPwd.getText());
-        
+
         if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
             frmChangePassword.usr = dto.getUsername();
             if (bll.Logins(dto)) {
@@ -206,6 +206,7 @@ public class frmHome extends javax.swing.JFrame {
                     frmCustomer.usr = dto.getUsername();
                     frmCustomer.name = dal.getName(dto.getUsername());
                     frmCustomer.role = "Khách hàng";
+                    
                     new frmCustomer().setVisible(true);
                 }
             } else {

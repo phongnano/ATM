@@ -12,6 +12,7 @@ public class DAL_Cusomters {
     private Connection con = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
+    private int amount;
 
     public boolean checkID(String usr) {
         String query = "select ID from USERS where ID = ? and ROLE = 2";
@@ -25,6 +26,22 @@ public class DAL_Cusomters {
         } catch (SQLException e) {
         }
         return false;
+    }
+
+    public int getBalance(String usr) {
+        String query = "select BALANCE from USERS where ID = ?";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usr);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                amount = rs.getInt("BALANCE");
+            }
+        } catch (SQLException e) {
+        }
+        return amount;
     }
 
     public int addCustomers(DTO_Customers dto) {

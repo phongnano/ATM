@@ -1,12 +1,14 @@
 package Transactions;
 
-import Customers.DTO_Customers;
-
 public class BLL_Transactions {
 
     DAL_Transactions dal = new DAL_Transactions();
 
-    public double Deposit(DTO_Customers dto) {
-        return dal.Deposit(dto);
+    public int Deposit(int amount, String usr) {
+        return dal.Deposit(amount, usr);
+    }
+
+    public int Withdraw(int amount, String usr) {
+        return dal.Withdraw(amount, usr);
     }
 }

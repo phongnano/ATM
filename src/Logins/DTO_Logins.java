@@ -7,6 +7,7 @@ public class DTO_Logins {
     private String passwowd;
     private String newpassword;
     private String repassword;
+    private double amount;
     private int role;
 
     public String getUsername() {
@@ -47,6 +48,14 @@ public class DTO_Logins {
 
     public void setRepassword(String repassword) {
         this.repassword = repassword;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public int getRole() {
