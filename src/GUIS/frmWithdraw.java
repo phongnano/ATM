@@ -2,17 +2,20 @@ package GUIS;
 
 import Customers.BLL_Customers;
 import Customers.DTO_Customers;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 public class frmWithdraw extends javax.swing.JFrame {
     
     DTO_Customers dto = new DTO_Customers();
     BLL_Customers bll = new BLL_Customers();
+    JButton btn;
+    Object obj;
     
     public frmWithdraw() {
         initComponents();
         panWithdraw.setVisible(false);
-        txtMoney.setVisible(false);
+        txtMoney.setEnabled(false);
     }
     
     @SuppressWarnings("unchecked")
@@ -65,11 +68,6 @@ public class frmWithdraw extends javax.swing.JFrame {
         txtMoney.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
-        txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                checkMoney(evt);
-            }
-        });
 
         btnWithdraw.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         btnWithdraw.setText("Rút tiền");
@@ -80,23 +78,58 @@ public class frmWithdraw extends javax.swing.JFrame {
         });
 
         btn1000.setText("1.000.000");
+        btn1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn3000.setText("3.000.000");
+        btn3000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn5000.setText("5.000.000");
+        btn5000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn7000.setText("7.000.000");
+        btn7000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn2000.setText("2.000.000");
+        btn2000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn4000.setText("4.000.000");
+        btn4000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btn6000.setText("6.000.000");
+        btn6000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValues(evt);
+            }
+        });
 
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOther(evt);
+                checkValues(evt);
             }
         });
 
@@ -225,9 +258,11 @@ public class frmWithdraw extends javax.swing.JFrame {
                 panWithdraw.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Số tài khoản của bạn không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                panWithdraw.setVisible(false);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Số tài khoản phải đủ 12 ki tự", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            panWithdraw.setVisible(false);
         }
     }//GEN-LAST:event_btnCheck
 
@@ -240,13 +275,17 @@ public class frmWithdraw extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnWithdraw
 
-    private void checkMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkMoney
-
-    }//GEN-LAST:event_checkMoney
-
-    private void btnOther(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOther
-        txtMoney.setVisible(true);
-    }//GEN-LAST:event_btnOther
+    private void checkValues(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkValues
+        obj = evt.getSource();
+        if (obj instanceof JButton) {
+            btn = (JButton) obj;
+            txtMoney.setEnabled(true);
+            txtMoney.setText(btn.getText());
+        }
+        if (btn.getText().equals("Số khác")) {
+            txtMoney.setText("");
+        }
+    }//GEN-LAST:event_checkValues
     
     public static void main(String args[]) {
         try {

@@ -210,9 +210,6 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
               </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="checkMoney"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnWithdraw">
               <Properties>
@@ -229,43 +226,64 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="1.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn3000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="3.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn5000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="5.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn7000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="7.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn2000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="2.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn4000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="4.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn6000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="6.000.000"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnOther">
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#x1ed1; kh&#xe1;c"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOther"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkValues"/>
               </Events>
             </Component>
           </SubComponents>
