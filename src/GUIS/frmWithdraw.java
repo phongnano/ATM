@@ -3,6 +3,7 @@ package GUIS;
 import Customers.BLL_Customers;
 import Customers.DAL_Cusomters;
 import Customers.DTO_Customers;
+import Limits.LimitText;
 import Transactions.BLL_Transactions;
 import java.text.NumberFormat;
 import java.util.Currency;
@@ -67,6 +68,7 @@ public class frmWithdraw extends javax.swing.JFrame {
         lblInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblInput.setText("Mời bạn nhập cmnd hoặc số tài khoản:");
 
+        txtAccount.setDocument(new LimitText(12));
         txtAccount.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
@@ -158,6 +160,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
+        txtMoney.setDocument(new LimitText(10));
         txtMoney.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền bạn cần rút");
@@ -301,9 +304,6 @@ public class frmWithdraw extends javax.swing.JFrame {
         if (!Character.isDigit(ch)) {
             evt.consume();
         }
-        if (txtAccount.getText().length() == 12) {
-            evt.consume();
-        }
     }//GEN-LAST:event_checkInput
 
     private void btnCheck(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheck
@@ -374,9 +374,6 @@ public class frmWithdraw extends javax.swing.JFrame {
     private void checkValidMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkValidMoney
         char ch = evt.getKeyChar();
         if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-        if (txtMoney.getText().length() == 10) {
             evt.consume();
         }
     }//GEN-LAST:event_checkValidMoney
