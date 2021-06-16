@@ -10,7 +10,6 @@ import java.util.Currency;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 
-
 public class frmDeposit extends javax.swing.JFrame {
 
     DTO_Customers dto = new DTO_Customers();
@@ -62,9 +61,10 @@ public class frmDeposit extends javax.swing.JFrame {
         setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         setResizable(false);
 
-        panelDeposit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NẠP TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
+        panelDeposit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NẠP TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
         txtAccount.setDocument(new LimitText(12));
+        txtAccount.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtAccount.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -73,9 +73,12 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
-        lblInput_1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblInput_1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblInput_1.setForeground(new java.awt.Color(0, 102, 51));
         lblInput_1.setText("Mời bạn nhập cmnd hoặc số tài khoản:");
 
+        btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCheck.setForeground(new java.awt.Color(204, 51, 0));
         btnCheck.setText("Xác thực");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,10 +86,12 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
-        lblInput_2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblInput_2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblInput_2.setForeground(new java.awt.Color(0, 102, 51));
         lblInput_2.setText("Nhập số tiền cần nộp:");
 
         txtMoney.setDocument(new LimitText(10));
+        txtMoney.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền bạn cần nộp");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -95,6 +100,8 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
+        btnDeposit.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnDeposit.setForeground(new java.awt.Color(204, 51, 0));
         btnDeposit.setText("Nộp tiền");
         btnDeposit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,9 +110,12 @@ public class frmDeposit extends javax.swing.JFrame {
         });
 
         txtBalance.setEditable(false);
+        txtBalance.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số tiền hiện tại trong tài khoản của bạn");
 
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(204, 51, 0));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,12 +135,12 @@ public class frmDeposit extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelDepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelDepositLayout.createSequentialGroup()
-                        .addComponent(txtMoney)
-                        .addGap(18, 18, 18)
+                        .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(btnDeposit))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDepositLayout.createSequentialGroup()
                         .addGroup(panelDepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAccount, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                            .addComponent(txtAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtBalance))
                         .addGap(18, 18, 18)
                         .addGroup(panelDepositLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -155,7 +165,7 @@ public class frmDeposit extends javax.swing.JFrame {
                     .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInput_2)
                     .addComponent(btnDeposit))
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -164,14 +174,14 @@ public class frmDeposit extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelDeposit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelDeposit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -189,20 +199,25 @@ public class frmDeposit extends javax.swing.JFrame {
     private void checkInfo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInfo
         dto.setId(txtAccount.getText());
         dto.setBalance(dal.getBalance(dto.getId()));
-        if (txtAccount.getText().length() == 9) {
-            if (bll.CheckID(dto)) {
-                txtAccount.setEditable(false);
-                lblInput_2.setVisible(true);
-                txtMoney.setVisible(true);
-                btnDeposit.setVisible(true);
-                txtBalance.setVisible(true);
-                txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
+        if (!dto.getId().isEmpty()) {
+            if (txtAccount.getText().length() == 9) {
+                if (bll.CheckID(dto)) {
+                    txtAccount.setEditable(false);
+                    lblInput_2.setVisible(true);
+                    txtMoney.setVisible(true);
+                    btnDeposit.setVisible(true);
+                    txtBalance.setVisible(true);
+                    txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
+                } else {
+                    JOptionPane.showMessageDialog(null, "CMND của bạn không đúng", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                    txtAccount.requestFocus();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "CMND của bạn không đúng", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "CMND phải đúng 9 ki tự", "Thông báo", JOptionPane.WARNING_MESSAGE);
                 txtAccount.requestFocus();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "CMND phải đúng 9 ki tự", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
             txtAccount.requestFocus();
         }
     }//GEN-LAST:event_checkInfo
@@ -215,6 +230,7 @@ public class frmDeposit extends javax.swing.JFrame {
     }//GEN-LAST:event_checkMoney
 
     private void Deposit(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Deposit
+
         if (!txtMoney.getText().isEmpty()) {
             dto.setAmount(Long.parseLong((txtMoney.getText())));
             if (dto.getAmount() < 50000 || dto.getAmount() > 2000000000) {
@@ -222,11 +238,15 @@ public class frmDeposit extends javax.swing.JFrame {
                 txtMoney.requestFocus();
             } else {
                 if (dto.getAmount() % 50000 == 0) {
-                    dto.deposit(dto.getAmount());
-                    bll_trans.Withdraw(dto.getBalance(), dto.getId());
-                    JOptionPane.showMessageDialog(null, "Nộp tiền thành công"
-                            + "\nSố dư hiện tại trong tài khoản sau khi nộp là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    ResetValue();
+                    int quest = JOptionPane.showConfirmDialog(null, "Bạn có muốn nộp số tiền với trị giá " + vndFormat.format(dto.getAmount()), "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (quest == JOptionPane.YES_OPTION) {
+                        dto.deposit(dto.getAmount());
+                        bll_trans.Withdraw(dto.getBalance(), dto.getId());
+                        JOptionPane.showMessageDialog(null, "Nộp tiền thành công"
+                                + "\nSố dư hiện tại trong tài khoản sau khi nộp là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                        ResetValue();
+                    }
+                    txtMoney.requestFocus();
                 } else {
                     JOptionPane.showMessageDialog(null, "Số tiền bạn nộp không hợp lệ", "Thông báo", JOptionPane.WARNING_MESSAGE);
                     txtMoney.requestFocus();

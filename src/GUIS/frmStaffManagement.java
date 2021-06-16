@@ -75,71 +75,68 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         setClosable(true);
         setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 14))); // NOI18N
+        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 102))); // NOI18N
 
-        lblIDStaff.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblIDStaff.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblIDStaff.setForeground(new java.awt.Color(0, 153, 0));
         lblIDStaff.setText("Mã nhân viên:");
 
         txtIDStaff.setEditable(false);
-        txtIDStaff.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDStaffActionPerformed(evt);
-            }
-        });
+        txtIDStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        txtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
+        txtID.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkID(evt);
             }
         });
 
-        lblID.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblID.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblID.setForeground(new java.awt.Color(0, 153, 0));
         lblID.setText("CMND:");
 
-        lblFullname.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblFullname.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblFullname.setForeground(new java.awt.Color(0, 153, 0));
         lblFullname.setText("Họ và tên:");
 
-        txtFullname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFullnameActionPerformed(evt);
-            }
-        });
+        txtFullname.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         groupGender.add(radioFemale);
-        radioFemale.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        radioFemale.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         radioFemale.setText("Nữ");
 
         groupGender.add(radioMale);
-        radioMale.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        radioMale.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         radioMale.setText("Nam");
 
-        lblGender.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblGender.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblGender.setForeground(new java.awt.Color(0, 153, 0));
         lblGender.setText("Giới tính:");
 
-        lblNativeplace.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblNativeplace.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblNativeplace.setForeground(new java.awt.Color(0, 153, 0));
         lblNativeplace.setText("Nơi sinh:");
 
+        cbNativeplace.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cbNativeplace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP HCM" }));
         cbNativeplace.setSelectedIndex(-1);
         cbNativeplace.setAutoscrolls(true);
 
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
 
+        txtTelephone.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkTelephone(evt);
             }
         });
 
-        lblTelephone.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblTelephone.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblTelephone.setForeground(new java.awt.Color(0, 153, 0));
         lblTelephone.setText("Điện thoại:");
 
-        lblBirthday.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblBirthday.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblBirthday.setForeground(new java.awt.Color(0, 153, 0));
         lblBirthday.setText("Ngày sinh:");
 
         javax.swing.GroupLayout panStaffLayout = new javax.swing.GroupLayout(panStaff);
@@ -164,17 +161,18 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                                     .addGroup(panStaffLayout.createSequentialGroup()
                                         .addGap(75, 75, 75)
                                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panStaffLayout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(radioFemale))
-                                            .addComponent(cbNativeplace, 0, 304, Short.MAX_VALUE)
-                                            .addComponent(dateBirthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtTelephone)
                                             .addGroup(panStaffLayout.createSequentialGroup()
                                                 .addComponent(radioMale)
-                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panStaffLayout.createSequentialGroup()
+                                                .addGap(0, 8, Short.MAX_VALUE)
+                                                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(radioFemale, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)))))
                                     .addGroup(panStaffLayout.createSequentialGroup()
-                                        .addGap(79, 79, 79)
+                                        .addGap(83, 83, 83)
                                         .addComponent(txtFullname))))
                             .addGroup(panStaffLayout.createSequentialGroup()
                                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +219,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        tblStaff.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        tblStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -240,19 +238,13 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
         jScrollPane.setViewportView(tblStaff);
 
+        btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(204, 0, 0));
         btnAdd.setText("Thêm nhân viên");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddStaff(evt);
-            }
-        });
 
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(204, 0, 0));
         btnCancel.setText("Hủy");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cancel(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -285,7 +277,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     .addComponent(btnAdd)
                     .addComponent(btnCancel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -313,32 +305,12 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_checkTelephone
 
     private void chooseStaffs(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chooseStaffs
-        int row = tblStaff.getSelectedRow();
-        if (row != -1) {
-            new frmDeposit().setVisible(true);
-        }
-        JOptionPane.showMessageDialog(null, "Ok");
+//        int row = tblStaff.getSelectedRow();
+//        if (row != -1) {
+//            new frmDeposit().setVisible(true);
+//        }
+//        JOptionPane.showMessageDialog(null, "Ok");
     }//GEN-LAST:event_chooseStaffs
-
-    private void AddStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStaff
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddStaff
-
-    private void Cancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Cancel
-
-    private void txtIDStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDStaffActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDStaffActionPerformed
-
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void txtFullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFullnameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

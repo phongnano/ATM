@@ -42,8 +42,16 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
 
         panelChange.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(0, 0, 153));
         lblUsername.setText("Tài khoản:");
 
+        txtOldpass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        txtUsername.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        btnChange.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnChange.setForeground(new java.awt.Color(153, 0, 51));
         btnChange.setText("Đổi mật khẩu");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +59,8 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
             }
         });
 
+        btnExit.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(153, 0, 51));
         btnExit.setText("Thoát");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,11 +68,21 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
             }
         });
 
+        txtNewpass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        lblOldpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblOldpass.setForeground(new java.awt.Color(0, 0, 153));
         lblOldpass.setText("Mật khẩu cũ:");
 
+        lblNewpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblNewpass.setForeground(new java.awt.Color(0, 0, 153));
         lblNewpass.setText("Mật khẩu mới:");
 
+        lblRepass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblRepass.setForeground(new java.awt.Color(0, 0, 153));
         lblRepass.setText("Nhập lại mật khẩu:");
+
+        txtRepass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
 
         javax.swing.GroupLayout panelChangeLayout = new javax.swing.GroupLayout(panelChange);
         panelChange.setLayout(panelChangeLayout);

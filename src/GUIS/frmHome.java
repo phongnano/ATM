@@ -41,8 +41,12 @@ public class frmHome extends javax.swing.JFrame {
 
         panLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        lblUsr.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblUsr.setForeground(new java.awt.Color(0, 0, 153));
         lblUsr.setText("Tài khoản:");
 
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 51, 0));
         btnLogin.setText("Đăng nhập");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,14 +54,21 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
 
+        txtUsr.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtUsr.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ConvertUppercase(evt);
             }
         });
 
+        txtPwd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        lblPwd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblPwd.setForeground(new java.awt.Color(0, 0, 153));
         lblPwd.setText("Mật khẩu:");
 
+        ckPwd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        ckPwd.setForeground(new java.awt.Color(51, 153, 0));
         ckPwd.setText("Hiển thị mật khẩu");
         ckPwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,8 +76,12 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
 
+        btnExit.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 51, 0));
         btnExit.setText("Thoát");
 
+        lblForget.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblForget.setForeground(new java.awt.Color(0, 102, 204));
         lblForget.setText("Quên mật khẩu?");
         lblForget.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,7 +134,7 @@ public class frmHome extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 23)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(0, 153, 102));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("CHÀO MỪNG ĐẾN VỚI HỆ THỐNG ATM CỦA PHONG");

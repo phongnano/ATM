@@ -7,7 +7,11 @@ public class frmAdmin extends javax.swing.JFrame {
 
     public frmAdmin() {
         initComponents();
-        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
+        if ((usr == null) && (name == null) && (role == null)) {
+            new frmHome().setVisible(true);
+        } else {
+            this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -36,11 +40,17 @@ public class frmAdmin extends javax.swing.JFrame {
             .addGap(0, 579, Short.MAX_VALUE)
         );
 
+        menuAdmin.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        mnHome.setForeground(new java.awt.Color(0, 51, 153));
         mnHome.setText("Trang chủ");
+        mnHome.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         menuAdmin.add(mnHome);
 
         mnManagement.setText("Danh mục quản lý");
+        mnManagement.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        itemBankManagement.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemBankManagement.setText("Quản lý ngân hàng");
         itemBankManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +59,7 @@ public class frmAdmin extends javax.swing.JFrame {
         });
         mnManagement.add(itemBankManagement);
 
+        itemStaffManagement.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemStaffManagement.setText("Quản lý nhân viên");
         itemStaffManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

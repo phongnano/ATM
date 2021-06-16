@@ -36,6 +36,8 @@ public class frmWithdraw extends javax.swing.JFrame {
         txtBalance.setText("");
         txtMoney.setText("");
         panWithdraw.setVisible(false);
+        txtAccount.setEditable(true);
+        txtAccount.requestFocus();
     }
 
     @SuppressWarnings("unchecked")
@@ -63,13 +65,14 @@ public class frmWithdraw extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panelWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        panelWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
-        lblInput.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblInput.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblInput.setForeground(new java.awt.Color(102, 0, 204));
         lblInput.setText("Mời bạn nhập cmnd hoặc số tài khoản:");
 
         txtAccount.setDocument(new LimitText(12));
-        txtAccount.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtAccount.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -78,7 +81,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btnCheck.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCheck.setForeground(new java.awt.Color(0, 153, 51));
         btnCheck.setText("Xác thực");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +92,8 @@ public class frmWithdraw extends javax.swing.JFrame {
 
         panWithdraw.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        btnWithdraw.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnWithdraw.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnWithdraw.setForeground(new java.awt.Color(0, 153, 51));
         btnWithdraw.setText("Rút tiền");
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +101,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn1000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn1000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn1000.setForeground(new java.awt.Color(255, 102, 102));
         btn1000.setText("1.000.000");
         btn1000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +110,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn3000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn3000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn3000.setForeground(new java.awt.Color(255, 102, 102));
         btn3000.setText("3.000.000");
         btn3000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +119,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn5000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn5000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn5000.setForeground(new java.awt.Color(255, 102, 102));
         btn5000.setText("5.000.000");
         btn5000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +128,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn7000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn7000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn7000.setForeground(new java.awt.Color(255, 102, 102));
         btn7000.setText("7.000.000");
         btn7000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +137,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn2000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn2000.setForeground(new java.awt.Color(255, 102, 102));
         btn2000.setText("2.000.000");
         btn2000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +146,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn4000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn4000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn4000.setForeground(new java.awt.Color(255, 102, 102));
         btn4000.setText("4.000.000");
         btn4000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +155,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn6000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn6000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn6000.setForeground(new java.awt.Color(255, 102, 102));
         btn6000.setText("6.000.000");
         btn6000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +164,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btnOther.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnOther.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnOther.setForeground(new java.awt.Color(255, 102, 102));
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +174,7 @@ public class frmWithdraw extends javax.swing.JFrame {
         });
 
         txtMoney.setDocument(new LimitText(10));
-        txtMoney.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền bạn cần rút");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -171,7 +184,7 @@ public class frmWithdraw extends javax.swing.JFrame {
         });
 
         txtBalance.setEditable(false);
-        txtBalance.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số tiền hiện tại trong tài khoản của bạn");
 
@@ -237,7 +250,8 @@ public class frmWithdraw extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(0, 153, 51));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +274,7 @@ public class frmWithdraw extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnCheck)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)))
+                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelWithdrawLayout.setVerticalGroup(
@@ -309,21 +323,26 @@ public class frmWithdraw extends javax.swing.JFrame {
     private void btnCheck(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheck
         dto.setId(txtAccount.getText());
         dto.setBalance(dal.getBalance(dto.getId()));
-        if (txtAccount.getText().length() == 9) {
-            if (bll.CheckID(dto)) {
-                panWithdraw.setVisible(true);
-                txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
-                txtAccount.setEditable(false);
+        if (!dto.getId().isEmpty()) {
+            if (txtAccount.getText().length() == 9) {
+                if (bll.CheckID(dto)) {
+                    panWithdraw.setVisible(true);
+                    txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
+                    txtAccount.setEditable(false);
+                } else {
+                    JOptionPane.showMessageDialog(null, "CMND của bạn không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                    panWithdraw.setVisible(false);
+                    txtAccount.requestFocus();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "CMND của bạn không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "CMND phải đúng 9 ki tự", "Thông báo", JOptionPane.WARNING_MESSAGE);
                 panWithdraw.setVisible(false);
                 txtAccount.requestFocus();
+                txtAccount.selectAll();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "CMND phải đúng 9 ki tự", "Thông báo", JOptionPane.WARNING_MESSAGE);
-            panWithdraw.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
             txtAccount.requestFocus();
-            txtAccount.selectAll();
         }
     }//GEN-LAST:event_btnCheck
 
@@ -336,12 +355,15 @@ public class frmWithdraw extends javax.swing.JFrame {
             } else {
                 if (dto.getAmount() % 50000 == 0) {
                     if (dto.getAmount() <= dto.getBalance()) {
-                        dto.withdraw(dto.getAmount());
-                        bll_trans.Withdraw(dto.getBalance(), dto.getId());
-                        JOptionPane.showMessageDialog(null, "Rút tiền thành công"
-                                + "\nSố dư hiện tại trong tài khoản sau khi rút là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                        ResetValue();
-
+                        int quest = JOptionPane.showConfirmDialog(null, "Bạn có muốn rút số tiền với trị giá " + vndFormat.format(dto.getAmount()), "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                        if (quest == JOptionPane.YES_OPTION) {
+                            dto.withdraw(dto.getAmount());
+                            bll_trans.Withdraw(dto.getBalance(), dto.getId());
+                            JOptionPane.showMessageDialog(null, "Rút tiền thành công"
+                                    + "\nSố dư hiện tại trong tài khoản sau khi rút là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                            ResetValue();
+                        }
+                        txtMoney.requestFocus();
                     } else {
                         JOptionPane.showMessageDialog(null, "Số tiền bạn rút vượt quá số dư hiện có trong tài khoản", "Thông báo", JOptionPane.WARNING_MESSAGE);
                         txtMoney.requestFocus();
@@ -379,10 +401,7 @@ public class frmWithdraw extends javax.swing.JFrame {
     }//GEN-LAST:event_checkValidMoney
 
     private void btnCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel
-        txtAccount.setText("");
-        txtAccount.requestFocus();
-        txtAccount.setEditable(true);
-        panWithdraw.setVisible(false);
+        ResetValue();
     }//GEN-LAST:event_btnCancel
 
     public static void main(String args[]) {

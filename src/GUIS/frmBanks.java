@@ -63,16 +63,23 @@ public class frmBanks extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        panBanks.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NGÂN HÀNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        panBanks.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NGÂN HÀNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
-        lblID.setText("Mẫ ngân hàng:");
+        lblID.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblID.setForeground(new java.awt.Color(0, 153, 0));
+        lblID.setText("Mã ngân hàng:");
 
         txtID.setEditable(false);
+        txtID.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
+        lblName.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblName.setForeground(new java.awt.Color(0, 153, 0));
         lblName.setText("Tên ngân hàng:");
 
         txtName.setEditable(false);
+        txtName.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
+        tblBanks.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         tblBanks.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -88,6 +95,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
         });
         jScrollPane.setViewportView(tblBanks);
 
+        btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(153, 0, 51));
         btnAdd.setText("Thêm");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +104,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEdit.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnEdit.setForeground(new java.awt.Color(153, 0, 51));
         btnEdit.setText("Sửa");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +113,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
             }
         });
 
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(153, 0, 51));
         btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +122,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(153, 0, 51));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +178,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
