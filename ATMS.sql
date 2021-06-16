@@ -50,6 +50,6 @@ values ('123456789', 'AD01234', 'Lê Hoàng Song', '1998-03-24', 0, 'TP.HCM', '0
 insert into USERS
 values ('234567890', 'NV01234', 'Nguyễn Thanh Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, null, 1);
 insert into USERS
-values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, 500000000, 2);
+values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, 5000000000, 2);
 
 select * from USERS where "ROLE" = 2
