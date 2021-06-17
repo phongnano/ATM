@@ -3,7 +3,6 @@ package GUIS;
 public class frmCustomer extends javax.swing.JFrame {
 
     public static String usr, name, role, acc;
-    public static long balance;
 
     public frmCustomer() {
         initComponents();
@@ -69,7 +68,6 @@ public class frmCustomer extends javax.swing.JFrame {
 
     private void Tranfers(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tranfers
         frmTransfer.account = acc;
-        frmTransfer.balance_send = balance;
         new frmTransfer().setVisible(true);
         this.dispose();
 

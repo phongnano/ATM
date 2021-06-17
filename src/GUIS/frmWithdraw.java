@@ -357,7 +357,8 @@ public class frmWithdraw extends javax.swing.JFrame {
                     if (dto.getAmount() <= dto.getBalance()) {
                         int quest = JOptionPane.showConfirmDialog(null, "Bạn có muốn rút số tiền với trị giá " + vndFormat.format(dto.getAmount()), "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                         if (quest == JOptionPane.YES_OPTION) {
-                            bll_trans.Withdraw(dto.getAmount(), dto.getId());
+                            dto.withdraw(dto.getAmount());
+                            bll_trans.Withdraw(dto.getBalance(), dto.getId());
                             JOptionPane.showMessageDialog(null, "Rút tiền thành công"
                                     + "\nSố dư hiện tại trong tài khoản sau khi rút là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                             ResetValue();

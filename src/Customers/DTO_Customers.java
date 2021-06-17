@@ -112,4 +112,21 @@ public class DTO_Customers {
     public void setRole(int role) {
         this.role = role;
     }
+
+    public void deposit(long dep) {
+        balance += dep;
+    }
+
+    public void withdraw(long wit) {
+        balance -= wit;
+    }
+
+    public void deposit_send(long dep) {
+        balance += dep;
+    }
+
+    public void withdraw_send(long wit) {
+        balance -= wit;
+    }
+    
 }

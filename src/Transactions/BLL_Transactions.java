@@ -11,4 +11,8 @@ public class BLL_Transactions {
     public int Withdraw(long amount, String usr) {
         return dal.Withdraw(amount, usr);
     }
+    
+    public int Transfer(long amount, String send_usr, String receive_usr) {
+        return dal.Transfer(amount, send_usr, receive_usr);
+    }
 }

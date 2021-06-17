@@ -3,6 +3,7 @@ package GUIS;
 import Customers.BLL_Customers;
 import Customers.DAL_Cusomters;
 import Customers.DTO_Customers;
+import Limits.LimitText;
 import Transactions.BLL_Transactions;
 import java.text.NumberFormat;
 import java.util.Currency;
@@ -11,23 +12,23 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 public class frmTransfer extends javax.swing.JFrame {
-    
+
     DTO_Customers dto = new DTO_Customers();
     DAL_Cusomters dal = new DAL_Cusomters();
     BLL_Customers bll = new BLL_Customers();
-    
+
     BLL_Transactions bll_trans = new BLL_Transactions();
-    
+
     Locale loc = new Locale("vi", "VN");
     Currency vnd = Currency.getInstance(loc);
     NumberFormat vndFormat = NumberFormat.getCurrencyInstance(loc);
-    
+
     JButton btn;
     Object obj;
-    
+
     public static String account;
     public static long balance_send, balance_receive;
-    
+
     public frmTransfer() {
         initComponents();
         panTransfer.setVisible(false);
@@ -37,7 +38,7 @@ public class frmTransfer extends javax.swing.JFrame {
         btnCheck.setVisible(false);
         btnCancel.setVisible(false);
     }
-    
+
     private void ResetValue() {
         txtID.setText("");
         txtID.requestFocus();
@@ -45,7 +46,7 @@ public class frmTransfer extends javax.swing.JFrame {
         radioAccount.setEnabled(true);
         txtID.setEditable(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -74,7 +75,7 @@ public class frmTransfer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂNTIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
+        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
 
         groups.add(radioCard);
         radioCard.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -110,6 +111,7 @@ public class frmTransfer extends javax.swing.JFrame {
         panTransfer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         txtMoney.setEditable(false);
+        txtMoney.setDocument(new LimitText(10));
         txtMoney.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
@@ -374,17 +376,18 @@ public class frmTransfer extends javax.swing.JFrame {
         txtID.requestFocus(true);
         btnCheck.setVisible(true);
         btnCancel.setVisible(true);
-        
+
         txtAccount.setVisible(true);
         txtBalance.setVisible(true);
-        
+
         txtAccount.setText(account);
-        txtBalance.setText(String.valueOf(vndFormat.format(balance_send)));
+        balance_send = dal.getBalance(account);
+        dto.setBalance(balance_send);
+        txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
     }//GEN-LAST:event_radioAccount
 
     private void btnTransfer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransfer
         dto.setAccount(account);
-        dto.setBalance(balance_send);
         dto.setId(txtID.getText());
         dto.setAmount(Long.parseLong(txtMoney.getText()));
         if (txtID.getText().isEmpty()) {
@@ -393,11 +396,8 @@ public class frmTransfer extends javax.swing.JFrame {
             if (amount < 50000 || amount > 2000000000) {
                 JOptionPane.showMessageDialog(null, "Số tiền nộp từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
             } else {
-                bll_trans.Withdraw(dto.getBalance(), dto.getAccount());
-                JOptionPane.showMessageDialog(null, "Chuyển tiền thành công"
-                        + "\nSố dư hiện tại trong tài khoản người gữi sau khi chuyển là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);          
-                bll_trans.Deposit(balance_receive, dto.getId());
-                
+                bll_trans.Transfer(dto.getAmount(), account, dto.getId());
+                JOptionPane.showMessageDialog(null, "Chuyển tiền thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
             }
         }
@@ -408,11 +408,14 @@ public class frmTransfer extends javax.swing.JFrame {
         if (!dto.getId().isEmpty()) {
             if (txtID.getText().length() == 9) {
                 if (bll.CheckID(dto)) {
-                    panTransfer.setVisible(true);
-                    radioAccount.setEnabled(false);
-                    txtID.setEditable(false);
-                    balance_receive = dal.getBalance(dto.getId());
-                    radioCard.setText(String.valueOf(vndFormat.format(balance_receive)));
+                    if (dto.getId().equals(account)) {
+                    } else {
+                        panTransfer.setVisible(true);
+                        radioAccount.setEnabled(false);
+                        txtID.setEditable(false);
+                        balance_receive = dal.getBalance(dto.getId());
+                        radioCard.setText(String.valueOf(vndFormat.format(balance_receive)));
+                    }
                 } else {
                     panTransfer.setVisible(false);
                     txtMoney.setText(null);
@@ -456,7 +459,7 @@ public class frmTransfer extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_checkValidMoney
-    
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new frmTransfer().setVisible(true);

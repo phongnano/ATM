@@ -239,7 +239,8 @@ public class frmDeposit extends javax.swing.JFrame {
                 if (dto.getAmount() % 50000 == 0) {
                     int quest = JOptionPane.showConfirmDialog(null, "Bạn có muốn nộp số tiền với trị giá " + vndFormat.format(dto.getAmount()), "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (quest == JOptionPane.YES_OPTION) {
-                        bll_trans.Deposit(dto.getAmount(), dto.getId());
+                        dto.deposit(dto.getAmount());
+                        bll_trans.Deposit(dto.getBalance(), dto.getId());
                         JOptionPane.showMessageDialog(null, "Nộp tiền thành công"
                                 + "\nSố dư hiện tại trong tài khoản sau khi nộp là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                         ResetValue();

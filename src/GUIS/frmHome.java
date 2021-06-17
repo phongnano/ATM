@@ -222,7 +222,6 @@ public class frmHome extends javax.swing.JFrame {
                     frmCustomer.name = dal.getName(dto.getUsername());
                     frmCustomer.role = "Khách hàng";
                     frmCustomer.acc = dal.getAccount(dto.getUsername());
-                    frmCustomer.balance = dal.getBalance(dto.getUsername());
                     new frmCustomer().setVisible(true);
                 }
             } else {

@@ -277,7 +277,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     .addComponent(btnAdd)
                     .addComponent(btnCancel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
