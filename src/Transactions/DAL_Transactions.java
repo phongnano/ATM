@@ -13,7 +13,7 @@ public class DAL_Transactions {
 
     public int Deposit(long amout, String usr) {
         int result = 0;
-        String query = "update USERS set BALANCE = ? where ID = ?";
+        String query = "update USERS set BALANCE = BALANCE + ? where ID = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -34,7 +34,7 @@ public class DAL_Transactions {
 
     public int Withdraw(long amout, String usr) {
         int result = 0;
-        String query = "update USERS set BALANCE = ? where ID = ?";
+        String query = "update USERS set BALANCE = BALANCE - ? where ID = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();

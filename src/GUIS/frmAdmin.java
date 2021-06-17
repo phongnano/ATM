@@ -42,7 +42,7 @@ public class frmAdmin extends javax.swing.JFrame {
 
         menuAdmin.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        mnHome.setForeground(new java.awt.Color(0, 51, 153));
+        mnHome.setForeground(new java.awt.Color(0, 0, 153));
         mnHome.setText("Trang chủ");
         mnHome.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         menuAdmin.add(mnHome);

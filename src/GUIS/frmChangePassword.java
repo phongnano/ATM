@@ -166,16 +166,16 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Vui lòng nhập mât khẩu mới khác với mật khẩu cũ", "Thông báo", JOptionPane.ERROR_MESSAGE);
                 return;
             } else {
-//                if (dto.getPasswowd().equals(dal.getPass(dto.getUsername()))) {
-//                    bll.ChangePasswords(dto);
-//                    JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-//                    this.dispose();
-//                    stf.dispose();
-//                    new frmHome().setVisible(true);
-//                } else {
-//                    JOptionPane.showMessageDialog(null, "Mật khẩu không tồn tại với tài khoản này", "Thông báo", JOptionPane.ERROR_MESSAGE);
-//                    return;
-//                }
+                if (dto.getPasswowd().equals(dal.getPass(dto.getUsername()))) {
+                    bll.ChangePasswords(dto);
+                    JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                    stf.dispose();
+                    new frmHome().setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Mật khẩu không tồn tại với tài khoản này", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
             }
         } else {
             JOptionPane.showMessageDialog(null, "Mật khẩu không khớp", "Thông báo", JOptionPane.ERROR_MESSAGE);

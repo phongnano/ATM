@@ -12,6 +12,7 @@ public class DTO_Customers {
     private String nativeplace;
     private String telephone;
     private String password;
+    private String account;
     private long amount;
     private long balance;
     private int role;
@@ -80,6 +81,14 @@ public class DTO_Customers {
         this.password = password;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
     public long getAmount() {
         return amount;
     }
@@ -102,13 +111,5 @@ public class DTO_Customers {
 
     public void setRole(int role) {
         this.role = role;
-    }
-
-    public void deposit(long dep) {
-        balance += dep;
-    }
-
-    public void withdraw(long wit) {
-        balance -= wit;
     }
 }

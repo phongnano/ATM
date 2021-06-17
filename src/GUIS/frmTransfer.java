@@ -1,19 +1,51 @@
 package GUIS;
 
 import Customers.BLL_Customers;
+import Customers.DAL_Cusomters;
 import Customers.DTO_Customers;
+import Transactions.BLL_Transactions;
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 public class frmTransfer extends javax.swing.JFrame {
-
+    
     DTO_Customers dto = new DTO_Customers();
+    DAL_Cusomters dal = new DAL_Cusomters();
     BLL_Customers bll = new BLL_Customers();
-
+    
+    BLL_Transactions bll_trans = new BLL_Transactions();
+    
+    Locale loc = new Locale("vi", "VN");
+    Currency vnd = Currency.getInstance(loc);
+    NumberFormat vndFormat = NumberFormat.getCurrencyInstance(loc);
+    
+    JButton btn;
+    Object obj;
+    
+    public static String account;
+    public static long balance_send, balance_receive;
+    
     public frmTransfer() {
         initComponents();
         panTransfer.setVisible(false);
+        txtID.setVisible(false);
+        txtAccount.setVisible(false);
+        txtBalance.setVisible(false);
+        btnCheck.setVisible(false);
+        btnCancel.setVisible(false);
     }
-
+    
+    private void ResetValue() {
+        txtID.setText("");
+        txtID.requestFocus();
+        txtMoney.setText("");
+        radioAccount.setEnabled(true);
+        txtID.setEditable(true);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -34,14 +66,21 @@ public class frmTransfer extends javax.swing.JFrame {
         btn4000 = new javax.swing.JButton();
         btn6000 = new javax.swing.JButton();
         btnOther = new javax.swing.JButton();
+        btnCheck = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        txtAccount = new javax.swing.JTextField();
+        txtBalance = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂNTIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 14))); // NOI18N
+        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂNTIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
 
         groups.add(radioCard);
-        radioCard.setText("Số thẻ");
+        radioCard.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        radioCard.setForeground(new java.awt.Color(153, 51, 0));
+        radioCard.setText("Số thẻ người nhận");
+        radioCard.setEnabled(false);
         radioCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioCard(evt);
@@ -49,15 +88,19 @@ public class frmTransfer extends javax.swing.JFrame {
         });
 
         groups.add(radioAccount);
-        radioAccount.setText("Số tài khoản");
+        radioAccount.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        radioAccount.setForeground(new java.awt.Color(153, 51, 0));
+        radioAccount.setText("Số tài khoản người nhận");
+        radioAccount.setToolTipText("");
         radioAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioAccount(evt);
             }
         });
 
-        txtID.setEditable(false);
+        txtID.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtID.setToolTipText("Nhập số thẻ hoặc số tài khoàn người nhận"); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkData(evt);
@@ -67,16 +110,17 @@ public class frmTransfer extends javax.swing.JFrame {
         panTransfer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         txtMoney.setEditable(false);
-        txtMoney.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtMoneycheckMoney(evt);
+                checkValidMoney(evt);
             }
         });
 
-        btnTransfer.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        btnTransfer.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnTransfer.setForeground(new java.awt.Color(204, 51, 0));
         btnTransfer.setText("Chuyển tiền");
         btnTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,24 +128,75 @@ public class frmTransfer extends javax.swing.JFrame {
             }
         });
 
+        btn1000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn1000.setForeground(new java.awt.Color(51, 102, 0));
         btn1000.setText("1.000.000");
+        btn1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn3000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn3000.setForeground(new java.awt.Color(51, 102, 0));
         btn3000.setText("3.000.000");
+        btn3000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn5000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn5000.setForeground(new java.awt.Color(51, 102, 0));
         btn5000.setText("5.000.000");
+        btn5000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn7000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn7000.setForeground(new java.awt.Color(51, 102, 0));
         btn7000.setText("7.000.000");
+        btn7000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn2000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn2000.setForeground(new java.awt.Color(51, 102, 0));
         btn2000.setText("2.000.000");
+        btn2000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn4000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn4000.setForeground(new java.awt.Color(51, 102, 0));
         btn4000.setText("4.000.000");
+        btn4000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btn6000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn6000.setForeground(new java.awt.Color(51, 102, 0));
         btn6000.setText("6.000.000");
+        btn6000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkValue(evt);
+            }
+        });
 
+        btnOther.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnOther.setForeground(new java.awt.Color(51, 102, 0));
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOther(evt);
+                checkValue(evt);
             }
         });
 
@@ -132,7 +227,7 @@ public class frmTransfer extends javax.swing.JFrame {
                             .addGroup(panTransferLayout.createSequentialGroup()
                                 .addGap(151, 151, 151)
                                 .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 145, Short.MAX_VALUE)))
+                        .addGap(0, 170, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panTransferLayout.setVerticalGroup(
@@ -163,6 +258,34 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCheck.setForeground(new java.awt.Color(204, 102, 0));
+        btnCheck.setText("Kiểm tra");
+        btnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheck(evt);
+            }
+        });
+
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(204, 102, 0));
+        btnCancel.setText("Hủy");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancel(evt);
+            }
+        });
+
+        txtAccount.setEditable(false);
+        txtAccount.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAccount.setToolTipText("Đây là số tài khoàn của người gửi"); // NOI18N
+
+        txtBalance.setEditable(false);
+        txtBalance.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtBalance.setToolTipText("Đây là số dư của người gửi"); // NOI18N
+
         javax.swing.GroupLayout panTransLayout = new javax.swing.GroupLayout(panTrans);
         panTrans.setLayout(panTransLayout);
         panTransLayout.setHorizontalGroup(
@@ -173,15 +296,21 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radioAccount)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransLayout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(panTransLayout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panTransLayout.createSequentialGroup()
-                    .addGap(48, 48, 48)
-                    .addComponent(panTransfer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(49, 49, 49)))
+                .addGap(291, 291, 291)
+                .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panTransLayout.createSequentialGroup()
+                        .addComponent(btnCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                        .addComponent(btnCancel))
+                    .addComponent(txtID)
+                    .addComponent(txtAccount)
+                    .addComponent(txtBalance))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panTransLayout.setVerticalGroup(
             panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,14 +319,19 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioCard)
                     .addComponent(radioAccount))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCheck)
+                    .addComponent(btnCancel))
+                .addGap(18, 18, 18)
+                .addComponent(panTransfer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panTransLayout.createSequentialGroup()
-                    .addGap(93, 93, 93)
-                    .addComponent(panTransfer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(94, 94, 94)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,51 +359,104 @@ public class frmTransfer extends javax.swing.JFrame {
         char ch = evt.getKeyChar();
         if (!Character.isDigit(ch)) {
             evt.consume();
-            dto.setId(txtID.getText());
-            if (txtID.getText().length() == 9) {
-                evt.consume();
-                if (bll.CheckID(dto)) {
-                    panTransfer.setVisible(true);
-                    txtID.setEditable(false);
-                } else {
-                    panTransfer.setVisible(false);
-                    txtMoney.setText(null);
-                    txtMoney.setEditable(false);
-                    JOptionPane.showMessageDialog(null, "Số thẻ hoặc số tài khoản không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
-                }
-            }
         }
-
     }//GEN-LAST:event_checkData
 
     private void radioCard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCard
         txtID.setEditable(true);
+        txtID.setText("");
         txtID.requestFocus(true);
     }//GEN-LAST:event_radioCard
 
     private void radioAccount(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioAccount
-        txtID.setEditable(true);
+        txtID.setVisible(true);
+        txtID.setText("");
         txtID.requestFocus(true);
+        btnCheck.setVisible(true);
+        btnCancel.setVisible(true);
+        
+        txtAccount.setVisible(true);
+        txtBalance.setVisible(true);
+        
+        txtAccount.setText(account);
+        txtBalance.setText(String.valueOf(vndFormat.format(balance_send)));
     }//GEN-LAST:event_radioAccount
 
-    private void txtMoneycheckMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMoneycheckMoney
-
-    }//GEN-LAST:event_txtMoneycheckMoney
-
     private void btnTransfer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransfer
-        int amount = Integer.parseInt(txtMoney.getText());
-        if (amount < 50000 || amount > 2000000000) {
-            JOptionPane.showMessageDialog(null, "Số tiền nộp từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        dto.setAccount(account);
+        dto.setBalance(balance_send);
+        dto.setId(txtID.getText());
+        dto.setAmount(Long.parseLong(txtMoney.getText()));
+        if (txtID.getText().isEmpty()) {
         } else {
-
+            int amount = Integer.parseInt(txtMoney.getText());
+            if (amount < 50000 || amount > 2000000000) {
+                JOptionPane.showMessageDialog(null, "Số tiền nộp từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            } else {
+                bll_trans.Withdraw(dto.getBalance(), dto.getAccount());
+                JOptionPane.showMessageDialog(null, "Chuyển tiền thành công"
+                        + "\nSố dư hiện tại trong tài khoản người gữi sau khi chuyển là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);          
+                bll_trans.Deposit(balance_receive, dto.getId());
+                
+                this.dispose();
+            }
         }
     }//GEN-LAST:event_btnTransfer
 
-    private void btnOther(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOther
-        txtMoney.setEditable(true);
-        txtMoney.requestFocus(true);
-    }//GEN-LAST:event_btnOther
+    private void btnCheck(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheck
+        dto.setId(txtID.getText());
+        if (!dto.getId().isEmpty()) {
+            if (txtID.getText().length() == 9) {
+                if (bll.CheckID(dto)) {
+                    panTransfer.setVisible(true);
+                    radioAccount.setEnabled(false);
+                    txtID.setEditable(false);
+                    balance_receive = dal.getBalance(dto.getId());
+                    radioCard.setText(String.valueOf(vndFormat.format(balance_receive)));
+                } else {
+                    panTransfer.setVisible(false);
+                    txtMoney.setText(null);
+                    txtMoney.setEditable(false);
+                    JOptionPane.showMessageDialog(null, "Số tài khoản người nhận không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                    txtID.requestFocus();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            txtID.requestFocus();
+        }
+    }//GEN-LAST:event_btnCheck
 
+    private void btnCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel
+        ResetValue();
+    }//GEN-LAST:event_btnCancel
+
+    private void checkValue(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkValue
+        obj = evt.getSource();
+        btn = (JButton) obj;
+        if (txtID.getText().isEmpty()) {
+            txtMoney.setText("");
+            txtMoney.setEditable(false);
+        } else {
+            if (obj instanceof JButton) {
+                txtMoney.setText(btn.getText().replace(".", ""));
+                txtMoney.setEditable(false);
+            }
+            if (btn.getText().equals("Số khác")) {
+                txtMoney.setText("");
+                txtMoney.requestFocus();
+                txtMoney.setEditable(true);
+            }
+        }
+    }//GEN-LAST:event_checkValue
+
+    private void checkValidMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkValidMoney
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_checkValidMoney
+    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new frmTransfer().setVisible(true);
@@ -284,6 +471,8 @@ public class frmTransfer extends javax.swing.JFrame {
     private javax.swing.JButton btn5000;
     private javax.swing.JButton btn6000;
     private javax.swing.JButton btn7000;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnCheck;
     private javax.swing.JButton btnOther;
     private javax.swing.JButton btnTransfer;
     private javax.swing.ButtonGroup groups;
@@ -291,6 +480,8 @@ public class frmTransfer extends javax.swing.JFrame {
     private javax.swing.JPanel panTransfer;
     private javax.swing.JRadioButton radioAccount;
     private javax.swing.JRadioButton radioCard;
+    private javax.swing.JTextField txtAccount;
+    private javax.swing.JTextField txtBalance;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtMoney;
     // End of variables declaration//GEN-END:variables

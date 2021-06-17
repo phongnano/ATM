@@ -11,13 +11,17 @@ public class frmStaff extends javax.swing.JFrame {
 
     public frmStaff() {
         initComponents();
-        this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
-        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
-        itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
-        itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
-        mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
-        itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
-        itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
+        if ((usr == null) && (name == null) && (role == null)) {
+            new frmHome().setVisible(true);
+        } else {
+            this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
+            mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+            itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
+            itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
+            mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
+            itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
+            itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -49,11 +53,16 @@ public class frmStaff extends javax.swing.JFrame {
         );
         panelStaffLayout.setVerticalGroup(
             panelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 666, Short.MAX_VALUE)
+            .addGap(0, 665, Short.MAX_VALUE)
         );
 
-        mnHome.setText("Trang chủ");
+        menuStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        mnHome.setForeground(new java.awt.Color(0, 0, 102));
+        mnHome.setText("Trang chủ");
+        mnHome.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        itemChangepass.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemChangepass.setText("Đổi mật khẩu");
         itemChangepass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +71,7 @@ public class frmStaff extends javax.swing.JFrame {
         });
         mnHome.add(itemChangepass);
 
+        itemLogout.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemLogout.setText("Đăng xuất");
         itemLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,9 +82,12 @@ public class frmStaff extends javax.swing.JFrame {
 
         menuStaff.add(mnHome);
 
+        mnCatalog.setForeground(new java.awt.Color(153, 0, 0));
         mnCatalog.setText("Danh mục");
         mnCatalog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        mnCatalog.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
+        itemCustomer.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemCustomer.setText("Quản lý khách hàng");
         itemCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +96,7 @@ public class frmStaff extends javax.swing.JFrame {
         });
         mnCatalog.add(itemCustomer);
 
+        itemCard.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemCard.setText("Quản lý thẻ");
         itemCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

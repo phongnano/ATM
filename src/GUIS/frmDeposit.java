@@ -230,7 +230,6 @@ public class frmDeposit extends javax.swing.JFrame {
     }//GEN-LAST:event_checkMoney
 
     private void Deposit(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Deposit
-
         if (!txtMoney.getText().isEmpty()) {
             dto.setAmount(Long.parseLong((txtMoney.getText())));
             if (dto.getAmount() < 50000 || dto.getAmount() > 2000000000) {
@@ -240,8 +239,7 @@ public class frmDeposit extends javax.swing.JFrame {
                 if (dto.getAmount() % 50000 == 0) {
                     int quest = JOptionPane.showConfirmDialog(null, "Bạn có muốn nộp số tiền với trị giá " + vndFormat.format(dto.getAmount()), "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (quest == JOptionPane.YES_OPTION) {
-                        dto.deposit(dto.getAmount());
-                        bll_trans.Withdraw(dto.getBalance(), dto.getId());
+                        bll_trans.Deposit(dto.getAmount(), dto.getId());
                         JOptionPane.showMessageDialog(null, "Nộp tiền thành công"
                                 + "\nSố dư hiện tại trong tài khoản sau khi nộp là " + vndFormat.format(dto.getBalance()), "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                         ResetValue();
