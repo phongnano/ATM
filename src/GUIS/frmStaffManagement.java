@@ -3,7 +3,6 @@ package GUIS;
 import Staffs.BLL_Staffs;
 import Staffs.DTO_Staffs;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmStaffManagement extends javax.swing.JInternalFrame {
