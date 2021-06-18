@@ -3,6 +3,8 @@ package GUIS;
 import Staffs.BLL_Staffs;
 import Staffs.DTO_Staffs;
 import java.util.ArrayList;
+import java.util.Random;
+import Limits.LimitText;
 import javax.swing.table.DefaultTableModel;
 
 public class frmStaffManagement extends javax.swing.JInternalFrame {
@@ -11,11 +13,20 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     BLL_Staffs bll = new BLL_Staffs();
     ArrayList<DTO_Staffs> arr = new ArrayList<>();
     frmAdmin ad;
+    Random rd = new Random();
 
     public frmStaffManagement(frmAdmin admin) {
         initComponents();
         this.ad = admin;
         loadStaffs();
+        initialStaffs();
+    }
+
+    private void initialStaffs() {
+        String id = "NV";
+        int rand = rd.nextInt(10000) + 90000;
+        String str = id + rand;
+        txtIDStaff.setText(str);
     }
 
     private void loadStaffs() {
@@ -83,6 +94,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         txtIDStaff.setEditable(false);
         txtIDStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        txtID.setDocument(new LimitText(9));
         txtID.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -122,7 +134,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         cbNativeplace.setAutoscrolls(true);
 
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
+        dateBirthday.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        dateBirthday.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                checkValidDate(evt);
+            }
+        });
 
+        txtTelephone.setDocument(new LimitText(10));
         txtTelephone.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -158,21 +177,19 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                                     .addComponent(lblTelephone))
                                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panStaffLayout.createSequentialGroup()
-                                        .addGap(75, 75, 75)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                                        .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(radioFemale, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)
+                                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(panStaffLayout.createSequentialGroup()
+                                        .addGap(83, 83, 83)
                                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(panStaffLayout.createSequentialGroup()
                                                 .addComponent(radioMale)
                                                 .addGap(0, 0, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panStaffLayout.createSequentialGroup()
-                                                .addGap(0, 8, Short.MAX_VALUE)
-                                                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(radioFemale, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)))))
-                                    .addGroup(panStaffLayout.createSequentialGroup()
-                                        .addGap(83, 83, 83)
-                                        .addComponent(txtFullname))))
+                                            .addComponent(txtFullname)))))
                             .addGroup(panStaffLayout.createSequentialGroup()
                                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblIDStaff)
@@ -240,6 +257,11 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         btnAdd.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(204, 0, 0));
         btnAdd.setText("Thêm nhân viên");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertStaff(evt);
+            }
+        });
 
         btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(204, 0, 0));
@@ -252,15 +274,13 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAdd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(554, 554, 554)))
+                        .addComponent(btnAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -270,14 +290,15 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnCancel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAdd)
+                            .addComponent(btnCancel))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,17 +309,11 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         if (!Character.isDigit(ch)) {
             evt.consume();
         }
-        if (txtTelephone.getText().length() == 9) {
-            evt.consume();
-        }
     }//GEN-LAST:event_checkID
 
     private void checkTelephone(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkTelephone
         char ch = evt.getKeyChar();
         if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-        if (txtTelephone.getText().length() == 10) {
             evt.consume();
         }
     }//GEN-LAST:event_checkTelephone
@@ -310,6 +325,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
 //        }
 //        JOptionPane.showMessageDialog(null, "Ok");
     }//GEN-LAST:event_chooseStaffs
+
+    private void checkValidDate(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkValidDate
+
+    }//GEN-LAST:event_checkValidDate
+
+    private void insertStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertStaff
+
+    }//GEN-LAST:event_insertStaff
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
