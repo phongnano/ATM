@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Customers/DAL_Cusomters.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmStaffManagement.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmCustomer.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Transactions/BLL_Transactions.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmBanks.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmHome.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Transactions/DAL_Transactions.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Customers/BLL_Customers.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Customers/DTO_Customers.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmAdmin.java</file>
             <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmDeposit.java</file>
             <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/ATMS.sql</file>
-            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/Logins/BLL_Logins.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmStaff.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmTransfer.java</file>
+            <file>file:/C:/Users/Luxury/Documents/GitHub/ATM/src/GUIS/frmWithdraw.java</file>
         </group>
     </open-files>
 </project-private>
