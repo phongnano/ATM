@@ -26,7 +26,9 @@ create table USERS (
     account     char(12)                ,
     balance     bigint                  ,
     role        int                     ,
-    foreign key (account) references CARDS (idaccount)
+    idbank      char(5)                 ,
+    foreign key (account) references CARDS (idaccount) ,
+    foreign key (idbank) references BANKS (idbank)
 );
 
 insert into BANKS
@@ -46,12 +48,12 @@ insert into CARDS
 values ('123456789013', '234567890124', '2020-12-23', '2024-12-23', null, 'Nội địa');
 
 insert into USERS
-values ('123456789', 'AD01234', 'Lê Hoàng Song', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, null, 0);
+values ('123456789', 'AD01234', 'Lê Hoàng Song', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, null, 0, null);
 insert into USERS
-values ('234567890', 'NV01234', 'Nguyễn Thanh Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, null, 1);
+values ('234567890', 'NV01234', 'Nguyễn Thanh Long', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, null, 1, null);
 insert into USERS
-values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, 5000000000, 2);
+values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HCM', '0589884191', '24031998', null, 5000000000, 2, null);
 insert into USERS
-values ('345678902', 'KH01235', 'Nguyễn Hoàng Long', '1998-04-25', 0, 'TP.HCM', '0589884192', '25041998', null, 500000000, 2);
+values ('345678902', 'KH01235', 'Nguyễn Hoàng Long', '1998-04-25', 0, 'TP.HCM', '0589884192', '25041998', null, 500000000, 2, null);
 
 select * from USERS where "ROLE" = 2
