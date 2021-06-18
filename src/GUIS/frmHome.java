@@ -5,12 +5,15 @@ import Logins.DAL_Logins;
 import Logins.DTO_Logins;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import Limits.LimitText;
+import java.util.ArrayList;
 
 public class frmHome extends javax.swing.JFrame {
 
     DTO_Logins dto = new DTO_Logins();
     BLL_Logins bll = new BLL_Logins();
     DAL_Logins dal = new DAL_Logins();
+    ArrayList<DTO_Logins> arr = new ArrayList<>();
 
     public frmHome() {
         initComponents();
@@ -54,6 +57,8 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
 
+        txtUsr.setDocument(new LimitText(7)
+        );
         txtUsr.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtUsr.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -198,31 +203,36 @@ public class frmHome extends javax.swing.JFrame {
         if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
             frmChangePassword.usr = dto.getUsername();
             if (bll.Logins(dto)) {
-                int role = dal.getRole(dto.getUsername());
-                if (role == 0) {
-                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    this.dispose();
-                    frmAdmin.usr = dto.getUsername();
-                    frmAdmin.name = dal.getName(dto.getUsername());
-                    frmAdmin.role = "Quản trị viên";
-                    new frmAdmin().setVisible(true);
-                }
-                if (role == 1) {
-                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    this.dispose();
-                    frmStaff.usr = dto.getUsername();
-                    frmStaff.name = dal.getName(dto.getUsername());
-                    frmStaff.role = "Nhân viên";
-                    new frmStaff().setVisible(true);
-                }
-                if (role == 2) {
-                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    this.dispose();
-                    frmCustomer.usr = dto.getUsername();
-                    frmCustomer.name = dal.getName(dto.getUsername());
-                    frmCustomer.role = "Khách hàng";
-                    frmCustomer.acc = dal.getAccount(dto.getUsername());
-                    new frmCustomer().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+                arr = bll.checkLogin(dto.getUsername());
+                for (int i = 0; i < arr.size(); i++) {
+                    dto = arr.get(i);
+                    String accountnumber = dto.getAccountnumber();
+                    String id = dto.getUsername();
+                    String fullname = dto.getFullname();
+                    long balance = dto.getBalance();
+                    int role = dto.getRole();
+                    if (role == 0) {
+                        frmAdmin.usr = id;
+                        frmAdmin.name = fullname;
+                        frmAdmin.role = "Quản trị viên";
+                        new frmAdmin().setVisible(true);
+                    }
+                    if (role == 1) {
+                        frmStaff.usr = id;
+                        frmStaff.name = fullname;
+                        frmStaff.role = "Nhân viên";
+                        new frmStaff().setVisible(true);
+                    }
+                    if (role == 2) {
+                        frmCustomer.acc = accountnumber;
+                        frmCustomer.usr = id;
+                        frmCustomer.name = fullname;
+                        frmCustomer.balance = balance;
+                        frmCustomer.role = "Khách hàng";
+                        new frmCustomer().setVisible(true);
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);

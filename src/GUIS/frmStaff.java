@@ -8,11 +8,13 @@ public class frmStaff extends javax.swing.JFrame {
     public static String usr, name, role;
     private frmChangePassword pass;
     private frmBanks bnk;
+    private frmCustomerManagement cst;
 
     public frmStaff() {
         initComponents();
         if ((usr == null) && (name == null) && (role == null)) {
             new frmHome().setVisible(true);
+            this.dispose();
         } else {
             this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
             mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
@@ -49,11 +51,11 @@ public class frmStaff extends javax.swing.JFrame {
         panelStaff.setLayout(panelStaffLayout);
         panelStaffLayout.setHorizontalGroup(
             panelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1288, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
         panelStaffLayout.setVerticalGroup(
             panelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+            .addGap(0, 679, Short.MAX_VALUE)
         );
 
         menuStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -113,17 +115,11 @@ public class frmStaff extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelStaff)
-                .addContainerGap())
+            .addComponent(panelStaff, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelStaff)
-                .addContainerGap())
+            .addComponent(panelStaff)
         );
 
         pack();
@@ -132,7 +128,7 @@ public class frmStaff extends javax.swing.JFrame {
 
     private void ChangePassword(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePassword
         if (pass == null || pass.isClosed()) {
-            pass = new frmChangePassword(this);
+            pass = new frmChangePassword(this, null);
             pass.setLocation(this.getWidth() / 2 - pass.getWidth() / 2, (this.getHeight() - 20) / 2 - pass.getHeight() / 2 - 20);
             panelStaff.add(pass);
             pass.setVisible(true);
@@ -165,7 +161,15 @@ public class frmStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_Logout
 
     private void CustomerManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerManagement
-
+        if (cst == null || cst.isClosed()) {
+            cst = new frmCustomerManagement(this);
+            cst.setLocation(this.getWidth() / 2 - cst.getWidth() / 2, (this.getHeight() - 20) / 2 - cst.getHeight() / 2 - 20);
+            panelStaff.add(cst);
+            cst.setVisible(true);
+        } else {
+            cst.setLocation(this.getWidth() / 2 - cst.getWidth() / 2, (this.getHeight() - 20) / 2 - cst.getHeight() / 2 - 20);
+            cst.setVisible(true);
+        }
     }//GEN-LAST:event_CustomerManagement
 
     private void CardManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardManagement

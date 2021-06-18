@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class DAL_Cusomters {
 
@@ -13,6 +14,34 @@ public class DAL_Cusomters {
     private PreparedStatement ps = null;
     private ResultSet rs = null;
     private long amount;
+
+    public ArrayList<DTO_Customers> CheckBalance(String usr) {
+        ArrayList<DTO_Customers> result = new ArrayList<>();
+        String query = "select ID, FULLNAME, BALANCE from USERS where IDS = ? and ROLE = 2";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usr);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                DTO_Customers dto = new DTO_Customers();
+                dto.setAccount(rs.getString("ID"));
+                dto.setFullname(rs.getString("FULLNAME"));
+                dto.setBalance(rs.getLong("BALANCE"));
+                result.add(dto);
+            }
+        } catch (SQLException e) {
+        } finally {
+            try {
+                con.close();
+                ps.close();
+                rs.close();
+            } catch (SQLException e) {
+            }
+        }
+        return result;
+    }
 
     public boolean checkID(String usr) {
         String query = "select ID from USERS where ID = ? and ROLE = 2";
@@ -29,7 +58,7 @@ public class DAL_Cusomters {
     }
 
     public long getBalance(String usr) {
-        String query = "select BALANCE from USERS where ID = ?";
+        String query = "select BALANCE from USERS where ID = ? and ROLE =2";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();

@@ -2,13 +2,22 @@ package Logins;
 
 public class DTO_Logins {
 
+    private String accountnumber;
     private String username;
     private String fullname;
     private String passwowd;
     private String newpassword;
     private String repassword;
-    private double amount;
+    private long balance;
     private int role;
+
+    public String getAccountnumber() {
+        return accountnumber;
+    }
+
+    public void setAccountnumber(String accountnumber) {
+        this.accountnumber = accountnumber;
+    }
 
     public String getUsername() {
         return username;
@@ -50,12 +59,12 @@ public class DTO_Logins {
         this.repassword = repassword;
     }
 
-    public double getAmount() {
-        return amount;
+    public long getBalance() {
+        return balance;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setBalance(long balance) {
+        this.balance = balance;
     }
 
     public int getRole() {

@@ -3,15 +3,15 @@ package GUIS;
 import Customers.BLL_Customers;
 import Customers.DAL_Cusomters;
 import Customers.DTO_Customers;
-import Limits.LimitText;
 import Transactions.BLL_Transactions;
 import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import Limits.LimitText;
 
-public class frmTransfer extends javax.swing.JFrame {
+public class frmTransfer extends javax.swing.JInternalFrame {
 
     DTO_Customers dto = new DTO_Customers();
     DAL_Cusomters dal = new DAL_Cusomters();
@@ -29,8 +29,11 @@ public class frmTransfer extends javax.swing.JFrame {
     public static String account;
     public static long balance_send, balance_receive;
 
-    public frmTransfer() {
+    frmCustomer cst;
+
+    public frmTransfer(frmCustomer cust) {
         initComponents();
+        this.cst = cust;
         panTransfer.setVisible(false);
         txtID.setVisible(false);
         txtAccount.setVisible(false);
@@ -51,7 +54,6 @@ public class frmTransfer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        groups = new javax.swing.ButtonGroup();
         panTrans = new javax.swing.JPanel();
         radioCard = new javax.swing.JRadioButton();
         radioAccount = new javax.swing.JRadioButton();
@@ -72,12 +74,10 @@ public class frmTransfer extends javax.swing.JFrame {
         txtAccount = new javax.swing.JTextField();
         txtBalance = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setClosable(true);
 
         panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
 
-        groups.add(radioCard);
         radioCard.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         radioCard.setForeground(new java.awt.Color(153, 51, 0));
         radioCard.setText("Số thẻ người nhận");
@@ -88,7 +88,6 @@ public class frmTransfer extends javax.swing.JFrame {
             }
         });
 
-        groups.add(radioAccount);
         radioAccount.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         radioAccount.setForeground(new java.awt.Color(153, 51, 0));
         radioAccount.setText("Số tài khoản người nhận");
@@ -117,7 +116,7 @@ public class frmTransfer extends javax.swing.JFrame {
         txtMoney.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                checkValidMoney(evt);
+                txtMoneycheckValidMoney(evt);
             }
         });
 
@@ -208,29 +207,29 @@ public class frmTransfer extends javax.swing.JFrame {
             panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panTransferLayout.createSequentialGroup()
                 .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panTransferLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransferLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn1000)
                             .addComponent(btn3000)
                             .addComponent(btn5000)
-                            .addComponent(btn7000))
+                            .addComponent(btn7000)
+                            .addComponent(btn1000))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn2000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn4000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn6000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnOther, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnOther, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10))
                     .addGroup(panTransferLayout.createSequentialGroup()
-                        .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panTransferLayout.createSequentialGroup()
-                                .addGap(340, 340, 340)
-                                .addComponent(btnTransfer))
-                            .addGroup(panTransferLayout.createSequentialGroup()
-                                .addGap(151, 151, 151)
-                                .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 170, Short.MAX_VALUE)))
+                        .addGap(306, 306, 306)
+                        .addComponent(btnTransfer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(306, 306, 306)))
                 .addContainerGap())
+            .addGroup(panTransferLayout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panTransferLayout.setVerticalGroup(
             panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,18 +237,19 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panTransferLayout.createSequentialGroup()
-                        .addComponent(btn1000)
+                        .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn1000)
+                            .addComponent(btn2000))
                         .addGap(18, 18, 18)
-                        .addComponent(btn3000)
+                        .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn3000)
+                            .addComponent(btn4000))
                         .addGap(18, 18, 18)
                         .addComponent(btn5000)
                         .addGap(18, 18, 18)
                         .addComponent(btn7000))
                     .addGroup(panTransferLayout.createSequentialGroup()
-                        .addComponent(btn2000)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn4000)
-                        .addGap(18, 18, 18)
+                        .addGap(90, 90, 90)
                         .addComponent(btn6000)
                         .addGap(18, 18, 18)
                         .addComponent(btnOther)))
@@ -257,7 +257,7 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnTransfer)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -298,12 +298,8 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(radioAccount)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransLayout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(panTransLayout.createSequentialGroup()
-                .addGap(291, 291, 291)
+                .addGap(389, 389, 389)
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panTransLayout.createSequentialGroup()
                         .addComponent(btnCheck)
@@ -312,6 +308,10 @@ public class frmTransfer extends javax.swing.JFrame {
                     .addComponent(txtID)
                     .addComponent(txtAccount)
                     .addComponent(txtBalance))
+                .addContainerGap(389, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panTransLayout.setVerticalGroup(
@@ -323,7 +323,7 @@ public class frmTransfer extends javax.swing.JFrame {
                     .addComponent(radioAccount))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,9 +331,9 @@ public class frmTransfer extends javax.swing.JFrame {
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCheck)
                     .addComponent(btnCancel))
-                .addGap(18, 18, 18)
-                .addComponent(panTransfer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -354,15 +354,7 @@ public class frmTransfer extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void checkData(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkData
-        char ch = evt.getKeyChar();
-        if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_checkData
 
     private void radioCard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCard
         txtID.setEditable(true);
@@ -381,25 +373,45 @@ public class frmTransfer extends javax.swing.JFrame {
         txtBalance.setVisible(true);
 
         txtAccount.setText(account);
-        balance_send = dal.getBalance(account);
         dto.setBalance(balance_send);
         txtBalance.setText(String.valueOf(vndFormat.format(dto.getBalance())));
     }//GEN-LAST:event_radioAccount
 
+    private void checkData(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkData
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_checkData
+
+    private void txtMoneycheckValidMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMoneycheckValidMoney
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtMoneycheckValidMoney
+
     private void btnTransfer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransfer
-        dto.setAccount(account);
-        dto.setId(txtID.getText());
-        dto.setAmount(Long.parseLong(txtMoney.getText()));
-        if (txtID.getText().isEmpty()) {
-        } else {
-            int amount = Integer.parseInt(txtMoney.getText());
-            if (amount < 50000 || amount > 2000000000) {
-                JOptionPane.showMessageDialog(null, "Số tiền nộp từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        if (!txtMoney.getText().isEmpty()) {
+            dto.setAccount(account);
+            dto.setId(txtID.getText());
+            dto.setAmount(Long.parseLong(txtMoney.getText()));
+            if (txtID.getText().isEmpty()) {
             } else {
-                bll_trans.Transfer(dto.getAmount(), account, dto.getId());
-                JOptionPane.showMessageDialog(null, "Chuyển tiền thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
+                int amount = Integer.parseInt(txtMoney.getText());
+                if (amount < 50000 || amount > 2000000000) {
+                    JOptionPane.showMessageDialog(null, "Số tiền nộp từ 50.000đ tới 2.000.000.000đ", "Thông báo", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    bll_trans.Transfer(dto.getAmount(), account, dto.getId());
+                    JOptionPane.showMessageDialog(null, "Chuyển tiền thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    ResetValue();
+                    this.dispose();
+                    new frmCustomer().setVisible(true);
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Dữ liệu không được bỏ trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            txtMoney.requestFocus();
         }
     }//GEN-LAST:event_btnTransfer
 
@@ -431,40 +443,26 @@ public class frmTransfer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCheck
 
     private void btnCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel
-        ResetValue();
+        int choice = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn hủy?", "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            ResetValue();
+        }
     }//GEN-LAST:event_btnCancel
 
     private void checkValue(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkValue
         obj = evt.getSource();
-        btn = (JButton) obj;
-        if (txtID.getText().isEmpty()) {
-            txtMoney.setText("");
+        if (obj instanceof JButton) {
+            btn = (JButton) obj;
+            txtMoney.setText(btn.getText().replace(".", ""));
             txtMoney.setEditable(false);
-        } else {
-            if (obj instanceof JButton) {
-                txtMoney.setText(btn.getText().replace(".", ""));
-                txtMoney.setEditable(false);
-            }
-            if (btn.getText().equals("Số khác")) {
-                txtMoney.setText("");
-                txtMoney.requestFocus();
-                txtMoney.setEditable(true);
-            }
+        }
+        if (btn.getText().equals("Số khác")) {
+            txtMoney.setText("");
+            txtMoney.requestFocus();
+            txtMoney.setEditable(true);
         }
     }//GEN-LAST:event_checkValue
 
-    private void checkValidMoney(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkValidMoney
-        char ch = evt.getKeyChar();
-        if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_checkValidMoney
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(() -> {
-            new frmTransfer().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1000;
@@ -478,7 +476,6 @@ public class frmTransfer extends javax.swing.JFrame {
     private javax.swing.JButton btnCheck;
     private javax.swing.JButton btnOther;
     private javax.swing.JButton btnTransfer;
-    private javax.swing.ButtonGroup groups;
     private javax.swing.JPanel panTrans;
     private javax.swing.JPanel panTransfer;
     private javax.swing.JRadioButton radioAccount;

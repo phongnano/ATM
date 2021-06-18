@@ -401,7 +401,10 @@ public class frmWithdraw extends javax.swing.JFrame {
     }//GEN-LAST:event_checkValidMoney
 
     private void btnCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel
-        ResetValue();
+        int choice = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn hủy?", "Thông báo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION) {
+            ResetValue();
+        }
     }//GEN-LAST:event_btnCancel
 
     public static void main(String args[]) {

@@ -1,9 +1,10 @@
 package Logins;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DAL_Logins {
-
+    
     private DatabaseAccess db = null;
     private Connection con = null;
     private PreparedStatement ps = null;
@@ -11,7 +12,37 @@ public class DAL_Logins {
     private String name, pass, account;
     private int role;
     private long balance;
-
+    
+    public ArrayList<DTO_Logins> checkLogin(String usr) {
+        ArrayList<DTO_Logins> result = new ArrayList<>();
+        String query = "select ID, IDS, FULLNAME, BALANCE, ROLE from USERS where IDS = ?";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usr);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                DTO_Logins dto = new DTO_Logins();
+                dto.setAccountnumber(rs.getString("ID"));
+                dto.setUsername(rs.getString("IDS"));
+                dto.setFullname(rs.getString("FULLNAME"));
+                dto.setBalance(rs.getLong("BALANCE"));
+                dto.setRole(rs.getInt("ROLE"));
+                result.add(dto);
+            }
+        } catch (SQLException e) {
+        } finally {
+            try {
+                con.close();
+                ps.close();
+                rs.close();
+            } catch (SQLException e) {
+            }
+        }
+        return result;
+    }
+    
     public String getAccount(String usr) {
         String query = "select ID from USERS where IDS = ?";
         try {
@@ -27,7 +58,7 @@ public class DAL_Logins {
         }
         return account;
     }
-
+    
     public long getBalance(String usr) {
         String query = "select BALANCE from USERS where IDS = ?";
         try {
@@ -43,7 +74,7 @@ public class DAL_Logins {
         }
         return balance;
     }
-
+    
     public String getName(String usr) {
         String query = "select FULLNAME from USERS where IDS = ?";
         try {
@@ -59,7 +90,7 @@ public class DAL_Logins {
         }
         return name;
     }
-
+    
     public String getPass(String usr) {
         String query = "select PASSWORD from USERS where IDS = ?";
         try {
@@ -75,7 +106,7 @@ public class DAL_Logins {
         }
         return pass;
     }
-
+    
     public int getRole(String usr) {
         String query = "select ROLE from USERS where IDS = ?";
         try {
@@ -91,7 +122,7 @@ public class DAL_Logins {
         }
         return role;
     }
-
+    
     public boolean Login(String usr, String pwd) {
         String query = "select IDS, PASSWORD from USERS where IDS = ? and PASSWORD = ?";
         try {
@@ -106,7 +137,7 @@ public class DAL_Logins {
         }
         return false;
     }
-
+    
     public void ChangePassword(String usr, String oldpwd, String newpwd, String repwd) {
         String query = "update USERS set PASSWORD = ? where IDS = ?";
         try {
@@ -125,5 +156,5 @@ public class DAL_Logins {
             }
         }
     }
-
+    
 }

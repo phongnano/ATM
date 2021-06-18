@@ -12,12 +12,13 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
     DAL_Logins dal = new DAL_Logins();
     BLL_Logins bll = new BLL_Logins();
     frmStaff stf;
+    frmCustomer cst;
 
-    public frmChangePassword(frmStaff staff) {
+    public frmChangePassword(frmStaff staff, frmCustomer cust) {
         initComponents();
         stf = staff;
+        cst = cust;
         txtUsername.setText(usr);
-        txtUsername.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -48,6 +49,7 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
 
         txtOldpass.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
 
+        txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
 
         btnChange.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -170,8 +172,6 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
                     bll.ChangePasswords(dto);
                     JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
-                    stf.dispose();
-                    new frmHome().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Mật khẩu không tồn tại với tài khoản này", "Thông báo", JOptionPane.ERROR_MESSAGE);
                     return;
