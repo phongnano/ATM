@@ -1,6 +1,5 @@
 package Staffs;
 
-import Banks.DTO_Banks;
 import Logins.DatabaseAccess;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

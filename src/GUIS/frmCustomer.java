@@ -7,6 +7,7 @@ public class frmCustomer extends javax.swing.JFrame {
     private frmChangePassword pass;
     private frmCheckBalance chkb;
     private frmTransfer tran;
+    private frmCheckPIN pin;
 
     public frmCustomer() {
         initComponents();
@@ -25,6 +26,7 @@ public class frmCustomer extends javax.swing.JFrame {
         mnTransaction = new javax.swing.JMenu();
         itemTrans = new javax.swing.JMenuItem();
         itemCheckBalance = new javax.swing.JMenuItem();
+        itemWithdraw = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CUSTOMER");
@@ -84,6 +86,15 @@ public class frmCustomer extends javax.swing.JFrame {
         });
         mnTransaction.add(itemCheckBalance);
 
+        itemWithdraw.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        itemWithdraw.setText("Rút tiền");
+        itemWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Withdraw(evt);
+            }
+        });
+        mnTransaction.add(itemWithdraw);
+
         menuCustomer.add(mnTransaction);
 
         setJMenuBar(menuCustomer);
@@ -115,7 +126,6 @@ public class frmCustomer extends javax.swing.JFrame {
             tran.setLocation(this.getWidth() / 2 - tran.getWidth() / 2, (this.getHeight() - 20) / 2 - tran.getHeight() / 2 - 20);
             tran.setVisible(true);
         }
-
     }//GEN-LAST:event_Tranfers
 
     private void ChangePassword(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePassword
@@ -143,6 +153,18 @@ public class frmCustomer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkBalance
 
+    private void Withdraw(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Withdraw
+        if (pin == null || pin.isClosed()) {
+            pin = new frmCheckPIN(this);
+            pin.setLocation(this.getWidth() / 2 - pin.getWidth() / 2, (this.getHeight() - 20) / 2 - pin.getHeight() / 2 - 20);
+            panelCustomer.add(pin);
+            pin.setVisible(true);
+        } else {
+            pin.setLocation(this.getWidth() / 2 - pin.getWidth() / 2, (this.getHeight() - 20) / 2 - pin.getHeight() / 2 - 20);
+            pin.setVisible(true);
+        }
+    }//GEN-LAST:event_Withdraw
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(() -> {
@@ -155,6 +177,7 @@ public class frmCustomer extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemCheckBalance;
     private javax.swing.JMenuItem itemLogout;
     private javax.swing.JMenuItem itemTrans;
+    private javax.swing.JMenuItem itemWithdraw;
     private javax.swing.JMenuBar menuCustomer;
     private javax.swing.JMenu mnHome;
     private javax.swing.JMenu mnTransaction;

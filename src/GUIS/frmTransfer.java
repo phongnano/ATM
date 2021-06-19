@@ -113,7 +113,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         txtMoney.setDocument(new LimitText(10));
         txtMoney.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMoney.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
+        txtMoney.setToolTipText("Vui lòng nhập số tiền cần gữi"); // NOI18N
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtMoneycheckValidMoney(evt);

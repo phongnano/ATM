@@ -9,6 +9,7 @@ public class frmStaff extends javax.swing.JFrame {
     private frmChangePassword pass;
     private frmBanks bnk;
     private frmCustomerManagement cst;
+    private frmWithdraws wit;
 
     public frmStaff() {
         initComponents();
@@ -38,6 +39,9 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog = new javax.swing.JMenu();
         itemCustomer = new javax.swing.JMenuItem();
         itemCard = new javax.swing.JMenuItem();
+        menuTransaction = new javax.swing.JMenu();
+        itemWithdraw = new javax.swing.JMenuItem();
+        itemTransfer = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -108,6 +112,30 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog.add(itemCard);
 
         menuStaff.add(mnCatalog);
+
+        menuTransaction.setForeground(new java.awt.Color(0, 153, 0));
+        menuTransaction.setText("Phiên giao dịch");
+        menuTransaction.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        itemWithdraw.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        itemWithdraw.setText("Rút tiền");
+        itemWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Withdraw(evt);
+            }
+        });
+        menuTransaction.add(itemWithdraw);
+
+        itemTransfer.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        itemTransfer.setText("Chuyển tiền");
+        itemTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Transfer(evt);
+            }
+        });
+        menuTransaction.add(itemTransfer);
+
+        menuStaff.add(menuTransaction);
 
         setJMenuBar(menuStaff);
 
@@ -184,6 +212,22 @@ public class frmStaff extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CardManagement
 
+    private void Withdraw(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Withdraw
+        if (wit == null || wit.isClosed()) {
+            wit = new frmWithdraws(this);
+            wit.setLocation(this.getWidth() / 2 - wit.getWidth() / 2, (this.getHeight() - 20) / 2 - wit.getHeight() / 2 - 20);
+            panelStaff.add(wit);
+            wit.setVisible(true);
+        } else {
+            wit.setLocation(this.getWidth() / 2 - wit.getWidth() / 2, (this.getHeight() - 20) / 2 - wit.getHeight() / 2 - 20);
+            wit.setVisible(true);
+        }
+    }//GEN-LAST:event_Withdraw
+
+    private void Transfer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Transfer
+
+    }//GEN-LAST:event_Transfer
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new frmStaff().setVisible(true);
@@ -195,7 +239,10 @@ public class frmStaff extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemChangepass;
     private javax.swing.JMenuItem itemCustomer;
     private javax.swing.JMenuItem itemLogout;
+    private javax.swing.JMenuItem itemTransfer;
+    private javax.swing.JMenuItem itemWithdraw;
     private javax.swing.JMenuBar menuStaff;
+    private javax.swing.JMenu menuTransaction;
     private javax.swing.JMenu mnCatalog;
     private javax.swing.JMenu mnHome;
     private javax.swing.JDesktopPane panelStaff;

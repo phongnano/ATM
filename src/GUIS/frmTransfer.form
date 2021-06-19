@@ -245,7 +245,7 @@
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
+                <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p s&#x1ed1; ti&#x1ec1;n c&#x1ea7;n g&#x1eef;i" noResource="true"/>
               </Properties>
               <Events>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMoneycheckValidMoney"/>
