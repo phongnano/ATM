@@ -42,26 +42,4 @@ public class DAL_Staffs {
         }
         return result;
     }
-    
-    public int addBanks(DTO_Banks dto) {
-        int result = 0;
-        String query = "insert into USERS values (?, ?)";
-        
-        try {
-            db = new DatabaseAccess();
-            con = db.getConnection();
-            ps = con.prepareStatement(query);
-            ps.setString(1, dto.getIDBank());
-            ps.setString(2, dto.getNameBank());
-            result = ps.executeUpdate();
-        } catch (SQLException e) {
-        } finally {
-            try {
-                con.close();
-                ps.close();
-            } catch (SQLException e) {
-            }
-        }
-        return result;
-    }
 }
