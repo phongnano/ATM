@@ -75,6 +75,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         txtBalance = new javax.swing.JTextField();
 
         setClosable(true);
+        setTitle("CHUYỂN TIỀN");
 
         panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
 

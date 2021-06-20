@@ -42,6 +42,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         dateBirthday = new com.toedter.calendar.JDateChooser();
 
         setClosable(true);
+        setTitle("QUẢN LÝ KHÁCH HÀNG");
         setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         panCustomer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THÔNG TIN KHÁCH HÀNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 20), new java.awt.Color(0, 51, 153))); // NOI18N

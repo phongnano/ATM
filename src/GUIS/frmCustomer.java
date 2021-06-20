@@ -1,5 +1,7 @@
 package GUIS;
 
+import javax.swing.ImageIcon;
+
 public class frmCustomer extends javax.swing.JFrame {
 
     public static String usr, name, role, acc;
@@ -12,6 +14,14 @@ public class frmCustomer extends javax.swing.JFrame {
     public frmCustomer() {
         initComponents();
         this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
+        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+        itemChangePassword.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepassword.png")));
+        itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
+
+        mnTransaction.setIcon(new ImageIcon(getClass().getResource("/Images/icon/transaction.png")));
+        itemWithdraw.setIcon(new ImageIcon(getClass().getResource("/Images/icon/withdraw.png")));
+        itemTransfer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/transfer.png")));
+        itemCheckBalance.setIcon(new ImageIcon(getClass().getResource("/Images/icon/checkbalance.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -24,9 +34,9 @@ public class frmCustomer extends javax.swing.JFrame {
         itemChangePassword = new javax.swing.JMenuItem();
         itemLogout = new javax.swing.JMenuItem();
         mnTransaction = new javax.swing.JMenu();
-        itemTrans = new javax.swing.JMenuItem();
-        itemCheckBalance = new javax.swing.JMenuItem();
         itemWithdraw = new javax.swing.JMenuItem();
+        itemTransfer = new javax.swing.JMenuItem();
+        itemCheckBalance = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CUSTOMER");
@@ -36,11 +46,11 @@ public class frmCustomer extends javax.swing.JFrame {
         panelCustomer.setLayout(panelCustomerLayout);
         panelCustomerLayout.setHorizontalGroup(
             panelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
         panelCustomerLayout.setVerticalGroup(
             panelCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 679, Short.MAX_VALUE)
         );
 
         menuCustomer.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -68,14 +78,23 @@ public class frmCustomer extends javax.swing.JFrame {
         mnTransaction.setText("Giao dịch");
         mnTransaction.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        itemTrans.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        itemTrans.setText("Chuyển tiền");
-        itemTrans.addActionListener(new java.awt.event.ActionListener() {
+        itemWithdraw.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        itemWithdraw.setText("Rút tiền");
+        itemWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Withdraw(evt);
+            }
+        });
+        mnTransaction.add(itemWithdraw);
+
+        itemTransfer.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        itemTransfer.setText("Chuyển tiền");
+        itemTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Tranfers(evt);
             }
         });
-        mnTransaction.add(itemTrans);
+        mnTransaction.add(itemTransfer);
 
         itemCheckBalance.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         itemCheckBalance.setText("Xem số dư");
@@ -85,15 +104,6 @@ public class frmCustomer extends javax.swing.JFrame {
             }
         });
         mnTransaction.add(itemCheckBalance);
-
-        itemWithdraw.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        itemWithdraw.setText("Rút tiền");
-        itemWithdraw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Withdraw(evt);
-            }
-        });
-        mnTransaction.add(itemWithdraw);
 
         menuCustomer.add(mnTransaction);
 
@@ -166,7 +176,6 @@ public class frmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_Withdraw
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(() -> {
             new frmCustomer().setVisible(true);
         });
@@ -176,7 +185,7 @@ public class frmCustomer extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemChangePassword;
     private javax.swing.JMenuItem itemCheckBalance;
     private javax.swing.JMenuItem itemLogout;
-    private javax.swing.JMenuItem itemTrans;
+    private javax.swing.JMenuItem itemTransfer;
     private javax.swing.JMenuItem itemWithdraw;
     private javax.swing.JMenuBar menuCustomer;
     private javax.swing.JMenu mnHome;

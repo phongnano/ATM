@@ -17,9 +17,9 @@ public class frmHome extends javax.swing.JFrame {
 
     public frmHome() {
         initComponents();
-        lblBackgroud.setIcon(new ImageIcon(getClass().getResource("/Images/picture/background.png")));
-        lblUsr.setIcon(new ImageIcon(getClass().getResource("/Images/icon/username.png")));
-        lblPwd.setIcon(new ImageIcon(getClass().getResource("/Images/icon/password.png")));
+        lblBackgroud.setIcon(new ImageIcon(getClass().getResource("/Images/picture/bidv.png")));
+        lblUsr.setIcon(new ImageIcon(getClass().getResource("/Images/icon/user.png")));
+        lblPwd.setIcon(new ImageIcon(getClass().getResource("/Images/icon/pass.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -147,23 +147,18 @@ public class frmHome extends javax.swing.JFrame {
 
         panBackgroud.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        lblBackgroud.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/picture/background.png"))); // NOI18N
+        lblBackgroud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBackgroud.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/picture/bidv.png"))); // NOI18N
 
         javax.swing.GroupLayout panBackgroudLayout = new javax.swing.GroupLayout(panBackgroud);
         panBackgroud.setLayout(panBackgroudLayout);
         panBackgroudLayout.setHorizontalGroup(
             panBackgroudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBackgroudLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblBackgroud)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(lblBackgroud, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
         );
         panBackgroudLayout.setVerticalGroup(
             panBackgroudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panBackgroudLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblBackgroud)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(lblBackgroud, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

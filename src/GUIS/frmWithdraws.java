@@ -36,6 +36,7 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
         btnRedo = new javax.swing.JButton();
 
         setClosable(true);
+        setTitle("RÚT TIỀN");
 
         panWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 51, 102))); // NOI18N
 

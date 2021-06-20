@@ -13,18 +13,19 @@ public class frmStaff extends javax.swing.JFrame {
 
     public frmStaff() {
         initComponents();
-        if ((usr == null) && (name == null) && (role == null)) {
-            new frmHome().setVisible(true);
-            this.dispose();
-        } else {
-            this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
-            mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
-            itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepass.png")));
-            itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
-            mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
-            itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customer.png")));
-            itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/card.png")));
-        }
+        this.setTitle("Tài khoản: " + usr + "\tHọ tên: " + name + "\tChức vụ: " + role);
+        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+        itemChangepass.setIcon(new ImageIcon(getClass().getResource("/Images/icon/changepassword.png")));
+        itemLogout.setIcon(new ImageIcon(getClass().getResource("/Images/icon/logout.png")));
+
+        mnCatalog.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
+        itemCustomer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/customermanagement.png")));
+        itemCard.setIcon(new ImageIcon(getClass().getResource("/Images/icon/cardmanagement.png")));
+
+        mnTransaction.setIcon(new ImageIcon(getClass().getResource("/Images/icon/transaction.png")));
+        itemDeposit.setIcon(new ImageIcon(getClass().getResource("/Images/icon/deposit.png")));
+        itemWithdraw.setIcon(new ImageIcon(getClass().getResource("/Images/icon/withdraw.png")));
+        itemTransfer.setIcon(new ImageIcon(getClass().getResource("/Images/icon/transfer.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -39,7 +40,8 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog = new javax.swing.JMenu();
         itemCustomer = new javax.swing.JMenuItem();
         itemCard = new javax.swing.JMenuItem();
-        menuTransaction = new javax.swing.JMenu();
+        mnTransaction = new javax.swing.JMenu();
+        itemDeposit = new javax.swing.JMenuItem();
         itemWithdraw = new javax.swing.JMenuItem();
         itemTransfer = new javax.swing.JMenuItem();
 
@@ -113,9 +115,13 @@ public class frmStaff extends javax.swing.JFrame {
 
         menuStaff.add(mnCatalog);
 
-        menuTransaction.setForeground(new java.awt.Color(0, 153, 0));
-        menuTransaction.setText("Phiên giao dịch");
-        menuTransaction.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        mnTransaction.setForeground(new java.awt.Color(0, 153, 0));
+        mnTransaction.setText("Phiên giao dịch");
+        mnTransaction.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+
+        itemDeposit.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        itemDeposit.setText("Nộp tiền");
+        mnTransaction.add(itemDeposit);
 
         itemWithdraw.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemWithdraw.setText("Rút tiền");
@@ -124,7 +130,7 @@ public class frmStaff extends javax.swing.JFrame {
                 Withdraw(evt);
             }
         });
-        menuTransaction.add(itemWithdraw);
+        mnTransaction.add(itemWithdraw);
 
         itemTransfer.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemTransfer.setText("Chuyển tiền");
@@ -133,9 +139,9 @@ public class frmStaff extends javax.swing.JFrame {
                 Transfer(evt);
             }
         });
-        menuTransaction.add(itemTransfer);
+        mnTransaction.add(itemTransfer);
 
-        menuStaff.add(menuTransaction);
+        menuStaff.add(mnTransaction);
 
         setJMenuBar(menuStaff);
 
@@ -238,13 +244,14 @@ public class frmStaff extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemCard;
     private javax.swing.JMenuItem itemChangepass;
     private javax.swing.JMenuItem itemCustomer;
+    private javax.swing.JMenuItem itemDeposit;
     private javax.swing.JMenuItem itemLogout;
     private javax.swing.JMenuItem itemTransfer;
     private javax.swing.JMenuItem itemWithdraw;
     private javax.swing.JMenuBar menuStaff;
-    private javax.swing.JMenu menuTransaction;
     private javax.swing.JMenu mnCatalog;
     private javax.swing.JMenu mnHome;
+    private javax.swing.JMenu mnTransaction;
     private javax.swing.JDesktopPane panelStaff;
     // End of variables declaration//GEN-END:variables
 }

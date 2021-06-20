@@ -83,6 +83,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         btnCancel = new javax.swing.JButton();
 
         setClosable(true);
+        setTitle("QUẢN LÝ NHÂN VIÊN");
         setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 102))); // NOI18N

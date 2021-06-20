@@ -1,5 +1,7 @@
 package GUIS;
 
+import javax.swing.ImageIcon;
+
 public class frmAdmin extends javax.swing.JFrame {
 
     public static String usr, name, role;
@@ -7,11 +9,13 @@ public class frmAdmin extends javax.swing.JFrame {
 
     public frmAdmin() {
         initComponents();
-        if ((usr == null) && (name == null) && (role == null)) {
-            new frmHome().setVisible(true);
-        } else {
-            this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
-        }
+
+        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
+        mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
+        
+        mnManagement.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
+        itemBankManagement.setIcon(new ImageIcon(getClass().getResource("/Images/icon/bankmanagement.png")));
+        itemStaffManagement.setIcon(new ImageIcon(getClass().getResource("/Images/icon/staffmanagement.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -104,16 +108,6 @@ public class frmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_StaffManagement
 
     public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
         java.awt.EventQueue.invokeLater(() -> {
             new frmAdmin().setVisible(true);
         });

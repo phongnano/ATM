@@ -12,12 +12,10 @@ public class frmForgetPassword extends javax.swing.JFrame {
 
         panelChange = new javax.swing.JPanel();
         lblUsername = new javax.swing.JLabel();
-        txtOldpass = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
         btnChange = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         txtNewpass = new javax.swing.JPasswordField();
-        lblOldpass = new javax.swing.JLabel();
         lblNewpass = new javax.swing.JLabel();
         lblRepass = new javax.swing.JLabel();
         txtRepass = new javax.swing.JPasswordField();
@@ -31,8 +29,6 @@ public class frmForgetPassword extends javax.swing.JFrame {
         lblUsername.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(153, 51, 0));
         lblUsername.setText("Tài khoản:");
-
-        txtOldpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
         txtUsername.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
@@ -56,10 +52,6 @@ public class frmForgetPassword extends javax.swing.JFrame {
 
         txtNewpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        lblOldpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        lblOldpass.setForeground(new java.awt.Color(153, 51, 0));
-        lblOldpass.setText("Mật khẩu cũ:");
-
         lblNewpass.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         lblNewpass.setForeground(new java.awt.Color(153, 51, 0));
         lblNewpass.setText("Mật khẩu mới:");
@@ -77,7 +69,6 @@ public class frmForgetPassword extends javax.swing.JFrame {
             .addGroup(panelChangeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOldpass)
                     .addComponent(lblNewpass)
                     .addComponent(lblRepass)
                     .addComponent(lblUsername))
@@ -90,7 +81,6 @@ public class frmForgetPassword extends javax.swing.JFrame {
                     .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtOldpass)
                             .addComponent(txtNewpass)
                             .addComponent(txtRepass, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -102,10 +92,6 @@ public class frmForgetPassword extends javax.swing.JFrame {
                 .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsername))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtOldpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOldpass))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelChangeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNewpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,12 +146,10 @@ public class frmForgetPassword extends javax.swing.JFrame {
     private javax.swing.JButton btnChange;
     private javax.swing.JButton btnExit;
     private javax.swing.JLabel lblNewpass;
-    private javax.swing.JLabel lblOldpass;
     private javax.swing.JLabel lblRepass;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JPanel panelChange;
     private javax.swing.JPasswordField txtNewpass;
-    private javax.swing.JPasswordField txtOldpass;
     private javax.swing.JPasswordField txtRepass;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables

@@ -62,6 +62,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         btnCancel = new javax.swing.JButton();
 
         setClosable(true);
+        setTitle("QUẢN LÝ NGÂN HÀNG");
 
         panBanks.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NGÂN HÀNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 

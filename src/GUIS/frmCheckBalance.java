@@ -50,6 +50,7 @@ public class frmCheckBalance extends javax.swing.JInternalFrame {
         txtBalance = new javax.swing.JTextField();
 
         setClosable(true);
+        setTitle("KIỂM TRA SỐ DƯ");
 
         panCheckBalance.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THÔNG TIN TÀI KHOẢN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 51, 153))); // NOI18N
 

@@ -34,6 +34,7 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
         txtFooter = new javax.swing.JTextField();
 
         setClosable(true);
+        setTitle("KIỂM TRA MÃ PIN");
 
         panCheckPIN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "KIỂM TRA MÃ PIN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
