@@ -3,8 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/84877/Documents/GitHub/ATM/ATMS.sql</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmAdmin.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmCheckBalance.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmWithdraws.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmCustomer.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/Images/icon/withdraw.png</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmStaff.java</file>
             <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmHome.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmTransfer.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmChangePassword.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/ATMS.sql</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmCustomerManagement.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmBanks.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmCheckPIN.java</file>
+            <file>file:/C:/Users/84877/Documents/GitHub/ATM/src/GUIS/frmStaffManagement.java</file>
         </group>
     </open-files>
 </project-private>
