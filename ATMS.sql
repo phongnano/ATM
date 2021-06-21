@@ -55,6 +55,4 @@ values ('345678901', 'KH01234', 'Nguyễn Hoàng Phong', '1998-03-24', 0, 'TP.HC
 insert into USERS
 values ('345678902', 'KH01235', 'Nguyễn Hoàng Long', '1998-04-25', 0, 'TP.HCM', '0589884192', '25041998', null, 500000000, '000000', 2, '00000');
 
-select usr.IDS, usr.ID, usr.FULLNAME, usr.GENDER, usr.TELEPHONE, bnk.NAMEBANK from BANKS bnk, USERS usr where bnk.IDBANK = usr.IDBANK and usr.ROLE = 1
-
-select * from BANKS
+select usr.IDS, usr.ID, usr.FULLNAME, usr.GENDER, usr.TELEPHONE, bnk.NAMEBANK from BANKS bnk, USERS usr where bnk.IDBANK = usr.IDBANK and usr.ROLE = 1;

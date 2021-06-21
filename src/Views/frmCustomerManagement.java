@@ -103,7 +103,6 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
         btnCancel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         btnCancel.setText("Hủy");
 
-        dateBirthday.setBackground(new java.awt.Color(255, 255, 255));
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
         dateBirthday.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
@@ -177,7 +176,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInsert)
                     .addComponent(btnCancel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         tblCustomer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -193,7 +192,6 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
             }
         ));
-        tblCustomer.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane.setViewportView(tblCustomer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
