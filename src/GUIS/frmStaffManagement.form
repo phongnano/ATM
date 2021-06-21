@@ -105,7 +105,6 @@
                                               <Component id="txtTelephone" alignment="1" max="32767" attributes="0"/>
                                               <Component id="radioFemale" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="cbNativeplace" alignment="1" pref="300" max="32767" attributes="0"/>
-                                              <Component id="dateBirthday" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -168,10 +167,7 @@
                       <Component id="lblNativeplace" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblBirthday" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="dateBirthday" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="lblBirthday" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblTelephone" min="-2" max="-2" attributes="0"/>
@@ -366,17 +362,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
-          <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="16" style="0"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="checkValidDate"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelephone">
           <Properties>

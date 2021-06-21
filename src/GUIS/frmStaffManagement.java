@@ -73,7 +73,6 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         lblGender = new javax.swing.JLabel();
         lblNativeplace = new javax.swing.JLabel();
         cbNativeplace = new javax.swing.JComboBox<>();
-        dateBirthday = new com.toedter.calendar.JDateChooser();
         txtTelephone = new javax.swing.JTextField();
         lblTelephone = new javax.swing.JLabel();
         lblBirthday = new javax.swing.JLabel();
@@ -134,14 +133,6 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         cbNativeplace.setSelectedIndex(-1);
         cbNativeplace.setAutoscrolls(true);
 
-        dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
-        dateBirthday.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        dateBirthday.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                checkValidDate(evt);
-            }
-        });
-
         txtTelephone.setDocument(new LimitText(10));
         txtTelephone.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -182,8 +173,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(radioFemale, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)
-                                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)))
                                     .addGroup(panStaffLayout.createSequentialGroup()
                                         .addGap(83, 83, 83)
                                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,9 +216,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     .addComponent(cbNativeplace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNativeplace))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBirthday)
-                    .addComponent(dateBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblBirthday)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTelephone)
@@ -340,7 +328,6 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
     private javax.swing.JComboBox<String> cbNativeplace;
-    private com.toedter.calendar.JDateChooser dateBirthday;
     private javax.swing.ButtonGroup groupGender;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JLabel lblBirthday;

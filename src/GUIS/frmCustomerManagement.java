@@ -162,7 +162,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblBirthday)
                     .addComponent(dateBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNatveplace)
                     .addComponent(comboNativeplace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -174,7 +174,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
                 .addGroup(panCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInsert)
                     .addComponent(btnCancel))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,9 +198,9 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertCustomer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertCustomer
-        SimpleDateFormat sdf_1 = new SimpleDateFormat("dd/MM/yyyy");
+        //SimpleDateFormat sdf_1 = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat sdf_2 = new SimpleDateFormat("yyyy");
-        String date_1 = sdf_1.format(dateBirthday.getDate()).replaceAll("/", "");
+        //String date_1 = sdf_1.format(dateBirthday.getDate()).replaceAll("/", "");
         
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         String date_2 = sdf_2.format(dateBirthday.getDate());
