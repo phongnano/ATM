@@ -1,13 +1,25 @@
-<<<<<<< HEAD
-Mon Dec 28 13:01:31 ICT 2020 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
-Mon Dec 28 13:01:31 ICT 2020 Thread[DRDAConnThread_2,5,main] Cleanup action starting
-java.sql.SQLException: Database 'sample' not found.
+Mon Jun 21 23:17:49 ICT 2021 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Mon Jun 21 23:17:49 ICT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-017a-2f5d-1ab2-000015b065a0 
+on database directory /Users/nguyenphong/Documents/GitHub/ATM/ATMS with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
+Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.14.6
+derby.system.home=/Users/nguyenphong/Documents/GitHub/ATM
+Database Class Loader started - derby.database.classpath=''
+Mon Jun 21 23:17:50 ICT 2021 Thread[DRDAConnThread_2,5,main] (XID = 3169), (SESSIONID = 0), (DATABASE = ATMS), (DRDAID = {1}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
@@ -20,12 +32,12 @@ java.sql.SQLException: Database 'sample' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
-Caused by: ERROR XJ004: Database 'sample' not found.
+Caused by: ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 18 more
 ============= begin nested exception, level (1) ===========
-ERROR XJ004: Database 'sample' not found.
+ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -33,7 +45,7 @@ ERROR XJ004: Database 'sample' not found.
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
@@ -48,15 +60,15 @@ ERROR XJ004: Database 'sample' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Mon Dec 28 13:01:31 ICT 2020 Thread[DRDAConnThread_2,5,main] (DATABASE = sample), (DRDAID = {1}), Database 'sample' not found.
-Mon Dec 28 13:01:37 ICT 2020 Thread[DRDAConnThread_2,5,main] Cleanup action starting
-java.sql.SQLException: Database 'sample' not found.
+Mon Jun 21 23:17:50 ICT 2021 Thread[DRDAConnThread_2,5,main] (DATABASE = ATMS), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
+Mon Jun 21 23:18:17 ICT 2021 Thread[DRDAConnThread_2,5,main] (XID = 3170), (SESSIONID = 1), (DATABASE = ATMS), (DRDAID = {2}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
@@ -69,12 +81,12 @@ java.sql.SQLException: Database 'sample' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
-Caused by: ERROR XJ004: Database 'sample' not found.
+Caused by: ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 18 more
 ============= begin nested exception, level (1) ===========
-ERROR XJ004: Database 'sample' not found.
+ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -82,7 +94,7 @@ ERROR XJ004: Database 'sample' not found.
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
 	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
 	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
@@ -97,57 +109,140 @@ ERROR XJ004: Database 'sample' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Mon Dec 28 13:01:37 ICT 2020 Thread[DRDAConnThread_2,5,main] (DATABASE = sample), (DRDAID = {2}), Database 'sample' not found.
+Mon Jun 21 23:18:17 ICT 2021 Thread[DRDAConnThread_2,5,main] (DATABASE = ATMS), (DRDAID = {2}), Connection authentication failure occurred.  Reason: Invalid authentication..
+Mon Jun 21 23:18:40 ICT 2021 Thread[DRDAConnThread_2,5,main] (XID = 3171), (SESSIONID = 2), (DATABASE = ATMS), (DRDAID = {3}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 18 more
+============= begin nested exception, level (1) ===========
+ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Mon Jun 21 23:18:40 ICT 2021 Thread[DRDAConnThread_2,5,main] (DATABASE = ATMS), (DRDAID = {3}), Connection authentication failure occurred.  Reason: Invalid authentication..
 ----------------------------------------------------------------
-Mon Dec 28 13:02:10 ICT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0176-a7ef-fb19-ffffb18aeed0 
-on database directory /Users/nguyenphong/Desktop/java/CayKieng with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
-Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b14
-user.dir=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.14.6
-derby.system.home=/Users/nguyenphong/Desktop/java
-Database Class Loader started - derby.database.classpath=''
+Mon Jun 21 23:19:14 ICT 2021: Shutting down Derby engine
+
+------------  Begin Shutdown Error Stack -------------
+
+ERROR XSLAQ: Cannot create log file at directory /Users/nguyenphong/Documents/GitHub/ATM/ATMS/log.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getLogDirectory(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getControlFileName(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpointWithTran(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpoint(Unknown Source)
+	at org.apache.derby.impl.store.raw.RawStore.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.blockingStart(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.executeWork(Unknown Source)
+	at org.apache.derby.drda.NetworkServerControl.main(Unknown Source)
+
+
+------------  End Shutdown Error Stack -------------
+
+
+------------  Begin Shutdown Error Stack -------------
+
+ERROR XSLAQ: Cannot create log file at directory /Users/nguyenphong/Documents/GitHub/ATM/ATMS/log.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getLogDirectory(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getControlFileName(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpointWithTran(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpoint(Unknown Source)
+	at org.apache.derby.impl.store.raw.RawStore.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.blockingStart(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.executeWork(Unknown Source)
+	at org.apache.derby.drda.NetworkServerControl.main(Unknown Source)
+
+
+------------  End Shutdown Error Stack -------------
+
+
+------------  Begin Shutdown Error Stack -------------
+
+ERROR XSLAQ: Cannot create log file at directory /Users/nguyenphong/Documents/GitHub/ATM/ATMS/log.
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getLogDirectory(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.getControlFileName(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpointWithTran(Unknown Source)
+	at org.apache.derby.impl.store.raw.log.LogToFile.checkpoint(Unknown Source)
+	at org.apache.derby.impl.store.raw.RawStore.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.stop(Unknown Source)
+	at org.apache.derby.impl.services.monitor.TopService.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.BaseMonitor.shutdown(Unknown Source)
+	at org.apache.derby.impl.services.monitor.FileMonitor.shutdown(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.blockingStart(Unknown Source)
+	at org.apache.derby.impl.drda.NetworkServerControlImpl.executeWork(Unknown Source)
+	at org.apache.derby.drda.NetworkServerControl.main(Unknown Source)
+
+
+------------  End Shutdown Error Stack -------------
+
 ----------------------------------------------------------------
-Mon Dec 28 13:02:11 ICT 2020:
-Shutting down instance a816c00e-0176-a7ef-fb19-ffffb18aeed0 on database directory /Users/nguyenphong/Desktop/java/CayKieng with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
-Mon Dec 28 13:02:11 ICT 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = CayKieng), (DRDAID = {4}), Database 'CayKieng' shutdown.
+Mon Jun 21 23:19:14 ICT 2021:
+Shutting down instance a816c00e-017a-2f5d-1ab2-000015b065a0 on database directory /Users/nguyenphong/Documents/GitHub/ATM/ATMS with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
 ----------------------------------------------------------------
-Mon Dec 28 13:02:16 ICT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a65c80ac-0176-a7ef-fb19-ffffb18aeed0 
-on database directory /Users/nguyenphong/Desktop/java/CayKieng with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
-Loaded from file:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b14
-user.dir=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/db
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.14.6
-derby.system.home=/Users/nguyenphong/Desktop/java
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Dec 28 13:02:26 ICT 2020:
-Shutting down instance a65c80ac-0176-a7ef-fb19-ffffb18aeed0 on database directory /Users/nguyenphong/Desktop/java/CayKieng with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
-Mon Dec 28 13:02:26 ICT 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = CayKieng), (DRDAID = {6}), Database 'CayKieng' shutdown.
-----------------------------------------------------------------
-Mon Dec 28 13:02:30 ICT 2020: Shutting down Derby engine
-----------------------------------------------------------------
-=======
-Wed Dec 23 16:31:33 ICT 2020 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
-----------------------------------------------------------------
-Wed Dec 23 16:31:33 ICT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0176-8ef0-7876-ffffee8c47e8 
-on database directory C:\Users\Admin\Desktop\java\ATMS with class loader sun.misc.Launcher$AppClassLoader@194fa3e 
-Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_111-b14
-user.dir=C:\Program Files\Java\jdk1.8.0_111\db
-os.name=Windows 10
-os.arch=x86
-os.version=10.0
-derby.system.home=C:\Users\Admin\Desktop\java
-Database Class Loader started - derby.database.classpath=''
->>>>>>> 6d6840913bb376c24720aa385c1b584fc7ab3739
