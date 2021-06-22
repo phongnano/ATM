@@ -47,12 +47,10 @@ public class frmAdmin extends javax.swing.JFrame {
 
         menuAdmin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
-        mnHome.setForeground(new java.awt.Color(153, 153, 0));
         mnHome.setText("Trang chủ");
         mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         menuAdmin.add(mnHome);
 
-        mnManagement.setForeground(new java.awt.Color(102, 0, 255));
         mnManagement.setText("Danh mục quản lý");
         mnManagement.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 

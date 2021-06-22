@@ -34,14 +34,10 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="panCheckBalance">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" title="TH&#xd4;NG TIN T&#xc0;I KHO&#x1ea2;N">
-              <Font PropertyName="font" name="Bahnschrift" size="16" style="1"/>
-              <Color PropertyName="color" blue="99" green="33" red="0" type="rgb"/>
+              <Font PropertyName="font" name="Bahnschrift" size="24" style="1"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -63,7 +59,7 @@
                       <Component id="txtFullname" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtBalance" alignment="0" pref="250" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,11 +89,8 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblAccount">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
           </Properties>
@@ -105,21 +98,15 @@
         <Component class="javax.swing.JTextField" name="txtAccount">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblFullname">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n"/>
           </Properties>
@@ -127,21 +114,15 @@
         <Component class="javax.swing.JTextField" name="txtFullname">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblBalance">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ed1; d&#x1b0; hi&#x1ec7;n t&#x1ea1;i"/>
           </Properties>
@@ -149,11 +130,8 @@
         <Component class="javax.swing.JTextField" name="txtBalance">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
           </Properties>
         </Component>

@@ -37,16 +37,14 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        panWithdraw.setBackground(null);
-        panWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 51, 102))); // NOI18N
+        panWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24))); // NOI18N
 
-        lblACcount.setBackground(null);
-        lblACcount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        lblACcount.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         lblACcount.setText("Mời bạn nhập cmnd/thẻ/số tài khoản");
 
-        txtAccount.setBackground(null);
+        txtAccount.setBackground(new java.awt.Color(240, 240, 240));
         txtAccount.setDocument(new LimitText(9));
-        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -54,25 +52,21 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCheck.setBackground(null);
-        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCheck.setText("Kiểm tra");
 
-        btnCancel.setBackground(null);
-        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCancel.setText("Hủy");
 
-        panWit.setBackground(null);
         panWit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         txtBalance.setEditable(false);
-        txtBalance.setBackground(null);
-        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        txtAmount.setBackground(null);
+        txtAmount.setBackground(new java.awt.Color(240, 240, 240));
         txtAmount.setDocument(new LimitText(10));
-        txtAmount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtAmount.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtAmount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAmount.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -83,8 +77,7 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
             }
         });
 
-        btnWithdraw.setBackground(null);
-        btnWithdraw.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        btnWithdraw.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnWithdraw.setText("Rút tiền");
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +85,7 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
             }
         });
 
-        btnRedo.setBackground(null);
-        btnRedo.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        btnRedo.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnRedo.setText("Làm lại");
 
         javax.swing.GroupLayout panWitLayout = new javax.swing.GroupLayout(panWit);
@@ -135,7 +127,7 @@ public class frmWithdraws extends javax.swing.JInternalFrame {
                     .addComponent(panWit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panWithdrawLayout.createSequentialGroup()
                         .addComponent(lblACcount)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(btnCheck)

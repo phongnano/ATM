@@ -35,112 +35,84 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        panCheckPIN.setBackground(new java.awt.Color(255, 255, 255));
-        panCheckPIN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "KIỂM TRA MÃ PIN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
+        panCheckPIN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "KIỂM TRA MÃ PIN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24))); // NOI18N
 
+        txtCheckID.setBackground(new java.awt.Color(240, 240, 240));
         txtCheckID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtCheckID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCheckID.setToolTipText("Vui lòng nhập cmnd hoặc thẻ"); // NOI18N
 
-        btnCheck.setBackground(java.awt.SystemColor.window);
-        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnCheck.setForeground(new java.awt.Color(0, 102, 0));
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCheck.setText("Kiểm tra");
 
-        panPIN.setBackground(java.awt.SystemColor.window);
         panPIN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        txtPIN.setBackground(new java.awt.Color(240, 240, 240));
         txtPIN.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtPIN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        btn7.setBackground(java.awt.SystemColor.window);
-        btn7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn7.setForeground(new java.awt.Color(255, 51, 0));
+        btn7.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn7.setText("7");
         btn7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn7.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn8.setBackground(java.awt.SystemColor.window);
-        btn8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn8.setForeground(new java.awt.Color(255, 51, 0));
+        btn8.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn8.setText("8");
         btn8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn8.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn9.setBackground(java.awt.SystemColor.window);
-        btn9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn9.setForeground(new java.awt.Color(255, 51, 0));
+        btn9.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn9.setText("9");
         btn9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn9.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn4.setBackground(java.awt.SystemColor.window);
-        btn4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn4.setForeground(new java.awt.Color(255, 51, 0));
+        btn4.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn4.setText("4");
         btn4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn4.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn5.setBackground(java.awt.SystemColor.window);
-        btn5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn5.setForeground(new java.awt.Color(255, 51, 0));
+        btn5.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn5.setText("5");
         btn5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn5.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn6.setBackground(java.awt.SystemColor.window);
-        btn6.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn6.setForeground(new java.awt.Color(255, 51, 0));
+        btn6.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn6.setText("6");
         btn6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn6.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn1.setBackground(java.awt.SystemColor.window);
-        btn1.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn1.setForeground(new java.awt.Color(255, 51, 0));
+        btn1.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn1.setText("1");
         btn1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn1.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn2.setBackground(java.awt.SystemColor.window);
-        btn2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn2.setForeground(new java.awt.Color(255, 51, 0));
+        btn2.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn2.setText("2");
         btn2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn2.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn3.setBackground(java.awt.SystemColor.window);
-        btn3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn3.setForeground(new java.awt.Color(255, 51, 0));
+        btn3.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn3.setText("3");
         btn3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn3.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btnVerify.setBackground(java.awt.SystemColor.window);
-        btnVerify.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnVerify.setForeground(new java.awt.Color(102, 0, 102));
+        btnVerify.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnVerify.setText("Xác nhận");
         btnVerify.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVerify.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn0.setBackground(java.awt.SystemColor.window);
-        btn0.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn0.setForeground(new java.awt.Color(255, 51, 0));
+        btn0.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn0.setText("0");
         btn0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn0.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btnRedo.setBackground(java.awt.SystemColor.window);
-        btnRedo.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnRedo.setForeground(new java.awt.Color(102, 0, 102));
+        btnRedo.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnRedo.setText("Nhập lại");
         btnRedo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRedo.setPreferredSize(new java.awt.Dimension(100, 27));
 
         txtFooter.setEditable(false);
-        txtFooter.setBackground(java.awt.SystemColor.window);
-        txtFooter.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        txtFooter.setForeground(new java.awt.Color(0, 102, 102));
+        txtFooter.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtFooter.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFooter.setText("NGUYỄN HOÀNG PHONG");
 
@@ -155,24 +127,22 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
                     .addComponent(txtPIN)
                     .addGroup(panPINLayout.createSequentialGroup()
                         .addGroup(panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(100, 100, 100)
-                        .addGroup(panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn0, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(100, 100, 100)
-                        .addGroup(panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(btn3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRedo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVerify, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addGroup(panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addGroup(panPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRedo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         panPINLayout.setVerticalGroup(
@@ -200,14 +170,12 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
                     .addComponent(btnVerify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRedo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(0, 102, 0));
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCancel.setText("Hủy");
 
         javax.swing.GroupLayout panCheckPINLayout = new javax.swing.GroupLayout(panCheckPIN);
@@ -215,15 +183,19 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
         panCheckPINLayout.setHorizontalGroup(
             panCheckPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panCheckPINLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panPIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panCheckPINLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panCheckPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panCheckPINLayout.createSequentialGroup()
                         .addComponent(btnCheck)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panPIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtCheckID))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(panCheckPINLayout.createSequentialGroup()
+                        .addComponent(txtCheckID, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panCheckPINLayout.setVerticalGroup(
             panCheckPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,8 +207,7 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
                     .addComponent(btnCheck)
                     .addComponent(btnCancel))
                 .addGap(18, 18, 18)
-                .addComponent(panPIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panPIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

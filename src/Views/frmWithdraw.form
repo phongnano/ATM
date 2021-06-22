@@ -36,14 +36,10 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="panelWithdraw">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" id="Window" palette="2" red="ff" type="palette"/>
-        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" title="R&#xda;T TI&#x1ec0;N">
-              <Font PropertyName="font" name="Bahnschrift" size="16" style="1"/>
-              <Color PropertyName="color" blue="99" green="0" red="0" type="rgb"/>
+              <Font PropertyName="font" name="Bahnschrift" size="24" style="1"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -63,7 +59,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnCheck" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnCancel" pref="81" max="32767" attributes="0"/>
+                          <Component id="btnCancel" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -92,28 +88,19 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblInput">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color type="null"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="0" red="66" type="rgb"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#x1edd;i b&#x1ea1;n nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAccount">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color type="null"/>
-            </Property>
             <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new LimitText(12)" type="code"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p cmnd ho&#x1eb7;c s&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
@@ -124,14 +111,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCheck">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color type="null"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="99" red="0" type="rgb"/>
+              <Color blue="33" green="cc" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="X&#xe1;c th&#x1ef1;c"/>
           </Properties>
@@ -141,9 +125,6 @@
         </Component>
         <Container class="javax.swing.JPanel" name="panWithdraw">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" id="Window" palette="2" red="ff" type="palette"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder roundedCorners="true"/>
@@ -197,9 +178,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="btn1000" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" pref="21" max="32767" attributes="0"/>
                               <Component id="btn3000" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" pref="20" max="32767" attributes="0"/>
                               <Component id="btn5000" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btn7000" min="-2" max="-2" attributes="0"/>
@@ -221,9 +202,9 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtMoney" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" pref="24" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" pref="21" max="32767" attributes="0"/>
                       <Component id="btnWithdraw" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -232,10 +213,10 @@
             <Component class="javax.swing.JButton" name="btnWithdraw">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="99" red="0" type="rgb"/>
+                  <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R&#xfa;t ti&#x1ec1;n"/>
               </Properties>
@@ -246,10 +227,10 @@
             <Component class="javax.swing.JButton" name="btn1000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="1.000.000"/>
               </Properties>
@@ -260,10 +241,10 @@
             <Component class="javax.swing.JButton" name="btn3000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="3.000.000"/>
               </Properties>
@@ -274,10 +255,10 @@
             <Component class="javax.swing.JButton" name="btn5000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="5.000.000"/>
               </Properties>
@@ -288,10 +269,10 @@
             <Component class="javax.swing.JButton" name="btn7000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="7.000.000"/>
               </Properties>
@@ -302,10 +283,10 @@
             <Component class="javax.swing.JButton" name="btn2000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="2.000.000"/>
               </Properties>
@@ -316,10 +297,10 @@
             <Component class="javax.swing.JButton" name="btn4000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="4.000.000"/>
               </Properties>
@@ -330,10 +311,10 @@
             <Component class="javax.swing.JButton" name="btn6000">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="6.000.000"/>
               </Properties>
@@ -344,10 +325,10 @@
             <Component class="javax.swing.JButton" name="btnOther">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="66" red="ff" type="rgb"/>
+                  <Color blue="0" green="99" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1ed1; kh&#xe1;c"/>
               </Properties>
@@ -361,7 +342,7 @@
                   <Connection code="new LimitText(10)" type="code"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p s&#x1ed1; ti&#x1ec1;n b&#x1ea1;n c&#x1ea7;n r&#xfa;t"/>
@@ -374,7 +355,7 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Bahnschrift" size="16" style="0"/>
+                  <Font name="Bahnschrift" size="16" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="toolTipText" type="java.lang.String" value="&#x110;&#xe2;y l&#xe0; s&#x1ed1; ti&#x1ec1;n hi&#x1ec7;n t&#x1ea1;i trong t&#xe0;i kho&#x1ea3;n c&#x1ee7;a b&#x1ea1;n"/>
@@ -384,14 +365,11 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnCancel">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color type="null"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="0"/>
+              <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="99" red="0" type="rgb"/>
+              <Color blue="33" green="cc" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="H&#x1ee7;y"/>
           </Properties>

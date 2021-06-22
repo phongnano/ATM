@@ -66,7 +66,6 @@ public class frmStaff extends javax.swing.JFrame {
 
         menuStaff.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
-        mnHome.setForeground(new java.awt.Color(0, 0, 102));
         mnHome.setText("Trang chủ");
         mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
@@ -90,7 +89,6 @@ public class frmStaff extends javax.swing.JFrame {
 
         menuStaff.add(mnHome);
 
-        mnCatalog.setForeground(new java.awt.Color(153, 0, 0));
         mnCatalog.setText("Danh mục");
         mnCatalog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         mnCatalog.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
@@ -115,7 +113,6 @@ public class frmStaff extends javax.swing.JFrame {
 
         menuStaff.add(mnCatalog);
 
-        mnTransaction.setForeground(new java.awt.Color(0, 153, 0));
         mnTransaction.setText("Phiên giao dịch");
         mnTransaction.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
@@ -243,7 +240,7 @@ public class frmStaff extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
             new frmStaff().setVisible(true);

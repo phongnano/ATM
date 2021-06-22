@@ -55,7 +55,6 @@ public class frmCustomer extends javax.swing.JFrame {
 
         menuCustomer.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
-        mnHome.setForeground(new java.awt.Color(51, 0, 153));
         mnHome.setText("Trang chủ");
         mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
@@ -74,7 +73,6 @@ public class frmCustomer extends javax.swing.JFrame {
 
         menuCustomer.add(mnHome);
 
-        mnTransaction.setForeground(new java.awt.Color(204, 51, 0));
         mnTransaction.setText("Giao dịch");
         mnTransaction.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
@@ -184,7 +182,7 @@ public class frmCustomer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
             new frmCustomer().setVisible(true);

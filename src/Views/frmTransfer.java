@@ -76,12 +76,9 @@ public class frmTransfer extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        panTrans.setBackground(new java.awt.Color(255, 255, 255));
-        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
+        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24), new java.awt.Color(51, 0, 204))); // NOI18N
 
-        radioCard.setBackground(new java.awt.Color(255, 255, 255));
-        radioCard.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        radioCard.setForeground(new java.awt.Color(153, 51, 0));
+        radioCard.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         radioCard.setText("Số thẻ người nhận");
         radioCard.setEnabled(false);
         radioCard.addActionListener(new java.awt.event.ActionListener() {
@@ -90,9 +87,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        radioAccount.setBackground(new java.awt.Color(255, 255, 255));
-        radioAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        radioAccount.setForeground(new java.awt.Color(153, 51, 0));
+        radioAccount.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         radioAccount.setText("Số tài khoản người nhận");
         radioAccount.setToolTipText("");
         radioAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +96,8 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        txtID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtID.setBackground(new java.awt.Color(240, 240, 240));
+        txtID.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtID.setToolTipText("Nhập số thẻ hoặc số tài khoàn người nhận"); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -110,13 +106,11 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        panTransfer.setBackground(new java.awt.Color(255, 255, 255));
         panTransfer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         txtMoney.setEditable(false);
-        txtMoney.setBackground(new java.awt.Color(255, 255, 255));
         txtMoney.setDocument(new LimitText(10));
-        txtMoney.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền cần gữi"); // NOI18N
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -125,9 +119,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btnTransfer.setBackground(new java.awt.Color(255, 255, 255));
-        btnTransfer.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnTransfer.setForeground(new java.awt.Color(204, 51, 0));
+        btnTransfer.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnTransfer.setText("Chuyển tiền");
         btnTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,9 +127,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn1000.setBackground(new java.awt.Color(255, 255, 255));
-        btn1000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn1000.setForeground(new java.awt.Color(51, 102, 0));
+        btn1000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn1000.setText("1.000.000");
         btn1000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,9 +135,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn3000.setBackground(new java.awt.Color(255, 255, 255));
-        btn3000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn3000.setForeground(new java.awt.Color(51, 102, 0));
+        btn3000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn3000.setText("3.000.000");
         btn3000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,9 +143,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn5000.setBackground(new java.awt.Color(255, 255, 255));
-        btn5000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn5000.setForeground(new java.awt.Color(51, 102, 0));
+        btn5000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn5000.setText("5.000.000");
         btn5000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,9 +151,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn7000.setBackground(new java.awt.Color(255, 255, 255));
-        btn7000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn7000.setForeground(new java.awt.Color(51, 102, 0));
+        btn7000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn7000.setText("7.000.000");
         btn7000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,9 +159,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn2000.setBackground(new java.awt.Color(255, 255, 255));
-        btn2000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn2000.setForeground(new java.awt.Color(51, 102, 0));
+        btn2000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn2000.setText("2.000.000");
         btn2000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,9 +167,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn4000.setBackground(new java.awt.Color(255, 255, 255));
-        btn4000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn4000.setForeground(new java.awt.Color(51, 102, 0));
+        btn4000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn4000.setText("4.000.000");
         btn4000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,9 +175,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btn6000.setBackground(new java.awt.Color(255, 255, 255));
-        btn6000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btn6000.setForeground(new java.awt.Color(51, 102, 0));
+        btn6000.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btn6000.setText("6.000.000");
         btn6000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,9 +183,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btnOther.setBackground(new java.awt.Color(255, 255, 255));
-        btnOther.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnOther.setForeground(new java.awt.Color(51, 102, 0));
+        btnOther.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,11 +199,11 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                 .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransferLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn3000)
-                            .addComponent(btn5000)
-                            .addComponent(btn7000)
-                            .addComponent(btn1000))
+                        .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn3000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn5000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn7000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn1000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panTransferLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn2000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -241,7 +217,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                         .addGap(306, 306, 306)))
                 .addContainerGap())
             .addGroup(panTransferLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+                .addGap(148, 148, 148)
                 .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -274,9 +250,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnCheck.setBackground(new java.awt.Color(255, 255, 255));
-        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnCheck.setForeground(new java.awt.Color(204, 102, 0));
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCheck.setText("Kiểm tra");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,9 +258,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        btnCancel.setForeground(new java.awt.Color(204, 102, 0));
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,14 +267,12 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         txtAccount.setEditable(false);
-        txtAccount.setBackground(new java.awt.Color(255, 255, 255));
-        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Đây là số tài khoàn của người gửi"); // NOI18N
 
         txtBalance.setEditable(false);
-        txtBalance.setBackground(new java.awt.Color(255, 255, 255));
-        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số dư của người gửi"); // NOI18N
 
@@ -311,13 +281,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         panTransLayout.setHorizontalGroup(
             panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panTransLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(radioCard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(radioAccount)
-                .addContainerGap())
-            .addGroup(panTransLayout.createSequentialGroup()
-                .addGap(232, 232, 232)
+                .addGap(241, 241, 241)
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panTransLayout.createSequentialGroup()
                         .addComponent(btnCheck)
@@ -327,10 +291,17 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                     .addComponent(txtBalance)
                     .addComponent(txtID))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panTransLayout.createSequentialGroup()
+                .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panTransLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(radioCard)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(radioAccount))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panTransLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         panTransLayout.setVerticalGroup(
             panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

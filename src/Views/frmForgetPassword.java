@@ -24,19 +24,14 @@ public class frmForgetPassword extends javax.swing.JFrame {
         setTitle("QUÊN MẬT KHẨU");
         setResizable(false);
 
-        panelChange.setBackground(new java.awt.Color(255, 255, 255));
         panelChange.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        lblUsername.setBackground(new java.awt.Color(255, 255, 255));
         lblUsername.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-        lblUsername.setForeground(new java.awt.Color(153, 51, 0));
         lblUsername.setText("Tài khoản:");
 
         txtUsername.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        btnChange.setBackground(new java.awt.Color(255, 255, 255));
         btnChange.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-        btnChange.setForeground(new java.awt.Color(0, 102, 51));
         btnChange.setText("Đổi mật khẩu");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,9 +39,7 @@ public class frmForgetPassword extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-        btnExit.setForeground(new java.awt.Color(0, 102, 51));
         btnExit.setText("Thoát");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,14 +49,10 @@ public class frmForgetPassword extends javax.swing.JFrame {
 
         txtNewpass.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        lblNewpass.setBackground(new java.awt.Color(255, 255, 255));
         lblNewpass.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-        lblNewpass.setForeground(new java.awt.Color(153, 51, 0));
         lblNewpass.setText("Mật khẩu mới:");
 
-        lblRepass.setBackground(new java.awt.Color(255, 255, 255));
         lblRepass.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-        lblRepass.setForeground(new java.awt.Color(153, 51, 0));
         lblRepass.setText("Nhập lại mật khẩu:");
 
         txtRepass.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
@@ -145,7 +134,7 @@ public class frmForgetPassword extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmForgetPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(() -> {
             new frmForgetPassword().setVisible(true);
