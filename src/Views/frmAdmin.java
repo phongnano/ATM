@@ -49,14 +49,14 @@ public class frmAdmin extends javax.swing.JFrame {
 
         mnHome.setForeground(new java.awt.Color(153, 153, 0));
         mnHome.setText("Trang chủ");
-        mnHome.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         menuAdmin.add(mnHome);
 
         mnManagement.setForeground(new java.awt.Color(102, 0, 255));
         mnManagement.setText("Danh mục quản lý");
-        mnManagement.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        mnManagement.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        itemBankManagement.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemBankManagement.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemBankManagement.setText("Quản lý ngân hàng");
         itemBankManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +65,7 @@ public class frmAdmin extends javax.swing.JFrame {
         });
         mnManagement.add(itemBankManagement);
 
-        itemStaffManagement.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemStaffManagement.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemStaffManagement.setText("Quản lý nhân viên");
         itemStaffManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

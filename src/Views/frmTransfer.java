@@ -77,10 +77,10 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         setClosable(true);
 
         panTrans.setBackground(new java.awt.Color(255, 255, 255));
-        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(51, 0, 204))); // NOI18N
+        panTrans.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHUYỂN TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(51, 0, 204))); // NOI18N
 
         radioCard.setBackground(new java.awt.Color(255, 255, 255));
-        radioCard.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        radioCard.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         radioCard.setForeground(new java.awt.Color(153, 51, 0));
         radioCard.setText("Số thẻ người nhận");
         radioCard.setEnabled(false);
@@ -91,7 +91,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         radioAccount.setBackground(new java.awt.Color(255, 255, 255));
-        radioAccount.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        radioAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         radioAccount.setForeground(new java.awt.Color(153, 51, 0));
         radioAccount.setText("Số tài khoản người nhận");
         radioAccount.setToolTipText("");
@@ -101,7 +101,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
             }
         });
 
-        txtID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtID.setToolTipText("Nhập số thẻ hoặc số tài khoàn người nhận"); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -116,7 +116,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         txtMoney.setEditable(false);
         txtMoney.setBackground(new java.awt.Color(255, 255, 255));
         txtMoney.setDocument(new LimitText(10));
-        txtMoney.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền cần gữi"); // NOI18N
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -126,7 +126,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btnTransfer.setBackground(new java.awt.Color(255, 255, 255));
-        btnTransfer.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnTransfer.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnTransfer.setForeground(new java.awt.Color(204, 51, 0));
         btnTransfer.setText("Chuyển tiền");
         btnTransfer.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +136,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn1000.setBackground(new java.awt.Color(255, 255, 255));
-        btn1000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn1000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn1000.setForeground(new java.awt.Color(51, 102, 0));
         btn1000.setText("1.000.000");
         btn1000.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +146,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn3000.setBackground(new java.awt.Color(255, 255, 255));
-        btn3000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn3000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn3000.setForeground(new java.awt.Color(51, 102, 0));
         btn3000.setText("3.000.000");
         btn3000.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn5000.setBackground(new java.awt.Color(255, 255, 255));
-        btn5000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn5000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn5000.setForeground(new java.awt.Color(51, 102, 0));
         btn5000.setText("5.000.000");
         btn5000.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +166,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn7000.setBackground(new java.awt.Color(255, 255, 255));
-        btn7000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn7000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn7000.setForeground(new java.awt.Color(51, 102, 0));
         btn7000.setText("7.000.000");
         btn7000.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +176,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn2000.setBackground(new java.awt.Color(255, 255, 255));
-        btn2000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn2000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn2000.setForeground(new java.awt.Color(51, 102, 0));
         btn2000.setText("2.000.000");
         btn2000.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +186,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn4000.setBackground(new java.awt.Color(255, 255, 255));
-        btn4000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn4000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn4000.setForeground(new java.awt.Color(51, 102, 0));
         btn4000.setText("4.000.000");
         btn4000.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +196,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btn6000.setBackground(new java.awt.Color(255, 255, 255));
-        btn6000.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn6000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn6000.setForeground(new java.awt.Color(51, 102, 0));
         btn6000.setText("6.000.000");
         btn6000.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +206,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btnOther.setBackground(new java.awt.Color(255, 255, 255));
-        btnOther.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnOther.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnOther.setForeground(new java.awt.Color(51, 102, 0));
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +275,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         );
 
         btnCheck.setBackground(new java.awt.Color(255, 255, 255));
-        btnCheck.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCheck.setForeground(new java.awt.Color(204, 102, 0));
         btnCheck.setText("Kiểm tra");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +285,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
         });
 
         btnCancel.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(204, 102, 0));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -296,13 +296,13 @@ public class frmTransfer extends javax.swing.JInternalFrame {
 
         txtAccount.setEditable(false);
         txtAccount.setBackground(new java.awt.Color(255, 255, 255));
-        txtAccount.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Đây là số tài khoàn của người gửi"); // NOI18N
 
         txtBalance.setEditable(false);
         txtBalance.setBackground(new java.awt.Color(255, 255, 255));
-        txtBalance.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số dư của người gửi"); // NOI18N
 
@@ -317,7 +317,7 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                 .addComponent(radioAccount)
                 .addContainerGap())
             .addGroup(panTransLayout.createSequentialGroup()
-                .addGap(234, 234, 234)
+                .addGap(232, 232, 232)
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panTransLayout.createSequentialGroup()
                         .addComponent(btnCheck)
@@ -345,11 +345,11 @@ public class frmTransfer extends javax.swing.JInternalFrame {
                 .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(panTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCheck)
                     .addComponent(btnCancel))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(panTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

@@ -44,18 +44,18 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
         panelChange.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         lblUsername.setBackground(new java.awt.Color(255, 255, 255));
-        lblUsername.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(0, 0, 153));
         lblUsername.setText("Tài khoản:");
 
-        txtOldpass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtOldpass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         txtUsername.setEditable(false);
         txtUsername.setBackground(new java.awt.Color(255, 255, 255));
-        txtUsername.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         btnChange.setBackground(new java.awt.Color(255, 255, 255));
-        btnChange.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnChange.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnChange.setForeground(new java.awt.Color(153, 0, 51));
         btnChange.setText("Đổi mật khẩu");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,7 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
         });
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
-        btnExit.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnExit.setForeground(new java.awt.Color(153, 0, 51));
         btnExit.setText("Thoát");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -74,24 +74,24 @@ public class frmChangePassword extends javax.swing.JInternalFrame {
             }
         });
 
-        txtNewpass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtNewpass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         lblOldpass.setBackground(new java.awt.Color(255, 255, 255));
-        lblOldpass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblOldpass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblOldpass.setForeground(new java.awt.Color(0, 0, 153));
         lblOldpass.setText("Mật khẩu cũ:");
 
         lblNewpass.setBackground(new java.awt.Color(255, 255, 255));
-        lblNewpass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblNewpass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblNewpass.setForeground(new java.awt.Color(0, 0, 153));
         lblNewpass.setText("Mật khẩu mới:");
 
         lblRepass.setBackground(new java.awt.Color(255, 255, 255));
-        lblRepass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblRepass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblRepass.setForeground(new java.awt.Color(0, 0, 153));
         lblRepass.setText("Nhập lại mật khẩu:");
 
-        txtRepass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtRepass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout panelChangeLayout = new javax.swing.GroupLayout(panelChange);
         panelChange.setLayout(panelChangeLayout);

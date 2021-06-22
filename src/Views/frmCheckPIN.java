@@ -36,95 +36,110 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
         setClosable(true);
 
         panCheckPIN.setBackground(new java.awt.Color(255, 255, 255));
-        panCheckPIN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "KIỂM TRA MÃ PIN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
+        panCheckPIN.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "KIỂM TRA MÃ PIN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
-        txtCheckID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtCheckID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtCheckID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCheckID.setToolTipText("Vui lòng nhập cmnd hoặc thẻ"); // NOI18N
 
-        btnCheck.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCheck.setBackground(java.awt.SystemColor.window);
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCheck.setForeground(new java.awt.Color(0, 102, 0));
         btnCheck.setText("Kiểm tra");
 
+        panPIN.setBackground(java.awt.SystemColor.window);
         panPIN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        txtPIN.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtPIN.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtPIN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        btn7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn7.setBackground(java.awt.SystemColor.window);
+        btn7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn7.setForeground(new java.awt.Color(255, 51, 0));
         btn7.setText("7");
         btn7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn7.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn8.setBackground(java.awt.SystemColor.window);
+        btn8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn8.setForeground(new java.awt.Color(255, 51, 0));
         btn8.setText("8");
         btn8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn8.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn9.setBackground(java.awt.SystemColor.window);
+        btn9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn9.setForeground(new java.awt.Color(255, 51, 0));
         btn9.setText("9");
         btn9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn9.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn4.setBackground(java.awt.SystemColor.window);
+        btn4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn4.setForeground(new java.awt.Color(255, 51, 0));
         btn4.setText("4");
         btn4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn4.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn5.setBackground(java.awt.SystemColor.window);
+        btn5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn5.setForeground(new java.awt.Color(255, 51, 0));
         btn5.setText("5");
         btn5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn5.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn6.setBackground(java.awt.SystemColor.window);
+        btn6.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn6.setForeground(new java.awt.Color(255, 51, 0));
         btn6.setText("6");
         btn6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn6.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn1.setBackground(java.awt.SystemColor.window);
+        btn1.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn1.setForeground(new java.awt.Color(255, 51, 0));
         btn1.setText("1");
         btn1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn1.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn2.setBackground(java.awt.SystemColor.window);
+        btn2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn2.setForeground(new java.awt.Color(255, 51, 0));
         btn2.setText("2");
         btn2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn2.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn3.setBackground(java.awt.SystemColor.window);
+        btn3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn3.setForeground(new java.awt.Color(255, 51, 0));
         btn3.setText("3");
         btn3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn3.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btnVerify.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnVerify.setBackground(java.awt.SystemColor.window);
+        btnVerify.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnVerify.setForeground(new java.awt.Color(102, 0, 102));
         btnVerify.setText("Xác nhận");
         btnVerify.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVerify.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btn0.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn0.setBackground(java.awt.SystemColor.window);
+        btn0.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn0.setForeground(new java.awt.Color(255, 51, 0));
         btn0.setText("0");
         btn0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn0.setPreferredSize(new java.awt.Dimension(100, 27));
 
-        btnRedo.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnRedo.setBackground(java.awt.SystemColor.window);
+        btnRedo.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnRedo.setForeground(new java.awt.Color(102, 0, 102));
         btnRedo.setText("Nhập lại");
         btnRedo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRedo.setPreferredSize(new java.awt.Dimension(100, 27));
 
         txtFooter.setEditable(false);
-        txtFooter.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtFooter.setBackground(java.awt.SystemColor.window);
+        txtFooter.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtFooter.setForeground(new java.awt.Color(0, 102, 102));
         txtFooter.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFooter.setText("NGUYỄN HOÀNG PHONG");
@@ -191,7 +206,7 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
         );
 
         btnCancel.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(0, 102, 0));
         btnCancel.setText("Hủy");
 
@@ -215,11 +230,11 @@ public class frmCheckPIN extends javax.swing.JInternalFrame {
             .addGroup(panCheckPINLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtCheckID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(panCheckPINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCheck)
                     .addComponent(btnCancel))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(panPIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );

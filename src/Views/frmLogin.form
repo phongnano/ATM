@@ -42,7 +42,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder justification="2" title="&#x110;&#x102;NG NH&#x1eac;P H&#x1ec6; TH&#x1ed0;NG">
-              <Font PropertyName="font" name="Tahoma" size="16" style="1"/>
+              <Font PropertyName="font" name="Bahnschrift" size="16" style="1"/>
               <Color PropertyName="color" blue="ff" green="99" red="0" type="rgb"/>
             </TitledBorder>
           </Border>

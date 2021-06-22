@@ -65,14 +65,17 @@ public class frmWithdraw extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panelWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
+        panelWithdraw.setBackground(java.awt.SystemColor.window);
+        panelWithdraw.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RÚT TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
-        lblInput.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        lblInput.setBackground(null);
+        lblInput.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblInput.setForeground(new java.awt.Color(102, 0, 204));
         lblInput.setText("Mời bạn nhập cmnd hoặc số tài khoản:");
 
+        txtAccount.setBackground(null);
         txtAccount.setDocument(new LimitText(12));
-        txtAccount.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtAccount.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -81,7 +84,8 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btnCheck.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCheck.setBackground(null);
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCheck.setForeground(new java.awt.Color(0, 153, 51));
         btnCheck.setText("Xác thực");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -90,9 +94,10 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
+        panWithdraw.setBackground(java.awt.SystemColor.window);
         panWithdraw.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        btnWithdraw.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnWithdraw.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnWithdraw.setForeground(new java.awt.Color(0, 153, 51));
         btnWithdraw.setText("Rút tiền");
         btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +106,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn1000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn1000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn1000.setForeground(new java.awt.Color(255, 102, 102));
         btn1000.setText("1.000.000");
         btn1000.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +115,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn3000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn3000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn3000.setForeground(new java.awt.Color(255, 102, 102));
         btn3000.setText("3.000.000");
         btn3000.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +124,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn5000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn5000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn5000.setForeground(new java.awt.Color(255, 102, 102));
         btn5000.setText("5.000.000");
         btn5000.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +133,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn7000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn7000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn7000.setForeground(new java.awt.Color(255, 102, 102));
         btn7000.setText("7.000.000");
         btn7000.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +142,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn2000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn2000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn2000.setForeground(new java.awt.Color(255, 102, 102));
         btn2000.setText("2.000.000");
         btn2000.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +151,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn4000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn4000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn4000.setForeground(new java.awt.Color(255, 102, 102));
         btn4000.setText("4.000.000");
         btn4000.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +160,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btn6000.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btn6000.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn6000.setForeground(new java.awt.Color(255, 102, 102));
         btn6000.setText("6.000.000");
         btn6000.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +169,7 @@ public class frmWithdraw extends javax.swing.JFrame {
             }
         });
 
-        btnOther.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnOther.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnOther.setForeground(new java.awt.Color(255, 102, 102));
         btnOther.setText("Số khác");
         btnOther.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +179,7 @@ public class frmWithdraw extends javax.swing.JFrame {
         });
 
         txtMoney.setDocument(new LimitText(10));
-        txtMoney.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền bạn cần rút");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -184,7 +189,7 @@ public class frmWithdraw extends javax.swing.JFrame {
         });
 
         txtBalance.setEditable(false);
-        txtBalance.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số tiền hiện tại trong tài khoản của bạn");
 
@@ -226,9 +231,9 @@ public class frmWithdraw extends javax.swing.JFrame {
                 .addGroup(panWithdrawLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panWithdrawLayout.createSequentialGroup()
                         .addComponent(btn1000)
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGap(18, 22, Short.MAX_VALUE)
                         .addComponent(btn3000)
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGap(18, 22, Short.MAX_VALUE)
                         .addComponent(btn5000)
                         .addGap(18, 18, 18)
                         .addComponent(btn7000))
@@ -245,12 +250,13 @@ public class frmWithdraw extends javax.swing.JFrame {
                         .addComponent(btnOther)))
                 .addGap(18, 18, 18)
                 .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 24, Short.MAX_VALUE)
                 .addComponent(btnWithdraw)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        btnCancel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        btnCancel.setBackground(null);
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(0, 153, 51));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +280,7 @@ public class frmWithdraw extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnCheck)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelWithdrawLayout.setVerticalGroup(
@@ -296,17 +302,11 @@ public class frmWithdraw extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelWithdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(panelWithdraw, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelWithdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(panelWithdraw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

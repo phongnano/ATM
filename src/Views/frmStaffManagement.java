@@ -104,19 +104,20 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         setClosable(true);
         setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
-        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 16), new java.awt.Color(0, 0, 102))); // NOI18N
+        panStaff.setBackground(java.awt.SystemColor.window);
+        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "QUẢN LÝ NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 0, 102))); // NOI18N
 
         lblIDStaff.setBackground(new java.awt.Color(255, 255, 255));
-        lblIDStaff.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblIDStaff.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblIDStaff.setForeground(new java.awt.Color(0, 153, 0));
         lblIDStaff.setText("Mã nhân viên:");
 
         txtIDStaff.setEditable(false);
         txtIDStaff.setBackground(new java.awt.Color(255, 255, 255));
-        txtIDStaff.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtIDStaff.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         txtID.setDocument(new LimitText(9));
-        txtID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkID(evt);
@@ -124,44 +125,44 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         lblID.setBackground(new java.awt.Color(255, 255, 255));
-        lblID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblID.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblID.setForeground(new java.awt.Color(0, 153, 0));
         lblID.setText("CMND:");
 
         lblFullname.setBackground(new java.awt.Color(255, 255, 255));
-        lblFullname.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblFullname.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblFullname.setForeground(new java.awt.Color(0, 153, 0));
         lblFullname.setText("Họ và tên:");
 
-        txtFullname.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtFullname.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         radioFemale.setBackground(new java.awt.Color(255, 255, 255));
         groupGender.add(radioFemale);
-        radioFemale.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        radioFemale.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         radioFemale.setText("Nữ");
 
         radioMale.setBackground(new java.awt.Color(255, 255, 255));
         groupGender.add(radioMale);
-        radioMale.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        radioMale.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         radioMale.setText("Nam");
 
         lblGender.setBackground(new java.awt.Color(255, 255, 255));
-        lblGender.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblGender.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblGender.setForeground(new java.awt.Color(0, 153, 0));
         lblGender.setText("Giới tính:");
 
         lblNativeplace.setBackground(new java.awt.Color(255, 255, 255));
-        lblNativeplace.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblNativeplace.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblNativeplace.setForeground(new java.awt.Color(0, 153, 0));
         lblNativeplace.setText("Nơi sinh:");
 
-        cbNativeplace.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        cbNativeplace.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         cbNativeplace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP.HCM" }));
         cbNativeplace.setSelectedIndex(-1);
         cbNativeplace.setAutoscrolls(true);
 
         txtTelephone.setDocument(new LimitText(10));
-        txtTelephone.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtTelephone.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkTelephone(evt);
@@ -169,29 +170,29 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         lblTelephone.setBackground(new java.awt.Color(255, 255, 255));
-        lblTelephone.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblTelephone.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblTelephone.setForeground(new java.awt.Color(0, 153, 0));
         lblTelephone.setText("Điện thoại:");
 
         lblBirthday.setBackground(new java.awt.Color(255, 255, 255));
-        lblBirthday.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblBirthday.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblBirthday.setForeground(new java.awt.Color(0, 153, 0));
         lblBirthday.setText("Ngày sinh:");
 
         dateBirthday.setBackground(new java.awt.Color(255, 255, 255));
         dateBirthday.setDateFormatString("dd/MM/yyyy\n"); // NOI18N
-        dateBirthday.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        dateBirthday.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         lblBank.setBackground(new java.awt.Color(255, 255, 255));
-        lblBank.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblBank.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblBank.setForeground(new java.awt.Color(0, 153, 0));
         lblBank.setText("Ngân hàng:");
 
-        cbBank.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        cbBank.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         cbBank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn ngân hàng" }));
 
         btnInsert.setBackground(new java.awt.Color(255, 255, 255));
-        btnInsert.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnInsert.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnInsert.setForeground(new java.awt.Color(204, 0, 0));
         btnInsert.setText("Thêm nhân viên");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +202,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         btnCancel.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(204, 0, 0));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +212,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(204, 0, 0));
         btnUpdate.setText("Cập nhật nhân viên");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +222,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         btnDelete.setBackground(new java.awt.Color(255, 255, 255));
-        btnDelete.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(204, 0, 0));
         btnDelete.setText("Xóa nhân viên");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -341,13 +342,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
         jScrollPane.setViewportView(tblStaff);
 
-        panCard.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THẺ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 16), new java.awt.Color(102, 0, 0))); // NOI18N
+        panCard.setBackground(java.awt.SystemColor.window);
+        panCard.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THẺ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(102, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout panCardLayout = new javax.swing.GroupLayout(panCard);
         panCard.setLayout(panCardLayout);
         panCardLayout.setHorizontalGroup(
             panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addGap(0, 752, Short.MAX_VALUE)
         );
         panCardLayout.setVerticalGroup(
             panCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,7 +366,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -374,8 +376,8 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

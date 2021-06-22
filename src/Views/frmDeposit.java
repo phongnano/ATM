@@ -62,11 +62,10 @@ public class frmDeposit extends javax.swing.JFrame {
         setResizable(false);
 
         panelDeposit.setBackground(new java.awt.Color(255, 255, 255));
-        panelDeposit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NẠP TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
+        panelDeposit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NẠP TIỀN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 0, 153))); // NOI18N
 
-        txtAccount.setBackground(null);
         txtAccount.setDocument(new LimitText(12));
-        txtAccount.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtAccount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAccount.setToolTipText("Vui lòng nhập cmnd hoặc số tài khoản");
         txtAccount.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -75,13 +74,11 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
-        lblInput_1.setBackground(null);
-        lblInput_1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblInput_1.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblInput_1.setForeground(new java.awt.Color(0, 102, 51));
         lblInput_1.setText("Mời bạn nhập cmnd hoặc số tài khoản:");
 
-        btnCheck.setBackground(null);
-        btnCheck.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCheck.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCheck.setForeground(new java.awt.Color(204, 51, 0));
         btnCheck.setText("Xác thực");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -90,14 +87,12 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
-        lblInput_2.setBackground(null);
-        lblInput_2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblInput_2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblInput_2.setForeground(new java.awt.Color(0, 102, 51));
         lblInput_2.setText("Nhập số tiền cần nộp:");
 
-        txtMoney.setBackground(null);
         txtMoney.setDocument(new LimitText(10));
-        txtMoney.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtMoney.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtMoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtMoney.setToolTipText("Vui lòng nhập số tiền bạn cần nộp");
         txtMoney.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -106,8 +101,7 @@ public class frmDeposit extends javax.swing.JFrame {
             }
         });
 
-        btnDeposit.setBackground(null);
-        btnDeposit.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnDeposit.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnDeposit.setForeground(new java.awt.Color(204, 51, 0));
         btnDeposit.setText("Nộp tiền");
         btnDeposit.addActionListener(new java.awt.event.ActionListener() {
@@ -117,13 +111,12 @@ public class frmDeposit extends javax.swing.JFrame {
         });
 
         txtBalance.setEditable(false);
-        txtBalance.setBackground(null);
-        txtBalance.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtBalance.setBackground(java.awt.SystemColor.window);
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         txtBalance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBalance.setToolTipText("Đây là số tiền hiện tại trong tài khoản của bạn");
 
-        btnCancel.setBackground(null);
-        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(204, 51, 0));
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +167,7 @@ public class frmDeposit extends javax.swing.JFrame {
                     .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInput_2)
                     .addComponent(btnDeposit))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

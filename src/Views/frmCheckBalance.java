@@ -52,31 +52,31 @@ public class frmCheckBalance extends javax.swing.JInternalFrame {
         setClosable(true);
 
         panCheckBalance.setBackground(new java.awt.Color(255, 255, 255));
-        panCheckBalance.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THÔNG TIN TÀI KHOẢN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 16), new java.awt.Color(0, 51, 153))); // NOI18N
+        panCheckBalance.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "THÔNG TIN TÀI KHOẢN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 51, 153))); // NOI18N
 
         lblAccount.setBackground(new java.awt.Color(255, 255, 255));
-        lblAccount.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblAccount.setText("Số tài khoản");
 
         txtAccount.setEditable(false);
         txtAccount.setBackground(new java.awt.Color(255, 255, 255));
-        txtAccount.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtAccount.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         lblFullname.setBackground(new java.awt.Color(255, 255, 255));
-        lblFullname.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblFullname.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblFullname.setText("Họ và tên");
 
         txtFullname.setEditable(false);
         txtFullname.setBackground(new java.awt.Color(255, 255, 255));
-        txtFullname.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtFullname.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         lblBalance.setBackground(new java.awt.Color(255, 255, 255));
-        lblBalance.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        lblBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         lblBalance.setText("Số dư hiện tại");
 
         txtBalance.setEditable(false);
         txtBalance.setBackground(new java.awt.Color(255, 255, 255));
-        txtBalance.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        txtBalance.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout panCheckBalanceLayout = new javax.swing.GroupLayout(panCheckBalance);
         panCheckBalance.setLayout(panCheckBalanceLayout);

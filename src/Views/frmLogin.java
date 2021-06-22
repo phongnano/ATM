@@ -38,7 +38,7 @@ public class frmLogin extends javax.swing.JFrame {
         setResizable(false);
 
         panLogin.setBackground(new java.awt.Color(255, 255, 255));
-        panLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ĐĂNG NHẬP HỆ THỐNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 16), new java.awt.Color(0, 153, 255))); // NOI18N
+        panLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ĐĂNG NHẬP HỆ THỐNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 16), new java.awt.Color(0, 153, 255))); // NOI18N
         panLogin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         lblLogo.setBackground(new java.awt.Color(255, 255, 255));

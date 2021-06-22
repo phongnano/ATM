@@ -68,9 +68,9 @@ public class frmStaff extends javax.swing.JFrame {
 
         mnHome.setForeground(new java.awt.Color(0, 0, 102));
         mnHome.setText("Trang chủ");
-        mnHome.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        itemChangepass.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemChangepass.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemChangepass.setText("Đổi mật khẩu");
         itemChangepass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class frmStaff extends javax.swing.JFrame {
         });
         mnHome.add(itemChangepass);
 
-        itemLogout.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemLogout.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemLogout.setText("Đăng xuất");
         itemLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,9 +93,9 @@ public class frmStaff extends javax.swing.JFrame {
         mnCatalog.setForeground(new java.awt.Color(153, 0, 0));
         mnCatalog.setText("Danh mục");
         mnCatalog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        mnCatalog.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        mnCatalog.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        itemCustomer.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemCustomer.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemCustomer.setText("Quản lý khách hàng");
         itemCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class frmStaff extends javax.swing.JFrame {
         });
         mnCatalog.add(itemCustomer);
 
-        itemCard.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemCard.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemCard.setText("Quản lý thẻ");
         itemCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,13 +117,13 @@ public class frmStaff extends javax.swing.JFrame {
 
         mnTransaction.setForeground(new java.awt.Color(0, 153, 0));
         mnTransaction.setText("Phiên giao dịch");
-        mnTransaction.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        mnTransaction.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
 
-        itemDeposit.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemDeposit.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemDeposit.setText("Nộp tiền");
         mnTransaction.add(itemDeposit);
 
-        itemWithdraw.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemWithdraw.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemWithdraw.setText("Rút tiền");
         itemWithdraw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class frmStaff extends javax.swing.JFrame {
         });
         mnTransaction.add(itemWithdraw);
 
-        itemTransfer.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        itemTransfer.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         itemTransfer.setText("Chuyển tiền");
         itemTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
