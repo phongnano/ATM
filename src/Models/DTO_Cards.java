@@ -8,8 +8,9 @@ public class DTO_Cards {
     private String idacco;
     private Date sttday;
     private Date endday;
-    private String typecard;
     private String idbank;
+    private String typecard;
+    private String pin;
 
     public String getIdcard() {
         return idcard;
@@ -43,6 +44,14 @@ public class DTO_Cards {
         this.endday = endday;
     }
 
+    public String getIdbank() {
+        return idbank;
+    }
+
+    public void setIdbank(String idbank) {
+        this.idbank = idbank;
+    }
+
     public String getTypecard() {
         return typecard;
     }
@@ -51,12 +60,12 @@ public class DTO_Cards {
         this.typecard = typecard;
     }
 
-    public String getIdbank() {
-        return idbank;
+    public String getPin() {
+        return pin;
     }
 
-    public void setIdbank(String idbank) {
-        this.idbank = idbank;
+    public void setPin(String pin) {
+        this.pin = pin;
     }
 
 }

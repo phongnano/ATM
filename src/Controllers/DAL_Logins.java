@@ -16,7 +16,7 @@ public class DAL_Logins {
     
     public ArrayList<DTO_Logins> checkLogin(String usr) {
         ArrayList<DTO_Logins> result = new ArrayList<>();
-        String query = "select ID, IDS, FULLNAME, BALANCE, ROLE from USERS where IDS = ?";
+        String query = "select IDS, FULLNAME, ACCOUNT, BALANCE, ROLE from USERS where IDS = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -25,9 +25,10 @@ public class DAL_Logins {
             rs = ps.executeQuery();
             while (rs.next()) {
                 DTO_Logins dto = new DTO_Logins();
-                dto.setAccountnumber(rs.getString("ID"));
                 dto.setUsername(rs.getString("IDS"));
                 dto.setFullname(rs.getString("FULLNAME"));
+                dto.setFullname(rs.getString("FULLNAME"));
+                dto.setAccountnumber(rs.getString("ACCOUNT"));
                 dto.setBalance(rs.getLong("BALANCE"));
                 dto.setRole(rs.getInt("ROLE"));
                 result.add(dto);

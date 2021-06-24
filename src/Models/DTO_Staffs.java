@@ -13,7 +13,7 @@ public class DTO_Staffs {
     private String telephone;
     private String password;
     private int role;
-    private String namebank;
+    private String bank;
 
     public String getIdstaff() {
         return idstaff;
@@ -87,12 +87,12 @@ public class DTO_Staffs {
         this.role = role;
     }
 
-    public String getNamebank() {
-        return namebank;
+    public String getBank() {
+        return bank;
     }
 
-    public void setNamebank(String namebank) {
-        this.namebank = namebank;
+    public void setBank(String bank) {
+        this.bank = bank;
     }
 
 }

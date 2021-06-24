@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.DTO_Customers;
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class BLL_Customers {
@@ -12,11 +13,10 @@ public class BLL_Customers {
     }
 
     public boolean CheckID(DTO_Customers dto) {
-        return dal.checkID(dto.getId());
+        return dal.checkID(dto.getAccount());
     }
 
-    public int AddCustomer(DTO_Customers dto) {
-        int result = dal.addCustomers(dto);
-        return result;
+    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank) {
+        return dal.insertCustomer(idcard, idaccount, startday, endday, idbank, typecard, pin, idcust, id, fullname, birthday, gender, nativeplace, telephone, password, account, balance, role, bank);
     }
 }

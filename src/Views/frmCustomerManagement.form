@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="groupGender">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="groupCard">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
@@ -32,14 +34,14 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane" pref="715" max="32767" attributes="0"/>
+              <Component id="jScrollPane" pref="630" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="panCustomer" max="32767" attributes="0"/>
-          <Component id="jScrollPane" alignment="0" pref="570" max="32767" attributes="0"/>
+          <Component id="jScrollPane" alignment="0" max="32767" attributes="0"/>
+          <Component id="panCustomer" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -61,35 +63,56 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblIDCust" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblFullname" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblGender" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblBirthday" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblNatveplace" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPhone" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="btnInsert" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblIDCust" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblID" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFullname" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBirthday" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNatveplace" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPhone" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblBank" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCard" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblIDCard" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAccount" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblStartday" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEndday" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="radioVisa" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="radioLocal" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="cbNativeplace" alignment="0" pref="429" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="radioMale" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="radioFemale" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtPhone" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtID" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtFullname" alignment="0" max="32767" attributes="0"/>
+                              <Component id="dateBirthday" max="32767" attributes="0"/>
+                              <Component id="cbBank" max="32767" attributes="0"/>
+                              <Component id="txtIDCust" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtStartday" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEndday" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtIDCard" alignment="1" max="32767" attributes="0"/>
+                              <Component id="txtAccount" alignment="1" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="comboNativeplace" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="radioMale" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="radioFemale" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtPhone" alignment="1" max="32767" attributes="0"/>
-                      <Component id="txtID" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtFullname" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="txtIDCust" min="-2" pref="300" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnInsert" min="-2" pref="105" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnDelete" min="-2" pref="105" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="btnCancel" min="-2" pref="105" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="dateBirthday" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -127,7 +150,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblNatveplace" min="-2" max="-2" attributes="0"/>
-                      <Component id="comboNativeplace" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbNativeplace" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -136,10 +159,42 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblBank" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbBank" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="radioVisa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="radioLocal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCard" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblIDCard" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtIDCard" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtAccount" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAccount" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtStartday" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblStartday" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtEndday" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEndday" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnInsert" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="187" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -155,9 +210,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtIDCust">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f0" green="f0" red="f0" type="rgb"/>
-            </Property>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
@@ -208,6 +261,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="f0" red="f0" type="rgb"/>
             </Property>
+            <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new LimitText(9)" type="code"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
@@ -245,7 +301,7 @@
             <Property name="text" type="java.lang.String" value="N&#x1eef;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboNativeplace">
+        <Component class="javax.swing.JComboBox" name="cbNativeplace">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="f0" red="f0" type="rgb"/>
@@ -317,7 +373,7 @@
                 <StringItem index="59" value="&#x110;&#xe0; N&#x1eb5;ng"/>
                 <StringItem index="60" value="H&#x1ea3;i Ph&#xf2;ng"/>
                 <StringItem index="61" value="H&#xe0; N&#x1ed9;i"/>
-                <StringItem index="62" value="TP HCM"/>
+                <StringItem index="62" value="TP.HCM"/>
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="-1"/>
@@ -339,6 +395,143 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="f0" red="f0" type="rgb"/>
             </Property>
+            <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new LimitText(10)" type="code"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblBank">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ng&#xe2;n h&#xe0;ng"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbBank">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="Ch&#x1ecd;n"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBank"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCard">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i th&#x1ebb;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="radioVisa">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupGender"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Visa"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="checkCard"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="radioLocal">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="groupGender"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="N&#x1ed9;i &#x111;&#x1ecb;a"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="checkCard"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblIDCard">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S&#x1ed1; th&#x1ebb;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtIDCard">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAccount">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S&#x1ed1; t&#xe0;i kho&#x1ea3;n"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAccount">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblStartday">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ng&#xe0;y ph&#xe1;t h&#xe0;nh"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtStartday">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblEndday">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ng&#xe0;y k&#x1ebf;t th&#xfa;c"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEndday">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
@@ -349,11 +542,27 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertCustomer"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnUpdate">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDelete">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCancel">
           <Properties>
@@ -361,14 +570,6 @@
               <Font name="Bahnschrift" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="H&#x1ee7;y"/>
-          </Properties>
-        </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
-          <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="1"/>
-            </Property>
           </Properties>
         </Component>
       </SubComponents>

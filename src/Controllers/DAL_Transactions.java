@@ -12,7 +12,7 @@ public class DAL_Transactions {
 
     public int Deposit(long amount, String usr) {
         int result = 0;
-        String query = "update USERS set BALANCE = ? where ID = ?";
+        String query = "update USERS set BALANCE = ? where ACCOUNT = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -33,7 +33,7 @@ public class DAL_Transactions {
 
     public int Withdraw(long amount, String usr) {
         int result = 0;
-        String query = "update USERS set BALANCE = ? where ID = ?";
+        String query = "update USERS set BALANCE = ? where ACCOUNT = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -54,8 +54,8 @@ public class DAL_Transactions {
 
     public int Transfer(long amount, String send_usr, String receive_usr) {
         int result = 0;
-        String query_send = "update USERS set BALANCE = BALANCE - ? where ID = ?";
-        String query_receive = "update USERS set BALANCE = BALANCE + ? where ID = ?";
+        String query_send = "update USERS set BALANCE = BALANCE - ? where ACCOUNT = ?";
+        String query_receive = "update USERS set BALANCE = BALANCE + ? where ACCOUNT = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();

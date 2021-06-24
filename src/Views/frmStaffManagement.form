@@ -8,7 +8,7 @@
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-      <Font name="Times New Roman" size="12" style="0"/>
+      <Font name="Bahnschrift" size="16" style="0"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -42,7 +42,7 @@
           <Group type="102" attributes="0">
               <Component id="panStaff" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane" pref="237" max="32767" attributes="0"/>
+              <Component id="jScrollPane" pref="229" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,12 +96,12 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace pref="80" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtFullname" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="cbNativeplace" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="dateBirthday" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="txtTelephone" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="cbBank" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="dateBirthday" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtFullname" alignment="1" pref="300" max="32767" attributes="0"/>
+                                              <Component id="cbNativeplace" alignment="1" pref="300" max="32767" attributes="0"/>
+                                              <Component id="txtTelephone" alignment="1" pref="300" max="32767" attributes="0"/>
+                                              <Component id="cbBank" alignment="1" pref="300" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -154,9 +154,9 @@
                       <Component id="lblNativeplace" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblBirthday" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="dateBirthday" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="lblBirthday" min="-2" max="-2" attributes="0"/>
+                      <Component id="dateBirthday" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -394,14 +394,6 @@
             <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh:"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
-          <Properties>
-            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy&#xa;" noResource="true"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Bahnschrift" size="16" style="1"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblBank">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -471,6 +463,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteStaff"/>
           </Events>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dateBirthday">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy" noResource="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Bahnschrift" size="16" style="1"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

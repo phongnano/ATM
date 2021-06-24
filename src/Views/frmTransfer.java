@@ -399,16 +399,16 @@ public class frmTransfer extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnTransfer
 
     private void btnCheck(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheck
-        dto.setId(txtID.getText());
-        if (!dto.getId().isEmpty()) {
+        dto.setAccount(txtID.getText());
+        if (!dto.getAccount().isEmpty()) {
             if (txtID.getText().length() == 9) {
                 if (bll.CheckID(dto)) {
-                    if (dto.getId().equals(account)) {
+                    if (dto.getAccount().equals(account)) {
                     } else {
                         panTransfer.setVisible(true);
                         radioAccount.setEnabled(false);
                         txtID.setEditable(false);
-                        balance_receive = dal.getBalance(dto.getId());
+                        balance_receive = dal.getBalance(dto.getAccount());
                         radioCard.setText(String.valueOf(vndFormat.format(balance_receive)));
                     }
                 } else {

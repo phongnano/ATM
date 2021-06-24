@@ -16,6 +16,7 @@ public class DTO_Customers {
     private long amount;
     private long balance;
     private int role;
+    private String bank;
 
     public String getIdcust() {
         return idcust;
@@ -117,6 +118,14 @@ public class DTO_Customers {
         balance += dep;
     }
 
+    public String getBank() {
+        return bank;
+    }
+
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
+
     public void withdraw(long wit) {
         balance -= wit;
     }
@@ -128,5 +137,5 @@ public class DTO_Customers {
     public void withdraw_send(long wit) {
         balance -= wit;
     }
-    
+
 }

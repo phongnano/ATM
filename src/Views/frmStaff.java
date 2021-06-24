@@ -57,11 +57,11 @@ public class frmStaff extends javax.swing.JFrame {
         panelStaff.setLayout(panelStaffLayout);
         panelStaffLayout.setHorizontalGroup(
             panelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGap(0, 1600, Short.MAX_VALUE)
         );
         panelStaffLayout.setVerticalGroup(
             panelStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
 
         menuStaff.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N

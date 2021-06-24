@@ -1,19 +1,23 @@
 package Views;
 
+import Controllers.BLL_Banks;
 import Controllers.BLL_Staffs;
-import Controllers.DAL_Banks;
 import Limits.LimitText;
 import Models.DTO_Staffs;
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmStaffManagement extends javax.swing.JInternalFrame {
 
     DTO_Staffs dto_staff = new DTO_Staffs();
     BLL_Staffs bll_staff = new BLL_Staffs();
+    BLL_Banks bll_bank = new BLL_Banks();
     ArrayList<DTO_Staffs> arr = new ArrayList<>();
     frmAdmin ad;
     Random rd = new Random();
@@ -27,8 +31,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     }
 
     private void loadBank() {
-        DAL_Banks dal = new DAL_Banks();
-        HashMap<String, String> map = dal.getBank();
+        HashMap<String, String> map = bll_bank.getBank();
         map.keySet().forEach((str) -> {
             cbBank.addItem(str);
         });
@@ -62,7 +65,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             String nativeplace = dto_staff.getNativeplace();
             Date birthday = dto_staff.getBirthday();
             String telephone = dto_staff.getTelephone();
-            String bank = dto_staff.getNamebank();
+            String bank = dto_staff.getBank();
             Object[] row = {idstaff, id, name, getGender, nativeplace, birthday, telephone, bank};
             model.addRow(row);
         }
@@ -90,18 +93,18 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         txtTelephone = new javax.swing.JTextField();
         lblTelephone = new javax.swing.JLabel();
         lblBirthday = new javax.swing.JLabel();
-        dateBirthday = new com.toedter.calendar.JDateChooser();
         lblBank = new javax.swing.JLabel();
         cbBank = new javax.swing.JComboBox<>();
         btnInsert = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        dateBirthday = new com.toedter.calendar.JDateChooser();
         jScrollPane = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
 
         setClosable(true);
-        setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
         panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24))); // NOI18N
 
@@ -164,9 +167,6 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         lblBirthday.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         lblBirthday.setText("Ngày sinh:");
 
-        dateBirthday.setDateFormatString("dd/MM/yyyy\n"); // NOI18N
-        dateBirthday.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
-
         lblBank.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
         lblBank.setText("Ngân hàng:");
 
@@ -206,6 +206,9 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             }
         });
 
+        dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
+        dateBirthday.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+
         javax.swing.GroupLayout panStaffLayout = new javax.swing.GroupLayout(panStaff);
         panStaff.setLayout(panStaffLayout);
         panStaffLayout.setHorizontalGroup(
@@ -239,12 +242,12 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                                         .addComponent(radioFemale))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panStaffLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                                        .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbBank, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                            .addComponent(cbNativeplace, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)
+                                            .addComponent(txtTelephone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                            .addComponent(cbBank, javax.swing.GroupLayout.Alignment.TRAILING, 0, 300, Short.MAX_VALUE)))))
                             .addGroup(panStaffLayout.createSequentialGroup()
                                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -280,9 +283,9 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     .addComponent(cbNativeplace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNativeplace))
                 .addGap(18, 18, 18)
-                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBirthday, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblBirthday)
+                    .addComponent(dateBirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTelephone)
@@ -338,7 +341,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
         );
 
         pack();
@@ -376,7 +379,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                     cbNativeplace.setSelectedIndex(i);
                 }
             }
-            dateBirthday.setDate(Date.valueOf(tblStaff.getValueAt(row, 5).toString()));
+            dateBirthday.setDate(java.sql.Date.valueOf(tblStaff.getValueAt(row, 5).toString()));
             txtTelephone.setText((String) (tblStaff.getValueAt(row, 6)));
             String bank = tblStaff.getValueAt(row, 7).toString();
             for (int i = 0; i < cbBank.getItemCount(); i++) {
@@ -389,19 +392,49 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_chooseStaffs
 
     private void insertStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertStaff
+        try {
+            HashMap<String, String> map = bll_bank.getBank();
+            dto_staff.setIdstaff(txtIDStaff.getText());
+            dto_staff.setId(txtID.getText());
+            dto_staff.setFullname(txtFullname.getText());
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            String strBirthday = format.format(dateBirthday.getDate());
+            Date birthday = format.parse(strBirthday);
+            dto_staff.setBirthday(new java.sql.Date(birthday.getTime()));
+            if (radioMale.isSelected()) {
+                dto_staff.setGender(0);
+            }
+            if (radioFemale.isSelected()) {
+                dto_staff.setGender(1);
+            }
+            dto_staff.setNativeplace(cbNativeplace.getSelectedItem().toString());
+            dto_staff.setTelephone(txtTelephone.getText());
+            dto_staff.setPassword(format.format(birthday).replaceAll("/", ""));
+            dto_staff.setRole(1);
+            dto_staff.setBank(map.get(cbBank.getSelectedItem().toString()));
+        } catch (ParseException ex) {
+            System.err.println(ex);
+        }
 
+        int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank());
+        if (result != 0) {
+            JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            loadStaffs();
+        } else {
+            JOptionPane.showMessageDialog(null, "Lỗi", "Thông báo", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_insertStaff
 
     private void updateStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStaff
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_updateStaff
 
     private void cancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cancel
 
     private void deleteStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStaff
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_deleteStaff
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.DTO_Customers;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ public class DAL_Cusomters {
 
     public ArrayList<DTO_Customers> CheckBalance(String usr) {
         ArrayList<DTO_Customers> result = new ArrayList<>();
-        String query = "select ID, FULLNAME, BALANCE from USERS where IDS = ? and ROLE = 2";
+        String query = "select ACCOUNT, FULLNAME, BALANCE from USERS where IDS = ? and ROLE = 2";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -26,7 +27,7 @@ public class DAL_Cusomters {
             rs = ps.executeQuery();
             while (rs.next()) {
                 DTO_Customers dto = new DTO_Customers();
-                dto.setAccount(rs.getString("ID"));
+                dto.setAccount(rs.getString("ACCOUNT"));
                 dto.setFullname(rs.getString("FULLNAME"));
                 dto.setBalance(rs.getLong("BALANCE"));
                 result.add(dto);
@@ -43,13 +44,13 @@ public class DAL_Cusomters {
         return result;
     }
 
-    public boolean checkID(String usr) {
-        String query = "select ID from USERS where ID = ? and ROLE = 2";
+    public boolean checkID(String acc) {
+        String query = "select ACCOUNT from USERS where ACCOUNT = ? and ROLE = 2";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
             ps = con.prepareStatement(query);
-            ps.setString(1, usr);
+            ps.setString(1, acc);
             rs = ps.executeQuery();
             return rs.next();
         } catch (SQLException e) {
@@ -58,7 +59,7 @@ public class DAL_Cusomters {
     }
 
     public long getBalance(String usr) {
-        String query = "select BALANCE from USERS where ID = ? and ROLE =2";
+        String query = "select BALANCE from USERS where ACCOUNT = ? and ROLE =2";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -73,22 +74,37 @@ public class DAL_Cusomters {
         return amount;
     }
 
-    public int addCustomers(DTO_Customers dto) {
+    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank) {
         int result = 0;
-        String query = "insert into USERS values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        String query_card = "insert into CARDS values (?, ?, ?, ?, ?, ?, ?)";
+        String query_customer = "insert into USERS (IDS, ID, FULLNAME, BIRTHDAY, GENDER, NATIVEPLACE, TELEPHONE, PASSWORD, ACCOUNT, BALANCE, ROLE, IDBANK) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
-            ps = con.prepareStatement(query);
-            ps.setString(1, dto.getId());
-            ps.setString(2, dto.getIdcust());
-            ps.setString(3, dto.getFullname());
-            ps.setDate(4, dto.getBirthday());
-            ps.setInt(5, dto.getGender());
-            ps.setString(6, dto.getNativeplace());
-            ps.setString(7, dto.getTelephone());
-            ps.setString(8, dto.getPassword());
-            ps.setInt(9, dto.getRole());
+            ps = con.prepareStatement(query_card);
+            ps.setString(1, idcard);
+            ps.setString(2, idaccount);
+            ps.setDate(3, startday);
+            ps.setDate(4, endday);
+            ps.setString(5, idbank);
+            ps.setString(6, typecard);
+            ps.setString(7, pin);
+            result = ps.executeUpdate();
+
+            ps = con.prepareStatement(query_customer);
+            ps.setString(1, idcust);
+            ps.setString(2, id);
+            ps.setString(3, fullname);
+            ps.setDate(4, birthday);
+            ps.setInt(5, gender);
+            ps.setString(6, nativeplace);
+            ps.setString(7, telephone);
+            ps.setString(8, password);
+            ps.setString(9, account);
+            ps.setLong(10, balance);
+            ps.setInt(11, role);
+            ps.setString(12, bank);
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {
@@ -96,6 +112,7 @@ public class DAL_Cusomters {
                 con.close();
                 ps.close();
             } catch (SQLException e) {
+                System.err.println(e);
             }
         }
         return result;
