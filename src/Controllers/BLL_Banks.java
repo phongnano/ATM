@@ -8,8 +8,8 @@ public class BLL_Banks {
 
     DAL_Banks dal = new DAL_Banks();
 
-    public HashMap<String, String> getBank() {
-        return dal.getBank();
+    public HashMap<String, String> getBank(String bank) {
+        return dal.getBank(bank);
     }
 
     public ArrayList<DTO_Banks> loadBanks() {

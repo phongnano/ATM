@@ -74,11 +74,11 @@ public class DAL_Cusomters {
         return amount;
     }
 
-    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank) {
+    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank, String manage) {
         int result = 0;
 
         String query_card = "insert into CARDS values (?, ?, ?, ?, ?, ?, ?)";
-        String query_customer = "insert into USERS (IDS, ID, FULLNAME, BIRTHDAY, GENDER, NATIVEPLACE, TELEPHONE, PASSWORD, ACCOUNT, BALANCE, ROLE, IDBANK) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query_customer = "insert into USERS (IDS, ID, FULLNAME, BIRTHDAY, GENDER, NATIVEPLACE, TELEPHONE, PASSWORD, ACCOUNT, BALANCE, ROLE, IDBANK, MANAGE) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -105,6 +105,7 @@ public class DAL_Cusomters {
             ps.setLong(10, balance);
             ps.setInt(11, role);
             ps.setString(12, bank);
+            ps.setString(13, manage);
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {

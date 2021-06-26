@@ -9,20 +9,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DAL_Banks {
-
+    
     private DatabaseAccess db = null;
     private Connection con = null;
     private ResultSet rs = null;
     private PreparedStatement ps = null;
     private DTO_Banks dto = null;
-
-    public HashMap<String, String> getBank() {
+    
+    public HashMap<String, String> getBank(String bank) {
         HashMap<String, String> map = new HashMap<>();
-        String query = "select IDBANK, NAMEBANK from BANKS";
+        String query = "select bnk.IDBANK, bnk.NAMEBANK from BANKS bnk,USERS usr where bnk.IDBANK = usr.IDBANK and usr.IDBANK = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
             ps = con.prepareStatement(query);
+            ps.setString(1, bank);
             rs = ps.executeQuery();
             while (rs.next()) {
                 dto = new DTO_Banks(rs.getString("IDBANK"), rs.getString("NAMEBANK"));
@@ -32,7 +33,7 @@ public class DAL_Banks {
         }
         return map;
     }
-
+    
     public ArrayList<DTO_Banks> loadBanks() {
         ArrayList<DTO_Banks> result = new ArrayList<>();
         String query = "select IDBANK, NAMEBANK from BANKS";
@@ -58,11 +59,11 @@ public class DAL_Banks {
         }
         return result;
     }
-
+    
     public int addBanks(DTO_Banks dto) {
         int result = 0;
         String query = "insert into BANKS values (?, ?)";
-
+        
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -80,11 +81,11 @@ public class DAL_Banks {
         }
         return result;
     }
-
+    
     public int editBanks(DTO_Banks dto) {
         int result = 0;
         String query = "update BANKS set NAMEBANK = ? where IDBANK = ?";
-
+        
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -102,11 +103,11 @@ public class DAL_Banks {
         }
         return result;
     }
-
+    
     public int deleteBanks(DTO_Banks dto) {
         int result = 0;
         String query = "delete from BANKS where IDBANK = ?";
-
+        
         try {
             db = new DatabaseAccess();
             con = db.getConnection();

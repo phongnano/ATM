@@ -28,6 +28,7 @@ create table USERS (
     balance     bigint                  ,
     role        int                     ,
     idbank      char(3)                 ,
+    manage      char(7)                 ,
     foreign key (account) references CARDS (idaccount) ,
     foreign key (idbank) references BANKS (idbank)
 );
@@ -41,11 +42,21 @@ values ('TCB', 'Techcombank');
 insert into BANKS
 values ('ARB', 'Agribank');
 
-SELECT * FROM BANKS;
-SELECT * FROM USERS;
-SELECT * FROM CARDS;
+SELECT bnk.IDBANK, bnk.NAMEBANK
+FROM BANKS bnk,USERS usr
+WHERE bnk.IDBANK = usr.IDBANK;
 
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00000', '24031998', 0, 'SCB');
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00001', '24031998', 0, 'BID');
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00002', '24031998', 0, 'TCB');
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00003', '24031998', 0, 'ARB');
 
+SELECT IDS, IDBANK
+FROM USERS
+WHERE MANAGE = 'NV91638'
 
-
-
+select * from USERS

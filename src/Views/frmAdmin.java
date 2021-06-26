@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 public class frmAdmin extends javax.swing.JFrame {
 
-    public static String usr, name, role;
+    public static String usr, name, role, bank, manage;
     frmBanks bnk;
     frmStaffManagement stf;
 
@@ -104,6 +104,8 @@ public class frmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_BankManagement
 
     private void StaffManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StaffManagement
+        frmStaffManagement.bank = bank;
+        frmStaffManagement.manage = manage;
         if (stf == null || stf.isClosed()) {
             stf = new frmStaffManagement(this);
             stf.setLocation(this.getWidth() / 2 - stf.getWidth() / 2, (this.getHeight() - 20) / 2 - stf.getHeight() / 2 - 20);

@@ -17,6 +17,7 @@ public class DTO_Customers {
     private long balance;
     private int role;
     private String bank;
+    private String manage;
 
     public String getIdcust() {
         return idcust;
@@ -124,6 +125,14 @@ public class DTO_Customers {
 
     public void setBank(String bank) {
         this.bank = bank;
+    }
+
+    public String getManage() {
+        return manage;
+    }
+
+    public void setManage(String manage) {
+        this.manage = manage;
     }
 
     public void withdraw(long wit) {

@@ -154,16 +154,22 @@ public class frmLogin extends javax.swing.JFrame {
                     String fullname = dto.getFullname();
                     long balance = dto.getBalance();
                     int role = dto.getRole();
+                    String bank = dto.getBank();
+                    String manage = dto.getUsername();
                     if (role == 0) {
                         frmAdmin.usr = id;
                         frmAdmin.name = fullname;
                         frmAdmin.role = "Quản trị viên";
+                        frmAdmin.bank = bank;
+                        frmAdmin.manage = manage;
                         new frmAdmin().setVisible(true);
                     }
                     if (role == 1) {
                         frmStaff.usr = id;
                         frmStaff.name = fullname;
                         frmStaff.role = "Nhân viên";
+                        frmStaff.bank = bank;
+                        frmStaff.manage = manage;
                         new frmStaff().setVisible(true);
                     }
                     if (role == 2) {

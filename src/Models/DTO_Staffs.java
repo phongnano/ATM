@@ -14,6 +14,7 @@ public class DTO_Staffs {
     private String password;
     private int role;
     private String bank;
+    private String manage;
 
     public String getIdstaff() {
         return idstaff;
@@ -95,4 +96,11 @@ public class DTO_Staffs {
         this.bank = bank;
     }
 
+    public String getManage() {
+        return manage;
+    }
+
+    public void setManage(String manage) {
+        this.manage = manage;
+    }
 }

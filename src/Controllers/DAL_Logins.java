@@ -16,7 +16,7 @@ public class DAL_Logins {
     
     public ArrayList<DTO_Logins> checkLogin(String usr) {
         ArrayList<DTO_Logins> result = new ArrayList<>();
-        String query = "select IDS, FULLNAME, ACCOUNT, BALANCE, ROLE from USERS where IDS = ?";
+        String query = "select IDS, FULLNAME, ACCOUNT, BALANCE, ROLE, IDBANK, MANAGE from USERS where IDS = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -31,6 +31,8 @@ public class DAL_Logins {
                 dto.setAccountnumber(rs.getString("ACCOUNT"));
                 dto.setBalance(rs.getLong("BALANCE"));
                 dto.setRole(rs.getInt("ROLE"));
+                dto.setBank(rs.getString("IDBANK"));
+                dto.setManage(rs.getString("MANAGE"));
                 result.add(dto);
             }
         } catch (SQLException e) {

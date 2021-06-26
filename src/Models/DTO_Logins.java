@@ -10,6 +10,8 @@ public class DTO_Logins {
     private String repassword;
     private long balance;
     private int role;
+    private String bank;
+    private String manage;
 
     public String getAccountnumber() {
         return accountnumber;
@@ -73,6 +75,22 @@ public class DTO_Logins {
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public String getBank() {
+        return bank;
+    }
+
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
+
+    public String getManage() {
+        return manage;
+    }
+
+    public void setManage(String manage) {
+        this.manage = manage;
     }
 
 }

@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class frmStaff extends javax.swing.JFrame {
 
-    public static String usr, name, role;
+    public static String usr, name, role, bank, manage;
     private frmChangePassword pass;
     private frmBanks bnk;
     private frmCustomerManagement cst;
@@ -192,6 +192,8 @@ public class frmStaff extends javax.swing.JFrame {
     }//GEN-LAST:event_Logout
 
     private void CustomerManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerManagement
+        frmCustomerManagement.bank = bank;
+        frmCustomerManagement.manage = manage;
         if (cst == null || cst.isClosed()) {
             cst = new frmCustomerManagement(this);
             cst.setLocation(this.getWidth() / 2 - cst.getWidth() / 2, (this.getHeight() - 20) / 2 - cst.getHeight() / 2 - 20);

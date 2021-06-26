@@ -47,9 +47,9 @@ public class DAL_Staffs {
         return result;
     }
 
-    public int insertStaff(String idstaff, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, int role, String bank) {
+    public int insertStaff(String idstaff, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, int role, String bank, String manage) {
         int result = 0;
-        String query = "insert into USERS (IDS, ID, FULLNAME, BIRTHDAY, GENDER, NATIVEPLACE, TELEPHONE, PASSWORD, ROLE, IDBANK) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "insert into USERS (IDS, ID, FULLNAME, BIRTHDAY, GENDER, NATIVEPLACE, TELEPHONE, PASSWORD, ROLE, IDBANK, MANAGE) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -64,6 +64,7 @@ public class DAL_Staffs {
             ps.setString(8, password);
             ps.setInt(9, role);
             ps.setString(10, bank);
+            ps.setString(11, manage);
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {

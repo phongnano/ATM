@@ -21,6 +21,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     BLL_Banks bll_bank = new BLL_Banks();
     frmStaff stf;
     Random rd = new Random();
+    public static String bank, manage;
 
     public frmCustomerManagement(frmStaff staff) {
         initComponents();
@@ -34,7 +35,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
     }
 
     private void loadBank() {
-        HashMap<String, String> map = bll_bank.getBank();
+        HashMap<String, String> map = bll_bank.getBank(bank);
         map.keySet().forEach((str) -> {
             cbBank.addItem(str);
         });
@@ -438,7 +439,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
     private void insertCustomer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertCustomer
         try {
-            HashMap<String, String> map = bll_bank.getBank();
+            HashMap<String, String> map = bll_bank.getBank(bank);
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             dto_card.setIdcard(txtIDCard.getText());
             dto_card.setIdacco(txtAccount.getText());
@@ -477,10 +478,10 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
             dto_cust.setBalance(50000);
             dto_cust.setRole(2);
             dto_cust.setBank(map.get(cbBank.getSelectedItem().toString()));
-
+            dto_cust.setManage(manage);
         } catch (ParseException e) {
         }
-        int result_cust = bll_cust.insertCustomer(dto_card.getIdcard(), dto_card.getIdacco(), dto_card.getSttday(), dto_card.getEndday(), dto_card.getIdbank(), dto_card.getTypecard(), dto_card.getPin(), dto_cust.getIdcust(), dto_cust.getId(), dto_cust.getFullname(), dto_cust.getBirthday(), dto_cust.getGender(), dto_cust.getNativeplace(), dto_cust.getTelephone(), dto_cust.getPassword(), dto_cust.getAccount(), dto_cust.getBalance(), dto_cust.getRole(), dto_cust.getBank());
+        int result_cust = bll_cust.insertCustomer(dto_card.getIdcard(), dto_card.getIdacco(), dto_card.getSttday(), dto_card.getEndday(), dto_card.getIdbank(), dto_card.getTypecard(), dto_card.getPin(), dto_cust.getIdcust(), dto_cust.getId(), dto_cust.getFullname(), dto_cust.getBirthday(), dto_cust.getGender(), dto_cust.getNativeplace(), dto_cust.getTelephone(), dto_cust.getPassword(), dto_cust.getAccount(), dto_cust.getBalance(), dto_cust.getRole(), dto_cust.getBank(), dto_cust.getManage());
         if (result_cust != 0) {
             System.out.println("OK");
         } else {

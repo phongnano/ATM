@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 public class frmCustomer extends javax.swing.JFrame {
 
-    public static String usr, name, role, acc;
+    public static String usr, name, role, acc, bank;
     public static Long balance;
     private frmChangePassword pass;
     private frmCheckBalance chkb;

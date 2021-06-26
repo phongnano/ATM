@@ -21,6 +21,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     ArrayList<DTO_Staffs> arr = new ArrayList<>();
     frmAdmin ad;
     Random rd = new Random();
+    public static String bank, manage;
 
     public frmStaffManagement(frmAdmin admin) {
         initComponents();
@@ -31,7 +32,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     }
 
     private void loadBank() {
-        HashMap<String, String> map = bll_bank.getBank();
+        HashMap<String, String> map = bll_bank.getBank(bank);
         map.keySet().forEach((str) -> {
             cbBank.addItem(str);
         });
@@ -65,8 +66,8 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             String nativeplace = dto_staff.getNativeplace();
             Date birthday = dto_staff.getBirthday();
             String telephone = dto_staff.getTelephone();
-            String bank = dto_staff.getBank();
-            Object[] row = {idstaff, id, name, getGender, nativeplace, birthday, telephone, bank};
+            String idbank = dto_staff.getBank();
+            Object[] row = {idstaff, id, name, getGender, nativeplace, birthday, telephone, idbank};
             model.addRow(row);
         }
         tblStaff.setModel(model);
@@ -381,19 +382,18 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             }
             dateBirthday.setDate(java.sql.Date.valueOf(tblStaff.getValueAt(row, 5).toString()));
             txtTelephone.setText((String) (tblStaff.getValueAt(row, 6)));
-            String bank = tblStaff.getValueAt(row, 7).toString();
+            String idbank = tblStaff.getValueAt(row, 7).toString();
             for (int i = 0; i < cbBank.getItemCount(); i++) {
-                if (cbBank.getItemAt(i).equalsIgnoreCase(bank)) {
+                if (cbBank.getItemAt(i).equalsIgnoreCase(idbank)) {
                     cbBank.setSelectedIndex(i);
                 }
             }
-
         }
     }//GEN-LAST:event_chooseStaffs
 
     private void insertStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertStaff
         try {
-            HashMap<String, String> map = bll_bank.getBank();
+            HashMap<String, String> map = bll_bank.getBank(bank);
             dto_staff.setIdstaff(txtIDStaff.getText());
             dto_staff.setId(txtID.getText());
             dto_staff.setFullname(txtFullname.getText());
@@ -412,11 +412,12 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             dto_staff.setPassword(format.format(birthday).replaceAll("/", ""));
             dto_staff.setRole(1);
             dto_staff.setBank(map.get(cbBank.getSelectedItem().toString()));
+            dto_staff.setManage(manage);
         } catch (ParseException ex) {
             System.err.println(ex);
         }
 
-        int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank());
+        int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank(), dto_staff.getManage());
         if (result != 0) {
             JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             loadStaffs();

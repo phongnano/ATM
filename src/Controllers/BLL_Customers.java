@@ -16,7 +16,7 @@ public class BLL_Customers {
         return dal.checkID(dto.getAccount());
     }
 
-    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank) {
-        return dal.insertCustomer(idcard, idaccount, startday, endday, idbank, typecard, pin, idcust, id, fullname, birthday, gender, nativeplace, telephone, password, account, balance, role, bank);
+    public int insertCustomer(String idcard, String idaccount, Date startday, Date endday, String idbank, String typecard, String pin, String idcust, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, String account, long balance, int role, String bank, String manage) {
+        return dal.insertCustomer(idcard, idaccount, startday, endday, idbank, typecard, pin, idcust, id, fullname, birthday, gender, nativeplace, telephone, password, account, balance, role, bank, manage);
     }
 }

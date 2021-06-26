@@ -12,7 +12,7 @@ public class BLL_Staffs {
         return dal.loadStaffs();
     }
 
-    public int insertStaff(String idstaff, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, int role, String bank) {
-        return dal.insertStaff(idstaff, id, fullname, birthday, gender, nativeplace, telephone, password, role, bank);
+    public int insertStaff(String idstaff, String id, String fullname, Date birthday, int gender, String nativeplace, String telephone, String password, int role, String bank, String manage) {
+        return dal.insertStaff(idstaff, id, fullname, birthday, gender, nativeplace, telephone, password, role, bank, manage);
     }
 }
