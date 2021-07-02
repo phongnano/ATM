@@ -16,6 +16,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
     frmAdmin adm;
     frmStaff stf;
     int result;
+    public static String bank;
 
     public frmBanks(frmAdmin admin, frmStaff staff) {
         initComponents();
@@ -33,7 +34,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         tblBanks.setVisible(true);
         String[] header = {"Mã ngân hàng", "Tên ngân hàng"};
         DefaultTableModel model = new DefaultTableModel(header, 0);
-        arr = bll.loadBanks();
+        arr = bll.loadBanks(bank);
         for (int i = 0; i < arr.size(); i++) {
             dto = arr.get(i);
             String id = dto.getIDBank();

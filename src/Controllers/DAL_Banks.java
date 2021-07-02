@@ -34,13 +34,14 @@ public class DAL_Banks {
         return map;
     }
     
-    public ArrayList<DTO_Banks> loadBanks() {
+    public ArrayList<DTO_Banks> loadBanks(String bank) {
         ArrayList<DTO_Banks> result = new ArrayList<>();
-        String query = "select IDBANK, NAMEBANK from BANKS";
+        String query = "select IDBANK, NAMEBANK from BANKS where IDBANK = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
             ps = con.prepareStatement(query);
+            ps.setString(1, bank);
             rs = ps.executeQuery();
             while (rs.next()) {
                 dto = new DTO_Banks();

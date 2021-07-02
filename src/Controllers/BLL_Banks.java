@@ -12,8 +12,8 @@ public class BLL_Banks {
         return dal.getBank(bank);
     }
 
-    public ArrayList<DTO_Banks> loadBanks() {
-        return dal.loadBanks();
+    public ArrayList<DTO_Banks> loadBanks(String bank) {
+        return dal.loadBanks(bank);
     }
 
     public int addBanks(DTO_Banks dto) {

@@ -45,6 +45,17 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         txtIDStaff.setText(str);
     }
 
+    private void resetValue() {
+        txtIDStaff.setText("");
+        txtID.setText("");
+        txtFullname.setText("");
+        groupGender.clearSelection();
+        cbNativeplace.setSelectedIndex(0);
+        dateBirthday = null;
+        txtTelephone.setText("");
+        cbBank.setSelectedIndex(0);
+    }
+
     private void loadStaffs() {
         tblStaff.setVisible(true);
         String[] header = {"Mã nhân viên", "CMND", "Họ và tên", "Giới tính", "Nơi sinh", "Ngày sinh", "Điện thoại", "Ngân hàng"};
@@ -420,6 +431,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank(), dto_staff.getManage());
         if (result != 0) {
             JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            resetValue();
             loadStaffs();
         } else {
             JOptionPane.showMessageDialog(null, "Lỗi", "Thông báo", JOptionPane.ERROR_MESSAGE);

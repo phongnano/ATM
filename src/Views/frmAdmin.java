@@ -92,6 +92,7 @@ public class frmAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BankManagement(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankManagement
+        frmBanks.bank = bank;
         if (bnk == null || bnk.isClosed()) {
             bnk = new frmBanks(this, null);
             bnk.setLocation(this.getWidth() / 2 - bnk.getWidth() / 2, (this.getHeight() - 20) / 2 - bnk.getHeight() / 2 - 20);

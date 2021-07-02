@@ -42,10 +42,6 @@ values ('TCB', 'Techcombank');
 insert into BANKS
 values ('ARB', 'Agribank');
 
-SELECT bnk.IDBANK, bnk.NAMEBANK
-FROM BANKS bnk,USERS usr
-WHERE bnk.IDBANK = usr.IDBANK;
-
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
 values ('AD00000', '24031998', 0, 'SCB');
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
@@ -53,10 +49,5 @@ values ('AD00001', '24031998', 0, 'BID');
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
 values ('AD00002', '24031998', 0, 'TCB');
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00003', '24031998', 0, 'ARB');
-
-SELECT IDS, IDBANK
-FROM USERS
-WHERE MANAGE = 'NV91638'
 
 select * from USERS
