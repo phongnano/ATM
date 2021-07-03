@@ -4,6 +4,7 @@ import Controllers.BLL_Logins;
 import Controllers.DAL_Logins;
 import Models.DTO_Logins;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class frmLogin extends javax.swing.JFrame {
@@ -15,6 +16,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
         initComponents();
+        lblLogo.setIcon(new ImageIcon(getClass().getResource("/Images/picture/SACOMBANK.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -28,25 +30,27 @@ public class frmLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         txtPassword = new javax.swing.JPasswordField();
+        cbBank = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ĐĂNG NHẬP HỆ THỐNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24))); // NOI18N
+        panLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ĐĂNG NHẬP HỆ THỐNG", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 24))); // NOI18N
         panLogin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
+        lblLogo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/picture/sacombank.png"))); // NOI18N
+        lblLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtUsername.setBackground(new java.awt.Color(240, 240, 240));
-        txtUsername.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtUsername.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 convertUppercase(evt);
             }
         });
 
-        ckShowpassword.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        ckShowpassword.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         ckShowpassword.setText("Hiện mật khẩu");
         ckShowpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +58,7 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
 
-        btnLogin.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnLogin.setText("Đăng nhập");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,18 +66,22 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnExit.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnExit.setText("Thoát");
 
         txtPassword.setBackground(new java.awt.Color(240, 240, 240));
-        txtPassword.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        cbBank.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout panLoginLayout = new javax.swing.GroupLayout(panLogin);
         panLogin.setLayout(panLoginLayout);
         panLoginLayout.setHorizontalGroup(
             panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panLoginLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panLoginLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(cbBank, 0, 167, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,10 +89,10 @@ public class frmLogin extends javax.swing.JFrame {
                     .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(panLoginLayout.createSequentialGroup()
                             .addComponent(btnLogin)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txtUsername)
-                        .addComponent(txtPassword)))
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         panLoginLayout.setVerticalGroup(
@@ -92,27 +100,29 @@ public class frmLogin extends javax.swing.JFrame {
             .addGroup(panLoginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogo)
+                    .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(panLoginLayout.createSequentialGroup()
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ckShowpassword)
-                        .addGap(54, 54, 54)
-                        .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnLogin)
-                            .addComponent(btnExit))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panLoginLayout.createSequentialGroup()
+                                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(ckShowpassword)
+                                .addGap(54, 54, 54)
+                                .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnLogin)
+                                    .addComponent(btnExit))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(panLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(panLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,6 +218,7 @@ public class frmLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JComboBox<String> cbBank;
     private javax.swing.JCheckBox ckShowpassword;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JPanel panLogin;

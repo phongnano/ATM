@@ -1,6 +1,7 @@
 create table BANKS  (
     idbank      char(3)     primary key ,
-    namebank    varchar(50)
+    namebank    varchar(50)             ,
+    logo        blob                    
 );
 
 create table CARDS  (
@@ -34,13 +35,13 @@ create table USERS (
 );
 
 insert into BANKS
-values ('SCB', 'Sacombank');
+values ('SCB', 'Sacombank', null);
 insert into BANKS
-values ('BID', 'BIDV');
+values ('BID', 'BIDV', null);
 insert into BANKS
-values ('TCB', 'Techcombank');
+values ('TCB', 'Techcombank', null);
 insert into BANKS
-values ('ARB', 'Agribank');
+values ('ARB', 'Agribank', null);
 
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
 values ('AD00000', '24031998', 0, 'SCB');
@@ -49,5 +50,4 @@ values ('AD00001', '24031998', 0, 'BID');
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
 values ('AD00002', '24031998', 0, 'TCB');
 insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-
-select * from USERS
+values ('AD00003 ', '24031998', 0, 'ARB');
