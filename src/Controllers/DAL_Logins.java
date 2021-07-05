@@ -1,8 +1,13 @@
 package Controllers;
 
+import Models.DTO_Banks;
 import Models.DTO_Logins;
+import java.awt.Image;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class DAL_Logins {
     
@@ -13,6 +18,48 @@ public class DAL_Logins {
     private String name, pass, account;
     private int role;
     private long balance;
+    private DTO_Banks dto_bank = new DTO_Banks();
+    
+    public HashMap<String, String> loadBank() {
+        HashMap<String, String> map = new HashMap<>();
+        String query = "select IDBANK, NAMEBANK from BANKS";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                dto_bank = new DTO_Banks(result.getString("IDBANK"), result.getString("NAMEBANK"));
+                map.put(dto_bank.getNambank(), dto_bank.getIdbank());
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        return map;
+    }
+    
+    public void getLogobank(JLabel lblLogo, String bank) {
+        String query = "select LOGOBANK from BANKS where IDBANK = ?";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, bank);
+            ResultSet result = ps.executeQuery();
+            if (result.next()) {
+                byte logobank[] = result.getBytes("LOGOBANK");
+                ImageIcon icon = new ImageIcon(logobank);
+                Image img = icon.getImage();
+                Image newImg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon newIcon = new ImageIcon(newImg);
+                lblLogo.setIcon(newIcon);
+            } else {
+                System.err.println("NOT OK");
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+    }
     
     public ArrayList<DTO_Logins> checkLogin(String usr) {
         ArrayList<DTO_Logins> result = new ArrayList<>();
@@ -127,17 +174,19 @@ public class DAL_Logins {
         return role;
     }
     
-    public boolean Login(String usr, String pwd) {
-        String query = "select IDS, PASSWORD from USERS where IDS = ? and PASSWORD = ?";
+    public boolean Login(String usr, String pwd, String bnk) {
+        String query = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ? and IDBANK = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
             ps = con.prepareStatement(query);
             ps.setString(1, usr);
             ps.setString(2, pwd);
+            ps.setString(3, bnk);
             rs = ps.executeQuery();
             return rs.next();
         } catch (SQLException e) {
+            System.err.println(e);
         }
         return false;
     }

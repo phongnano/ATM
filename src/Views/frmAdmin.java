@@ -11,7 +11,7 @@ public class frmAdmin extends javax.swing.JFrame {
     public frmAdmin() {
         initComponents();
 
-        this.setTitle("Tài khoản: " + usr + "\tMật khẩu: " + name + "\tChức vụ: " + role);
+        this.setTitle("Tài khoản: " + usr + "\tHọ và tên: " + name + "\tChức vụ: " + role);
         mnHome.setIcon(new ImageIcon(getClass().getResource("/Images/icon/home.png")));
 
         mnManagement.setIcon(new ImageIcon(getClass().getResource("/Images/icon/catalog.png")));
@@ -42,19 +42,19 @@ public class frmAdmin extends javax.swing.JFrame {
         );
         panelAdminLayout.setVerticalGroup(
             panelAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
 
         menuAdmin.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
 
         mnHome.setText("Trang chủ");
-        mnHome.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        mnHome.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         menuAdmin.add(mnHome);
 
         mnManagement.setText("Danh mục quản lý");
-        mnManagement.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        mnManagement.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        itemBankManagement.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        itemBankManagement.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemBankManagement.setText("Quản lý ngân hàng");
         itemBankManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class frmAdmin extends javax.swing.JFrame {
         });
         mnManagement.add(itemBankManagement);
 
-        itemStaffManagement.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        itemStaffManagement.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         itemStaffManagement.setText("Quản lý nhân viên");
         itemStaffManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

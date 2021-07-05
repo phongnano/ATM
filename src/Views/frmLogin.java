@@ -4,7 +4,7 @@ import Controllers.BLL_Logins;
 import Controllers.DAL_Logins;
 import Models.DTO_Logins;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 public class frmLogin extends javax.swing.JFrame {
@@ -16,7 +16,16 @@ public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
         initComponents();
-        lblLogo.setIcon(new ImageIcon(getClass().getResource("/Images/picture/SACOMBANK.png")));
+        loadBank();
+        cbBank.setSelectedItem("Chọn ngân hàng");
+    }
+
+    private void loadBank() {
+        HashMap<String, String> map = bll.loadBank();
+        cbBank.removeAllItems();
+        map.keySet().forEach((str) -> {
+            cbBank.addItem(str);
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -40,6 +49,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         lblLogo.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setText("LOGO");
         lblLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtUsername.setBackground(new java.awt.Color(240, 240, 240));
@@ -68,20 +78,30 @@ public class frmLogin extends javax.swing.JFrame {
 
         btnExit.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnExit.setText("Thoát");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exit(evt);
+            }
+        });
 
         txtPassword.setBackground(new java.awt.Color(240, 240, 240));
         txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         cbBank.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cbBank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chooseBank(evt);
+            }
+        });
 
         javax.swing.GroupLayout panLoginLayout = new javax.swing.GroupLayout(panLogin);
         panLogin.setLayout(panLoginLayout);
         panLoginLayout.setHorizontalGroup(
             panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panLoginLayout.createSequentialGroup()
+            .addGroup(panLoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cbBank, 0, 167, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,12 +168,14 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_convertUppercase
 
     private void checkLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLogin
+        HashMap<String, String> map = bll.loadBank();
         dto.setUsername(txtUsername.getText());
         dto.setPasswowd(txtPassword.getText());
-
+        String bnk = map.get(cbBank.getSelectedItem().toString());
+        dto.setBank(bnk);
         if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
             frmChangePassword.usr = dto.getUsername();
-            if (bll.Logins(dto)) {
+            if (bll.Login(dto.getUsername(), dto.getPasswowd(), dto.getBank())) {
                 JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose();
                 arr = bll.checkLogin(dto.getUsername());
@@ -192,12 +214,27 @@ public class frmLogin extends javax.swing.JFrame {
                     }
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu hoặc ngân hàng không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không được bỏ trống", "Thông báo", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_checkLogin
+
+    private void exit(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit
+
+    }//GEN-LAST:event_exit
+
+    private void chooseBank(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseBank
+        HashMap<String, String> map = bll.loadBank();
+        if (cbBank.getSelectedIndex() == -1) {
+            lblLogo.setText("LOGO");
+        } else {
+            String bank = map.get(cbBank.getSelectedItem().toString());
+            bll.getLogobank(lblLogo, bank);
+            lblLogo.setText("");
+        }
+    }//GEN-LAST:event_chooseBank
 
     public static void main(String args[]) {
         try {

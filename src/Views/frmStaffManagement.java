@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmStaffManagement extends javax.swing.JInternalFrame {
-
+    
     DTO_Staffs dto_staff = new DTO_Staffs();
     BLL_Staffs bll_staff = new BLL_Staffs();
     BLL_Banks bll_bank = new BLL_Banks();
@@ -22,7 +22,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     frmAdmin ad;
     Random rd = new Random();
     public static String bank, manage;
-
+    
     public frmStaffManagement(frmAdmin admin) {
         initComponents();
         this.ad = admin;
@@ -30,32 +30,32 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         loadStaffs();
         initialStaffs();
     }
-
+    
     private void loadBank() {
         HashMap<String, String> map = bll_bank.getBank(bank);
         map.keySet().forEach((str) -> {
             cbBank.addItem(str);
         });
     }
-
+    
     private void initialStaffs() {
         String id = "NV";
         int rand = rd.nextInt(10000) + 90000;
         String str = id + rand;
         txtIDStaff.setText(str);
     }
-
+    
     private void resetValue() {
         txtIDStaff.setText("");
         txtID.setText("");
         txtFullname.setText("");
         groupGender.clearSelection();
-        cbNativeplace.setSelectedIndex(0);
-        dateBirthday = null;
+        cbNativeplace.setSelectedIndex(-1);
+        dateBirthday.setCalendar(null);
         txtTelephone.setText("");
         cbBank.setSelectedIndex(0);
     }
-
+    
     private void loadStaffs() {
         tblStaff.setVisible(true);
         String[] header = {"Mã nhân viên", "CMND", "Họ và tên", "Giới tính", "Nơi sinh", "Ngày sinh", "Điện thoại", "Ngân hàng"};
@@ -84,7 +84,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         tblStaff.setModel(model);
         tblStaff.setDefaultEditor(Object.class, null);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -118,75 +118,75 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         setClosable(true);
         setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
 
-        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 1, 24))); // NOI18N
+        panStaff.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NHÂN VIÊN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 24))); // NOI18N
 
-        lblIDStaff.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblIDStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblIDStaff.setText("Mã nhân viên:");
 
         txtIDStaff.setEditable(false);
-        txtIDStaff.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtIDStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         txtID.setBackground(new java.awt.Color(240, 240, 240));
         txtID.setDocument(new LimitText(9));
-        txtID.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtID.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkID(evt);
             }
         });
 
-        lblID.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblID.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblID.setText("CMND:");
 
-        lblFullname.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblFullname.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblFullname.setText("Họ và tên:");
 
         txtFullname.setBackground(new java.awt.Color(240, 240, 240));
-        txtFullname.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtFullname.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         groupGender.add(radioFemale);
-        radioFemale.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        radioFemale.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         radioFemale.setText("Nữ");
 
         groupGender.add(radioMale);
-        radioMale.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        radioMale.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         radioMale.setText("Nam");
 
-        lblGender.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblGender.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblGender.setText("Giới tính:");
 
-        lblNativeplace.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblNativeplace.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblNativeplace.setText("Nơi sinh:");
 
         cbNativeplace.setBackground(new java.awt.Color(240, 240, 240));
-        cbNativeplace.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        cbNativeplace.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cbNativeplace.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP.HCM" }));
         cbNativeplace.setSelectedIndex(-1);
         cbNativeplace.setAutoscrolls(true);
 
         txtTelephone.setBackground(new java.awt.Color(240, 240, 240));
         txtTelephone.setDocument(new LimitText(10));
-        txtTelephone.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        txtTelephone.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         txtTelephone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 checkTelephone(evt);
             }
         });
 
-        lblTelephone.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblTelephone.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblTelephone.setText("Điện thoại:");
 
-        lblBirthday.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblBirthday.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblBirthday.setText("Ngày sinh:");
 
-        lblBank.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        lblBank.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lblBank.setText("Ngân hàng:");
 
         cbBank.setBackground(new java.awt.Color(240, 240, 240));
-        cbBank.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        cbBank.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         cbBank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn ngân hàng" }));
 
-        btnInsert.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnInsert.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnInsert.setText("Thêm nhân viên");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +194,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancel.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnCancel.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnCancel.setText("Hủy");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +202,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             }
         });
 
-        btnUpdate.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnUpdate.setText("Cập nhật nhân viên");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,7 +210,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         btnDelete.setText("Xóa nhân viên");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,7 +219,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         });
 
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
-        dateBirthday.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        dateBirthday.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         javax.swing.GroupLayout panStaffLayout = new javax.swing.GroupLayout(panStaff);
         panStaff.setLayout(panStaffLayout);
@@ -317,7 +317,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        tblStaff.setFont(new java.awt.Font("Bahnschrift", 1, 16)); // NOI18N
+        tblStaff.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -346,14 +346,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(770, Short.MAX_VALUE))
+                .addContainerGap(792, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE))
         );
 
         pack();
@@ -427,7 +427,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         } catch (ParseException ex) {
             System.err.println(ex);
         }
-
+        
         int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank(), dto_staff.getManage());
         if (result != 0) {
             JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);

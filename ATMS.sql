@@ -1,7 +1,7 @@
 create table BANKS  (
     idbank      char(3)     primary key ,
     namebank    varchar(50)             ,
-    logo        blob                    
+    logobank    blob                    
 );
 
 create table CARDS  (
@@ -34,20 +34,15 @@ create table USERS (
     foreign key (idbank) references BANKS (idbank)
 );
 
-insert into BANKS
-values ('SCB', 'Sacombank', null);
-insert into BANKS
-values ('BID', 'BIDV', null);
-insert into BANKS
-values ('TCB', 'Techcombank', null);
-insert into BANKS
-values ('ARB', 'Agribank', null);
+select IDS, PASSWORD, IDBANK from USERS where IDS = 'AD00003' and PASSWORD = '123' and IDBANK = 'SCB'
 
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00000', '24031998', 0, 'SCB');
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00001', '24031998', 0, 'BID');
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00002', '24031998', 0, 'TCB');
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00003 ', '24031998', 0, 'ARB');
+insert into USERS (IDS, PASSWORD, IDBANK)
+values ('AD00000', '123', 'ARB');
+insert into USERS (IDS, PASSWORD, IDBANK)
+values ('AD00001', '123', 'BID');
+insert into USERS (IDS, PASSWORD, IDBANK)
+values ('AD00002', '123', 'SCB');
+insert into USERS (IDS, PASSWORD, IDBANK)
+values ('AD00003', '123', 'TCB');
+
+SELECT * FROM USERS
