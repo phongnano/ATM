@@ -3,7 +3,6 @@ create table BANKS  (
     namebank    varchar(50)             ,
     logobank    blob                    
 );
-
 create table CARDS  (
     idcard      char(9)                 ,
     idaccount   char(9)                 ,
@@ -13,15 +12,14 @@ create table CARDS  (
     typecard    varchar(10)             ,
     pin         char(6)                 ,
     primary key (idaccount)             ,
-    foreign key (idbank) references BANKS (idbank)
+    constraint fk_CARDS_idbank foreign key (idbank) references BANKS (idbank)
 );
-
 create table USERS (
     ids         char(7)     primary key ,
     id          char(9)                 ,
     fullname    varchar(50)             ,
     birthday    date                    ,
-    gender      int                     , --0: Nam, 1: Nữ
+    gender      int                     ,
     nativeplace varchar(100)            ,
     telephone   char(10)                ,
     password    varchar(50)             ,
@@ -30,12 +28,17 @@ create table USERS (
     role        int                     ,
     idbank      char(3)                 ,
     manage      char(7)                 ,
-    foreign key (account) references CARDS (idaccount) ,
-    foreign key (idbank) references BANKS (idbank)
+    constraint fk_USERS_account foreign key (account) references CARDS (idaccount) ,
+    constraint fk_USERS_idbank foreign key (idbank) references BANKS (idbank)
 );
-
-select IDS, PASSWORD, IDBANK from USERS where IDS = 'AD00003' and PASSWORD = '123' and IDBANK = 'SCB'
-
+insert into BANKS (IDBANK, NAMEBANK, LOGOBANK)
+values ('ARB', 'Agribank', null);
+insert into BANKS
+values ('BID', 'BIDV', null);
+insert into BANKS
+values ('SCB', 'Sacombank', null);
+insert into BANKS
+values ('TCB', 'Techcombank', null);
 insert into USERS (IDS, PASSWORD, IDBANK)
 values ('AD00000', '123', 'ARB');
 insert into USERS (IDS, PASSWORD, IDBANK)
@@ -44,5 +47,3 @@ insert into USERS (IDS, PASSWORD, IDBANK)
 values ('AD00002', '123', 'SCB');
 insert into USERS (IDS, PASSWORD, IDBANK)
 values ('AD00003', '123', 'TCB');
-
-SELECT * FROM USERS
