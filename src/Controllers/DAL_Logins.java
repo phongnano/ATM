@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class DAL_Logins {
-    
+
     private DatabaseAccess db = null;
     private Connection con = null;
     private PreparedStatement ps = null;
@@ -19,7 +19,7 @@ public class DAL_Logins {
     private int role;
     private long balance;
     private DTO_Banks dto_bank = new DTO_Banks();
-    
+
     public HashMap<String, String> loadBank() {
         HashMap<String, String> map = new HashMap<>();
         String query = "select IDBANK, NAMEBANK from BANKS";
@@ -37,7 +37,7 @@ public class DAL_Logins {
         }
         return map;
     }
-    
+
     public void getLogobank(JLabel lblLogo, String bank) {
         String query = "select LOGOBANK from BANKS where IDBANK = ?";
         try {
@@ -48,19 +48,26 @@ public class DAL_Logins {
             ResultSet result = ps.executeQuery();
             if (result.next()) {
                 byte logobank[] = result.getBytes("LOGOBANK");
-                ImageIcon icon = new ImageIcon(logobank);
-                Image img = icon.getImage();
-                Image newImg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH);
-                ImageIcon newIcon = new ImageIcon(newImg);
-                lblLogo.setIcon(newIcon);
+                if (logobank != null) {
+                    ImageIcon icon = new ImageIcon(logobank);
+                    Image img = icon.getImage();
+                    Image newImg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon newIcon = new ImageIcon(newImg);
+                    lblLogo.setIcon(newIcon);
+                    lblLogo.setText("");
+                }
+                else{
+                    lblLogo.setIcon(null);
+                    lblLogo.setText("LOGO");
+                }
             } else {
-                System.err.println("NOT OK");
+                System.err.println("Không tìm thấy ảnh");
             }
         } catch (SQLException e) {
             System.err.println(e);
         }
     }
-    
+
     public ArrayList<DTO_Logins> checkLogin(String usr) {
         ArrayList<DTO_Logins> result = new ArrayList<>();
         String query = "select IDS, FULLNAME, ACCOUNT, BALANCE, ROLE, IDBANK, MANAGE from USERS where IDS = ?";
@@ -93,7 +100,7 @@ public class DAL_Logins {
         }
         return result;
     }
-    
+
     public String getAccount(String usr) {
         String query = "select ID from USERS where IDS = ?";
         try {
@@ -109,7 +116,7 @@ public class DAL_Logins {
         }
         return account;
     }
-    
+
     public long getBalance(String usr) {
         String query = "select BALANCE from USERS where IDS = ?";
         try {
@@ -125,7 +132,7 @@ public class DAL_Logins {
         }
         return balance;
     }
-    
+
     public String getName(String usr) {
         String query = "select FULLNAME from USERS where IDS = ?";
         try {
@@ -141,7 +148,7 @@ public class DAL_Logins {
         }
         return name;
     }
-    
+
     public String getPass(String usr) {
         String query = "select PASSWORD from USERS where IDS = ?";
         try {
@@ -157,7 +164,7 @@ public class DAL_Logins {
         }
         return pass;
     }
-    
+
     public int getRole(String usr) {
         String query = "select ROLE from USERS where IDS = ?";
         try {
@@ -173,7 +180,7 @@ public class DAL_Logins {
         }
         return role;
     }
-    
+
     public boolean Login(String usr, String pwd, String bnk) {
         String query = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ? and IDBANK = ?";
         try {
@@ -190,7 +197,7 @@ public class DAL_Logins {
         }
         return false;
     }
-    
+
     public void ChangePassword(String usr, String oldpwd, String newpwd, String repwd) {
         String query = "update USERS set PASSWORD = ? where IDS = ?";
         try {
@@ -209,5 +216,5 @@ public class DAL_Logins {
             }
         }
     }
-    
+
 }

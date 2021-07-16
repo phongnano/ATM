@@ -1,12 +1,10 @@
 package Models;
 
-import java.io.InputStream;
-
 public class DTO_Banks {
 
     private String idbank;
     private String nambank;
-    private InputStream logobank;
+    private byte[] logobank;
 
     public String getIdbank() {
         return idbank;
@@ -24,17 +22,23 @@ public class DTO_Banks {
         this.nambank = nambank;
     }
 
-    public InputStream getLogobank() {
+    public byte[] getLogobank() {
         return logobank;
     }
 
-    public void setLogobank(InputStream logobank) {
+    public void setLogobank(byte[] logobank) {
         this.logobank = logobank;
     }
 
     public DTO_Banks(String idbank, String namebank) {
         this.idbank = idbank;
         this.nambank = namebank;
+    }
+
+    public DTO_Banks(String idbank, String namebank, byte[] logobank) {
+        this.idbank = idbank;
+        this.nambank = namebank;
+        this.logobank = logobank;
     }
 
     public DTO_Banks() {

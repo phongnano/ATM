@@ -3,6 +3,7 @@ package Controllers;
 import Models.DTO_Banks;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JLabel;
 
 public class BLL_Banks {
 
@@ -10,6 +11,10 @@ public class BLL_Banks {
 
     public HashMap<String, String> getBank(String bank) {
         return dal.getBank(bank);
+    }
+
+    public boolean getLogobank(JLabel lblLogo) {
+        return dal.getLogobank(lblLogo);
     }
 
     public ArrayList<DTO_Banks> loadBanks(String bank) {

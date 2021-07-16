@@ -47,3 +47,5 @@ insert into USERS (IDS, PASSWORD, IDBANK)
 values ('AD00002', '123', 'SCB');
 insert into USERS (IDS, PASSWORD, IDBANK)
 values ('AD00003', '123', 'TCB');
+
+select IDBANK, NAMEBANK, LOGOBANK from BANKS where IDBANK = 'TCB'

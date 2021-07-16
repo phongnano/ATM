@@ -232,7 +232,6 @@ public class frmLogin extends javax.swing.JFrame {
         } else {
             String bank = map.get(cbBank.getSelectedItem().toString());
             bll.getLogobank(lblLogo, bank);
-            lblLogo.setText("");
         }
     }//GEN-LAST:event_chooseBank
 

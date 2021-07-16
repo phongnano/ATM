@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmStaffManagement extends javax.swing.JInternalFrame {
-    
+
     DTO_Staffs dto_staff = new DTO_Staffs();
     BLL_Staffs bll_staff = new BLL_Staffs();
     BLL_Banks bll_bank = new BLL_Banks();
@@ -22,29 +22,28 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
     frmAdmin ad;
     Random rd = new Random();
     public static String bank, manage;
-    
+
     public frmStaffManagement(frmAdmin admin) {
         initComponents();
         this.ad = admin;
         loadBank();
         loadStaffs();
-        initialStaffs();
     }
-    
+
     private void loadBank() {
         HashMap<String, String> map = bll_bank.getBank(bank);
         map.keySet().forEach((str) -> {
             cbBank.addItem(str);
         });
     }
-    
+
     private void initialStaffs() {
         String id = "NV";
         int rand = rd.nextInt(10000) + 90000;
         String str = id + rand;
         txtIDStaff.setText(str);
     }
-    
+
     private void resetValue() {
         txtIDStaff.setText("");
         txtID.setText("");
@@ -55,7 +54,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         txtTelephone.setText("");
         cbBank.setSelectedIndex(0);
     }
-    
+
     private void loadStaffs() {
         tblStaff.setVisible(true);
         String[] header = {"Mã nhân viên", "CMND", "Họ và tên", "Giới tính", "Nơi sinh", "Ngày sinh", "Điện thoại", "Ngân hàng"};
@@ -84,7 +83,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         tblStaff.setModel(model);
         tblStaff.setDefaultEditor(Object.class, null);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -112,6 +111,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         dateBirthday = new com.toedter.calendar.JDateChooser();
+        btnInit = new javax.swing.JButton();
         jScrollPane = new javax.swing.JScrollPane();
         tblStaff = new javax.swing.JTable();
 
@@ -221,6 +221,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         dateBirthday.setDateFormatString("dd/MM/yyyy"); // NOI18N
         dateBirthday.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        btnInit.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        btnInit.setText("Tạo mã nhân viên");
+        btnInit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                initStaff(evt);
+            }
+        });
+
         javax.swing.GroupLayout panStaffLayout = new javax.swing.GroupLayout(panStaff);
         panStaff.setLayout(panStaffLayout);
         panStaffLayout.setHorizontalGroup(
@@ -228,17 +236,21 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             .addGroup(panStaffLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(panStaffLayout.createSequentialGroup()
-                        .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblIDStaff)
-                            .addComponent(lblID))
-                        .addGap(60, 60, 60)
-                        .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(txtIDStaff)))
                     .addComponent(lblGender)
                     .addGroup(panStaffLayout.createSequentialGroup()
                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panStaffLayout.createSequentialGroup()
+                                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblIDStaff)
+                                    .addComponent(lblID))
+                                .addGap(60, 60, 60)
+                                .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtID)
+                                    .addGroup(panStaffLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(txtIDStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnInit))))
                             .addGroup(panStaffLayout.createSequentialGroup()
                                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblFullname)
@@ -253,7 +265,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(radioFemale))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panStaffLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(dateBirthday, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
@@ -276,7 +288,8 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIDStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIDStaff))
+                    .addComponent(lblIDStaff)
+                    .addComponent(btnInit))
                 .addGap(18, 18, 18)
                 .addGroup(panStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,7 +366,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panStaff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE))
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
         );
 
         pack();
@@ -427,7 +440,7 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
         } catch (ParseException ex) {
             System.err.println(ex);
         }
-        
+
         int result = bll_staff.insertStaff(dto_staff.getIdstaff(), dto_staff.getId(), dto_staff.getFullname(), dto_staff.getBirthday(), dto_staff.getGender(), dto_staff.getNativeplace(), dto_staff.getTelephone(), dto_staff.getPassword(), dto_staff.getRole(), dto_staff.getBank(), dto_staff.getManage());
         if (result != 0) {
             JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
@@ -450,9 +463,14 @@ public class frmStaffManagement extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_deleteStaff
 
+    private void initStaff(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initStaff
+        initialStaffs();
+    }//GEN-LAST:event_initStaff
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnInit;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cbBank;

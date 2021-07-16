@@ -1,12 +1,15 @@
 package Controllers;
 
 import Models.DTO_Banks;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class DAL_Banks {
 
@@ -34,9 +37,35 @@ public class DAL_Banks {
         return map;
     }
 
+    public boolean getLogobank(JLabel lblLogo) {
+        String query = "select LOGOBANK from BANKS where IDBANK = ?";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ResultSet result = ps.executeQuery();
+            if (result.next()) {
+                byte logobank[] = result.getBytes("LOGOBANK");
+                if (logobank == null) {
+                } else {
+                    ImageIcon icon = new ImageIcon(logobank);
+                    Image img = icon.getImage();
+                    Image newImg = img.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon newIcon = new ImageIcon(newImg);
+                    lblLogo.setIcon(newIcon);
+                }
+            } else {
+                System.err.println("Không tìm thấy ảnh");
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        return false;
+    }
+
     public ArrayList<DTO_Banks> loadBanks(String bank) {
         ArrayList<DTO_Banks> result = new ArrayList<>();
-        String query = "select IDBANK, NAMEBANK from BANKS where IDBANK = ?";
+        String query = "select IDBANK, NAMEBANK, LOGOBANK from BANKS where IDBANK = ?";
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
@@ -44,9 +73,7 @@ public class DAL_Banks {
             ps.setString(1, bank);
             rs = ps.executeQuery();
             while (rs.next()) {
-                dto = new DTO_Banks();
-                dto.setIdbank(rs.getString("IDBANK"));
-                dto.setNambank(rs.getString("NAMEBANK"));
+                dto = new DTO_Banks(rs.getString("IDBANK"), rs.getString("NAMEBANK"), rs.getBytes("LOGOBANK"));
                 result.add(dto);
             }
         } catch (SQLException e) {
@@ -71,7 +98,7 @@ public class DAL_Banks {
             ps = con.prepareStatement(query);
             ps.setString(1, dto.getIdbank());
             ps.setString(2, dto.getNambank());
-            ps.setBinaryStream(3, dto.getLogobank());
+            ps.setBytes(3, dto.getLogobank());
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {
@@ -86,14 +113,14 @@ public class DAL_Banks {
 
     public int editBanks(DTO_Banks dto) {
         int result = 0;
-        String query = "update BANKS set NAMEBANK = ? where IDBANK = ?";
+        String query = "update BANKS set LOGOBANK = ? where IDBANK = ?";
 
         try {
             db = new DatabaseAccess();
             con = db.getConnection();
             ps = con.prepareStatement(query);
-            ps.setString(1, dto.getIdbank());
-            ps.setString(2, dto.getNambank());
+            ps.setBytes(1, dto.getLogobank());
+            ps.setString(2, dto.getIdbank());
             result = ps.executeUpdate();
         } catch (SQLException e) {
         } finally {
