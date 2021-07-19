@@ -33,13 +33,13 @@ create table USERS (
 );
 insert into USERS (IDS, PASSWORD, ROLE)
 values ('AD00000', '123', 0);
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00001', '123', 0, 'ARB');
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00002', '123', 0, 'BID');
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00003', '123', 0, 'SCB';
-insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
-values ('AD00004', '123', 0, 'TCB');
+-- insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+-- values ('AD00001', '123', 0, 'ARB');
+-- insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+-- values ('AD00002', '123', 0, 'BID');
+-- insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+-- values ('AD00003', '123', 0, 'SCB';
+-- insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+-- values ('AD00004', '123', 0, 'TCB');
 
 select * from BANKS

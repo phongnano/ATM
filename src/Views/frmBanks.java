@@ -316,6 +316,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Têp hình ành", "jpg", "png");
         fileChooser.addChoosableFileFilter(filter);
         int results = fileChooser.showOpenDialog(null);
+        
         File file = fileChooser.getSelectedFile();
         if (results == JFileChooser.APPROVE_OPTION) {
             path = file.getAbsolutePath();
@@ -340,6 +341,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
             if (tblBanks.getValueAt(row, 2) != null) {
                 ImageIcon icon = (ImageIcon) tblBanks.getValueAt(row, 2);
                 Image img = icon.getImage().getScaledInstance(lblLogobank.getWidth(), lblLogobank.getHeight(), Image.SCALE_SMOOTH);
+                JOptionPane.showMessageDialog(null, img);
                 lblLogobank.setText("");
                 lblLogobank.setIcon(new ImageIcon(img));
             } else {
