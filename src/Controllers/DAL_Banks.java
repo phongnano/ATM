@@ -88,6 +88,30 @@ public class DAL_Banks {
         return result;
     }
 
+    public ArrayList<DTO_Banks> loadBanks() {
+        ArrayList<DTO_Banks> result = new ArrayList<>();
+        String query = "select IDBANK, NAMEBANK, LOGOBANK from BANKS";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                dto = new DTO_Banks(rs.getString("IDBANK"), rs.getString("NAMEBANK"), rs.getBytes("LOGOBANK"));
+                result.add(dto);
+            }
+        } catch (SQLException e) {
+        } finally {
+            try {
+                con.close();
+                ps.close();
+                rs.close();
+            } catch (SQLException e) {
+            }
+        }
+        return result;
+    }
+
     public int addBanks(DTO_Banks dto) {
         int result = 0;
         String query = "insert into BANKS values (?, ?, ?)";

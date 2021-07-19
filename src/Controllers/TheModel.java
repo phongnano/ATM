@@ -18,7 +18,7 @@ public class TheModel extends AbstractTableModel {
     }
 
     public Class getColumn(int col) {
-        if (col == 1) {
+        if (col == 2) {
             return Icon.class;
         } else {
             return getValueAt(0, col).getClass();

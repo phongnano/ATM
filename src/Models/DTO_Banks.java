@@ -29,7 +29,11 @@ public class DTO_Banks {
     public void setLogobank(byte[] logobank) {
         this.logobank = logobank;
     }
-
+    
+    public DTO_Banks(){
+        
+    }
+    
     public DTO_Banks(String idbank, String namebank) {
         this.idbank = idbank;
         this.nambank = namebank;
@@ -40,9 +44,9 @@ public class DTO_Banks {
         this.nambank = namebank;
         this.logobank = logobank;
     }
-
-    public DTO_Banks() {
-
+    
+    @Override
+    public String toString(){
+        return nambank;
     }
-
 }

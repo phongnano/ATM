@@ -31,21 +31,15 @@ create table USERS (
     constraint fk_USERS_account foreign key (account) references CARDS (idaccount) ,
     constraint fk_USERS_idbank foreign key (idbank) references BANKS (idbank)
 );
-insert into BANKS (IDBANK, NAMEBANK, LOGOBANK)
-values ('ARB', 'Agribank', null);
-insert into BANKS
-values ('BID', 'BIDV', null);
-insert into BANKS
-values ('SCB', 'Sacombank', null);
-insert into BANKS
-values ('TCB', 'Techcombank', null);
-insert into USERS (IDS, PASSWORD, IDBANK)
-values ('AD00000', '123', 'ARB');
-insert into USERS (IDS, PASSWORD, IDBANK)
-values ('AD00001', '123', 'BID');
-insert into USERS (IDS, PASSWORD, IDBANK)
-values ('AD00002', '123', 'SCB');
-insert into USERS (IDS, PASSWORD, IDBANK)
-values ('AD00003', '123', 'TCB');
+insert into USERS (IDS, PASSWORD, ROLE)
+values ('AD00000', '123', 0);
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00001', '123', 0, 'ARB');
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00002', '123', 0, 'BID');
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00003', '123', 0, 'SCB';
+insert into USERS (IDS, PASSWORD, ROLE, IDBANK)
+values ('AD00004', '123', 0, 'TCB');
 
-select IDBANK, NAMEBANK, LOGOBANK from BANKS where IDBANK = 'TCB'
+select * from BANKS

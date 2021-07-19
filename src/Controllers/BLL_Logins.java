@@ -2,15 +2,15 @@ package Controllers;
 
 import Models.DTO_Logins;
 import java.util.ArrayList;
-import java.util.HashMap;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 public class BLL_Logins {
 
     DAL_Logins dal = new DAL_Logins();
 
-    public HashMap<String, String> loadBank() {
-        return dal.loadBank();
+    public void loadBank(JComboBox combobox) {
+        dal.loadBank(combobox);
     }
 
     public void getLogobank(JLabel lblLogo, String bank) {
@@ -19,6 +19,10 @@ public class BLL_Logins {
 
     public ArrayList<DTO_Logins> checkLogin(String usr) {
         return dal.checkLogin(usr);
+    }
+
+    public boolean Login(String usr, String pwd) {
+        return dal.Login(usr, pwd);
     }
 
     public boolean Login(String usr, String pwd, String bnk) {

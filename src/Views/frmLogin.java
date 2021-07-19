@@ -2,9 +2,9 @@ package Views;
 
 import Controllers.BLL_Logins;
 import Controllers.DAL_Logins;
+import Models.DTO_Banks;
 import Models.DTO_Logins;
 import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 public class frmLogin extends javax.swing.JFrame {
@@ -16,16 +16,12 @@ public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
         initComponents();
+
         loadBank();
-        cbBank.setSelectedItem("Chọn ngân hàng");
     }
 
     private void loadBank() {
-        HashMap<String, String> map = bll.loadBank();
-        cbBank.removeAllItems();
-        map.keySet().forEach((str) -> {
-            cbBank.addItem(str);
-        });
+        bll.loadBank(cbBank);
     }
 
     @SuppressWarnings("unchecked")
@@ -88,6 +84,7 @@ public class frmLogin extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         cbBank.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        cbBank.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn ngân hàng" }));
         cbBank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chooseBank(evt);
@@ -101,8 +98,8 @@ public class frmLogin extends javax.swing.JFrame {
             .addGroup(panLoginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ckShowpassword)
@@ -120,22 +117,21 @@ public class frmLogin extends javax.swing.JFrame {
             .addGroup(panLoginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panLoginLayout.createSequentialGroup()
                         .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(panLoginLayout.createSequentialGroup()
                                 .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ckShowpassword)
-                                .addGap(54, 54, 54)
-                                .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnLogin)
-                                    .addComponent(btnExit))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ckShowpassword)
+                        .addGap(90, 90, 90)
+                        .addGroup(panLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnLogin)
+                            .addComponent(btnExit))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -168,56 +164,86 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_convertUppercase
 
     private void checkLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLogin
-        HashMap<String, String> map = bll.loadBank();
-        dto.setUsername(txtUsername.getText());
-        dto.setPasswowd(txtPassword.getText());
-        String bnk = map.get(cbBank.getSelectedItem().toString());
-        dto.setBank(bnk);
-        if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
-            frmChangePassword.usr = dto.getUsername();
-            if (bll.Login(dto.getUsername(), dto.getPasswowd(), dto.getBank())) {
-                JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
-                arr = bll.checkLogin(dto.getUsername());
-                for (int i = 0; i < arr.size(); i++) {
-                    dto = arr.get(i);
-                    String accountnumber = dto.getAccountnumber();
-                    String id = dto.getUsername();
-                    String fullname = dto.getFullname();
-                    long balance = dto.getBalance();
-                    int role = dto.getRole();
-                    String bank = dto.getBank();
-                    String manage = dto.getUsername();
-                    if (role == 0) {
-                        frmAdmin.usr = id;
-                        frmAdmin.name = fullname;
-                        frmAdmin.role = "Quản trị viên";
-                        frmAdmin.bank = bank;
-                        frmAdmin.manage = manage;
-                        new frmAdmin().setVisible(true);
+
+        if (cbBank.getSelectedIndex() == 0) {
+            dto.setUsername(txtUsername.getText());
+            dto.setPasswowd(txtPassword.getText());
+            if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
+                frmChangePassword.usr = dto.getUsername();
+                if (bll.Login(dto.getUsername(), dto.getPasswowd())) {
+                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                    arr = bll.checkLogin(dto.getUsername());
+                    for (int i = 0; i < arr.size(); i++) {
+                        dto = arr.get(i);
+                        String id = dto.getUsername();
+                        String fullname = dto.getFullname();
+                        int role = dto.getRole();
+                        if (role == 0) {
+                            frmAdmin.usr = id;
+                            frmAdmin.name = fullname;
+                            frmAdmin.role = "Quản trị viên";
+                            new frmAdmin().setVisible(true);
+                        }
                     }
-                    if (role == 1) {
-                        frmStaff.usr = id;
-                        frmStaff.name = fullname;
-                        frmStaff.role = "Nhân viên";
-                        frmStaff.bank = bank;
-                        frmStaff.manage = manage;
-                        new frmStaff().setVisible(true);
-                    }
-                    if (role == 2) {
-                        frmCustomer.acc = accountnumber;
-                        frmCustomer.usr = id;
-                        frmCustomer.name = fullname;
-                        frmCustomer.balance = balance;
-                        frmCustomer.role = "Khách hàng";
-                        new frmCustomer().setVisible(true);
-                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu hoặc ngân hàng không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu hoặc ngân hàng không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không được bỏ trống", "Thông báo", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không được bỏ trống", "Thông báo", JOptionPane.ERROR_MESSAGE);
+            dto.setUsername(txtUsername.getText());
+            dto.setPasswowd(txtPassword.getText());
+            String idbank = ((DTO_Banks) cbBank.getSelectedItem()).getIdbank();
+            dto.setBank(idbank);
+
+            if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
+                frmChangePassword.usr = dto.getUsername();
+                if (bll.Login(dto.getUsername(), dto.getPasswowd(), dto.getBank())) {
+                    JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    this.dispose();
+                    arr = bll.checkLogin(dto.getUsername());
+                    for (int i = 0; i < arr.size(); i++) {
+                        dto = arr.get(i);
+                        String accountnumber = dto.getAccountnumber();
+                        String id = dto.getUsername();
+                        String fullname = dto.getFullname();
+                        long balance = dto.getBalance();
+                        int role = dto.getRole();
+                        String bank = dto.getBank();
+                        String manage = dto.getUsername();
+                        if (role == 0) {
+                            frmAdmin.usr = id;
+                            frmAdmin.name = fullname;
+                            frmAdmin.role = "Quản trị viên";
+                            frmAdmin.bank = bank;
+                            frmAdmin.manage = manage;
+                            new frmAdmin().setVisible(true);
+                        }
+                        if (role == 1) {
+                            frmStaff.usr = id;
+                            frmStaff.name = fullname;
+                            frmStaff.role = "Nhân viên";
+                            frmStaff.bank = bank;
+                            frmStaff.manage = manage;
+                            new frmStaff().setVisible(true);
+                        }
+                        if (role == 2) {
+                            frmCustomer.acc = accountnumber;
+                            frmCustomer.usr = id;
+                            frmCustomer.name = fullname;
+                            frmCustomer.balance = balance;
+                            frmCustomer.role = "Khách hàng";
+                            new frmCustomer().setVisible(true);
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu hoặc ngân hàng không đúng", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Tài khoản hoặc mật khẩu không được bỏ trống", "Thông báo", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_checkLogin
 
@@ -226,12 +252,12 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_exit
 
     private void chooseBank(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseBank
-        HashMap<String, String> map = bll.loadBank();
-        if (cbBank.getSelectedIndex() == -1) {
+        if (cbBank.getSelectedIndex() == 0) {
             lblLogo.setText("LOGO");
+            lblLogo.setIcon(null);
         } else {
-            String bank = map.get(cbBank.getSelectedItem().toString());
-            bll.getLogobank(lblLogo, bank);
+            String idbank = ((DTO_Banks) cbBank.getSelectedItem()).getIdbank();
+            bll.getLogobank(lblLogo, idbank);
         }
     }//GEN-LAST:event_chooseBank
 

@@ -43,7 +43,7 @@ public class frmCustomerManagement extends javax.swing.JInternalFrame {
 
     private void initialCustomers() {
         String id = "KH";
-        int rand = rd.nextInt(10000) + 90000;
+        int rand = rd.nextInt(90000) + 10000;
         String str = id + rand;
         txtIDCust.setText(str);
     }

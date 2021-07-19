@@ -5,8 +5,8 @@ import Models.DTO_Logins;
 import java.awt.Image;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 public class DAL_Logins {
@@ -18,10 +18,8 @@ public class DAL_Logins {
     private String name, pass, account;
     private int role;
     private long balance;
-    private DTO_Banks dto_bank = new DTO_Banks();
 
-    public HashMap<String, String> loadBank() {
-        HashMap<String, String> map = new HashMap<>();
+    public void loadBank(JComboBox combobox) {
         String query = "select IDBANK, NAMEBANK from BANKS";
         try {
             db = new DatabaseAccess();
@@ -29,13 +27,13 @@ public class DAL_Logins {
             ps = con.prepareStatement(query);
             ResultSet result = ps.executeQuery();
             while (result.next()) {
-                dto_bank = new DTO_Banks(result.getString("IDBANK"), result.getString("NAMEBANK"));
-                map.put(dto_bank.getNambank(), dto_bank.getIdbank());
+                String idbank = result.getString("IDBANK");
+                String namebank = result.getString("NAMEBANK");
+                combobox.addItem(new DTO_Banks(idbank, namebank));
             }
         } catch (SQLException e) {
             System.err.println(e);
         }
-        return map;
     }
 
     public void getLogobank(JLabel lblLogo, String bank) {
@@ -55,8 +53,7 @@ public class DAL_Logins {
                     ImageIcon newIcon = new ImageIcon(newImg);
                     lblLogo.setIcon(newIcon);
                     lblLogo.setText("");
-                }
-                else{
+                } else {
                     lblLogo.setIcon(null);
                     lblLogo.setText("LOGO");
                 }
@@ -190,6 +187,22 @@ public class DAL_Logins {
             ps.setString(1, usr);
             ps.setString(2, pwd);
             ps.setString(3, bnk);
+            rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+        return false;
+    }
+
+    public boolean Login(String usr, String pwd) {
+        String query = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ?";
+        try {
+            db = new DatabaseAccess();
+            con = db.getConnection();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usr);
+            ps.setString(2, pwd);
             rs = ps.executeQuery();
             return rs.next();
         } catch (SQLException e) {
