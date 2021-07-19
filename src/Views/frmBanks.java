@@ -19,7 +19,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.commons.io.IOUtils;
 
 public class frmBanks extends javax.swing.JInternalFrame {
-    
+
     DTO_Banks dto = new DTO_Banks();
     BLL_Banks bll = new BLL_Banks();
     Random rd = new Random();
@@ -29,43 +29,67 @@ public class frmBanks extends javax.swing.JInternalFrame {
     String path;
     BufferedImage bi;
     public static String bank;
-    
+
     public frmBanks(frmAdmin admin, frmStaff staff) {
         initComponents();
         this.adm = admin;
         this.stf = staff;
-        loadBanks();
+        if (bank == null) {
+            LoadBanks();
+        } else {
+            LoadBanks(bank);
+        }
     }
-    
+
     private void resetData() {
         txtID.setText("");
         txtName.setText("");
         lblLogobank.setText("LOGO");
+        lblLogobank.setIcon(null);
     }
-    
-    private void loadBanks() {
-        tblBanks.setVisible(true);
-        BLL_Banks bLL_banks = new BLL_Banks();
-        ArrayList<DTO_Banks> arr = bLL_banks.loadBanks(bank);
+
+    private void LoadBanks(String bnk) {
+        BLL_Banks bll_bank = new BLL_Banks();
+        ArrayList<DTO_Banks> list = bll_bank.loadBanks(bnk);
         String[] header = {"Mã ngân hàng", "Tên ngân hàng", "Hình ảnh"};
-        Object[][] rows = new Object[arr.size()][3];
-        for (int i = 0; i < arr.size(); i++) {
-            rows[i][0] = arr.get(i).getIdbank();
-            rows[i][1] = arr.get(i).getNambank();
-            if (arr.get(i).getLogobank() != null) {
-                ImageIcon icon = new ImageIcon(new ImageIcon(arr.get(i).getLogobank()).getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH));
+        Object[][] rows = new Object[list.size()][3];
+        for (int i = 0; i < list.size(); i++) {
+            rows[i][0] = list.get(i).getIdbank();
+            rows[i][1] = list.get(i).getNambank();
+            if (list.get(i).getLogobank() != null) {
+                ImageIcon icon = new ImageIcon(new ImageIcon(list.get(i).getLogobank()).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
                 rows[i][2] = icon;
             } else {
-                System.err.println("Không có ảnh");
+                rows[i][2] = null;
             }
         }
         TheModel model = new TheModel(rows, header);
         tblBanks.setModel(model);
-        tblBanks.setRowHeight(200);
-        tblBanks.getColumnModel().getColumn(2).setPreferredWidth(200);
-        //tblBanks.setDefaultEditor(Object.class, null);
+        tblBanks.setRowHeight(100);
+        tblBanks.getColumnModel().getColumn(2).setPreferredWidth(100);
     }
-    
+
+    private void LoadBanks() {
+        BLL_Banks bll_bank = new BLL_Banks();
+        ArrayList<DTO_Banks> list = bll_bank.loadBanks();
+        String[] header = {"Mã ngân hàng", "Tên ngân hàng", "Hình ảnh"};
+        Object[][] rows = new Object[list.size()][3];
+        for (int i = 0; i < list.size(); i++) {
+            rows[i][0] = list.get(i).getIdbank();
+            rows[i][1] = list.get(i).getNambank();
+            if (list.get(i).getLogobank() != null) {
+                ImageIcon icon = new ImageIcon(new ImageIcon(list.get(i).getLogobank()).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
+                rows[i][2] = icon;
+            } else {
+                rows[i][2] = null;
+            }
+        }
+        TheModel model = new TheModel(rows, header);
+        tblBanks.setModel(model);
+        tblBanks.setRowHeight(100);
+        tblBanks.getColumnModel().getColumn(2).setPreferredWidth(100);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -190,7 +214,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
                             .addComponent(txtID)
                             .addComponent(txtName)
                             .addGroup(panBanksLayout.createSequentialGroup()
-                                .addComponent(lblLogobank, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblLogobank, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -208,17 +232,17 @@ public class frmBanks extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panBanksLayout.createSequentialGroup()
-                        .addComponent(lblLogobank, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblLogobank, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(panBanksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18))
+                            .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(panBanksLayout.createSequentialGroup()
                         .addComponent(btnLoadimge)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -245,6 +269,8 @@ public class frmBanks extends javax.swing.JInternalFrame {
             int results = bll.addBanks(dto);
             if (results != 0) {
                 JOptionPane.showMessageDialog(null, "OK");
+                resetData();
+                LoadBanks();
             } else {
                 JOptionPane.showMessageDialog(null, "NOT OK");
             }
@@ -273,7 +299,7 @@ public class frmBanks extends javax.swing.JInternalFrame {
         if (choice == JOptionPane.YES_OPTION) {
             try {
                 result = bll.deleteBanks(dto);
-                loadBanks();
+                //loadBanks();
                 resetData();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Lỗi: " + e, "Thông báo", JOptionPane.ERROR_MESSAGE);
