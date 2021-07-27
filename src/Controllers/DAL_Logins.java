@@ -179,34 +179,33 @@ public class DAL_Logins {
     }
 
     public boolean Login(String usr, String pwd, String bnk) {
-        String query = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ? and IDBANK = ?";
-        try {
-            db = new DatabaseAccess();
-            con = db.getConnection();
-            ps = con.prepareStatement(query);
-            ps.setString(1, usr);
-            ps.setString(2, pwd);
-            ps.setString(3, bnk);
-            rs = ps.executeQuery();
-            return rs.next();
-        } catch (SQLException e) {
-            System.err.println(e);
-        }
-        return false;
-    }
-
-    public boolean Login(String usr, String pwd) {
-        String query = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ?";
-        try {
-            db = new DatabaseAccess();
-            con = db.getConnection();
-            ps = con.prepareStatement(query);
-            ps.setString(1, usr);
-            ps.setString(2, pwd);
-            rs = ps.executeQuery();
-            return rs.next();
-        } catch (SQLException e) {
-            System.err.println(e);
+        String query_nobank = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ?";
+        String query_withbank = "select IDS, PASSWORD, IDBANK from USERS where IDS = ? and PASSWORD = ? and IDBANK = ?";
+        if (bnk == null) {
+            try {
+                db = new DatabaseAccess();
+                con = db.getConnection();
+                ps = con.prepareStatement(query_nobank);
+                ps.setString(1, usr);
+                ps.setString(2, pwd);
+                rs = ps.executeQuery();
+                return rs.next();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        } else {
+            try {
+                db = new DatabaseAccess();
+                con = db.getConnection();
+                ps = con.prepareStatement(query_withbank);
+                ps.setString(1, usr);
+                ps.setString(2, pwd);
+                ps.setString(3, bnk);
+                rs = ps.executeQuery();
+                return rs.next();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
         return false;
     }

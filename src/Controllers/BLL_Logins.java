@@ -21,10 +21,6 @@ public class BLL_Logins {
         return dal.checkLogin(usr);
     }
 
-    public boolean Login(String usr, String pwd) {
-        return dal.Login(usr, pwd);
-    }
-
     public boolean Login(String usr, String pwd, String bnk) {
         return dal.Login(usr, pwd, bnk);
     }

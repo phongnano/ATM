@@ -170,7 +170,7 @@ public class frmLogin extends javax.swing.JFrame {
             dto.setPasswowd(txtPassword.getText());
             if (!dto.getUsername().isEmpty() && !dto.getPasswowd().isEmpty()) {
                 frmChangePassword.usr = dto.getUsername();
-                if (bll.Login(dto.getUsername(), dto.getPasswowd())) {
+                if (bll.Login(dto.getUsername(), dto.getPasswowd(), null)) {
                     JOptionPane.showMessageDialog(null, "Đăng nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                     this.dispose();
                     arr = bll.checkLogin(dto.getUsername());
