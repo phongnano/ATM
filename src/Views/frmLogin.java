@@ -164,7 +164,6 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_convertUppercase
 
     private void checkLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLogin
-
         if (cbBank.getSelectedIndex() == 0) {
             dto.setUsername(txtUsername.getText());
             dto.setPasswowd(txtPassword.getText());
